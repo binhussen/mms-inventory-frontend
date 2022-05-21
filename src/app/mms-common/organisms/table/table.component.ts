@@ -165,6 +165,7 @@ export class TableComponent implements OnInit, AfterViewInit {
             this.data,
             excludedColumns ?? []
           );
+          console.log(totalItems);
           this.displayedColumns = this.tableService.getDisplayedColumns(
             this.columns
           );

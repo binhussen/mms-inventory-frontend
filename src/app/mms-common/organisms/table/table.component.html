@@ -35,7 +35,10 @@
       <mat-cell *cdkCellDef="let row; let i = index">
         <span class="mobile-label">{{ column.header }}:</span>
         <ng-container *ngIf="row && column.cell(row)">
-          {{ column.columnDef === 'date' ? (column.cell(row) | date) :  column.cell(row)}}
+          <a href={{column.cell(row)}} *ngIf="column.columnDef ==='attachments'">
+            {{ column.cell(row)}}
+          </a>
+          <span *ngIf="column.columnDef !='attachments'">{{ column.columnDef === 'date' ? (column.cell(row) | date) :  column.cell(row)}}</span>
         </ng-container>
   
         <ng-container *ngIf="!column.cell(row) && column.columnDef == 'No'">

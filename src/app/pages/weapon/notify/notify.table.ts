@@ -5,7 +5,7 @@ const baseApiUrl = 'http://localhost:3000';
 const dataSourceUrl = `${baseApiUrl}/notifies`;
 const actions: Array<Action> = [
   { name: 'Expand', type: 'expand', path: 'notifies' },
-  { name: 'Edit', type: 'edit' },
+  { name: 'Edit', type: 'edit' }
 ];
 
 const notifyTableState: TableState = {

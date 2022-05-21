@@ -13,7 +13,7 @@ export class LayoutComponent implements OnInit {
   matDrawerShow = true;
   sideNavMode: MatDrawerMode = 'side';
   @ViewChild('drawerob') drawerob!: any;
-  user = { firstName: 'Ezedin', lastName: 'Fedlu' };
+  user = { firstName: 'binhussen', lastName: 'Hussen' };
   constructor(
     private media: MediaObserver,
     private translateService: TranslateService
