@@ -58,6 +58,7 @@ export class TableService {
     let params = new HttpParams();
     params = params.set('_page', pageNumber.toString());
     params = params.set('_limit', limit.toString());
+    console.log(dataSourceUrl)
     const httpResponse = this.httpClient.get(dataSourceUrl, {
       observe: 'response',
       params,

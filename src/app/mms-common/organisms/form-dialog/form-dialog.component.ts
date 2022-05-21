@@ -62,7 +62,7 @@ export class FormDialogComponent implements OnInit {
         if (f.status !== 'PENDING') {
           setTimeout(() => {
             this.dialogRef.close();
-          }, 3000);
+          }, 1000);
         }
       });
   }

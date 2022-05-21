@@ -40,9 +40,13 @@ export class PageDetailComponent implements OnInit, OnDestroy {
               ...table,
               links: {
                 ...table.links,
-                getPath: `${table.links.getPath}?${
-                  Object.keys(table.childOf)[0]
-                }=${this.activatedRoute.snapshot.params.id}`,
+                getPath: `${table.links.getPath}/${this.activatedRoute.snapshot.params.id}/notifyitems`,
+                createPath: `${table.links.getPath}/${this.activatedRoute.snapshot.params.id}/notifyitems`,
+                updatePath: `${table.links.getPath}/${this.activatedRoute.snapshot.params.id}/notifyitems`
+                // Chaild Links
+                // getPath: `${table.links.getPath}
+                //  $?${Object.keys(table.childOf)[0]}=
+                // /${this.activatedRoute.snapshot.params.id}`,
               },
             };
 

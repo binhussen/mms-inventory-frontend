@@ -1,11 +1,12 @@
 import { Action } from 'src/app/mms-common/organisms/table/table.component';
 import { TableState } from 'src/app/store/models/table.state';
+import { environment } from 'src/environments/environment';
 
-const baseApiUrl = 'http://localhost:3000';
-const dataSourceUrl = `${baseApiUrl}/notifies`;
+const baseApiUrl = environment.baseApiUrl;
+const dataSourceUrl = `${baseApiUrl}notifyheaders`;
 const actions: Array<Action> = [
-  { name: 'Expand', type: 'expand', path: 'notifies' },
-  { name: 'Edit', type: 'edit' },
+  { name: 'Expand', type: 'expand', path: 'notifyheaders' },
+  { name: 'Edit', type: 'edit' }
 ];
 
 const notifyTableState: TableState = {
@@ -27,10 +28,10 @@ const notifyTableState: TableState = {
     {
       type: 'notifyItems',
       links: {
-        getPath: `${baseApiUrl}/notifyItems?notifiesId=[id]`,
-        createPath: `${baseApiUrl}/notifyItems`,
-        updatePath: `${baseApiUrl}/notifyItems/[id]`,
-        deletePath: `${baseApiUrl}/notifyItems/[id]`,
+        getPath: `${baseApiUrl}/notifyheaders/[id]/notifyitems`,
+        createPath: `${baseApiUrl}/notifyheaders/[id]/notifyitems`,
+        updatePath: `${baseApiUrl}/notifyitems/[id]`,
+        deletePath: `${baseApiUrl}/notifyitems/[id]`,
       },
       relationType: 'many',
     },
