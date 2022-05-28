@@ -15,6 +15,11 @@ const routes: Routes = [
         pathMatch: 'full',
       },
       {
+        path:'user-menu',
+        loadChildren: () =>
+        import('../user-menu/user-menu.module').then((m) => m.UserMenuModule) 
+      },
+      {
         path: 'weapon',
         loadChildren: () =>
           import('../weapon/weapon.module').then((m) => m.WeaponModule),
