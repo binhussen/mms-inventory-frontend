@@ -3,7 +3,7 @@ const notifyItemForm: Form = {
   title: 'Notify Item',
   elements: [
     {
-      name: 'Type',
+      name: 'type',
       type: 'select',
       placeholder: 'Weapon Type',
       defaultValue: '',
@@ -16,7 +16,7 @@ const notifyItemForm: Form = {
       validations: [{ type: 'required', value: true }],
     },
     {
-      name: 'weaponName',
+      name: 'name',
       type: 'text',
       placeholder: 'Weapon Name',
       defaultValue: '',
@@ -43,7 +43,7 @@ const notifyForm: Form = {
       defaultValue: '',
       formArrayItems: [
         {
-          name: 'Type',
+          name: 'type',
           type: 'select',
           placeholder: 'Weapon Type',
           defaultValue: '',
@@ -56,7 +56,7 @@ const notifyForm: Form = {
           validations: [{ type: 'required', value: true }],
         },
         {
-          name: 'weaponName',
+          name: 'name',
           type: 'text',
           placeholder: 'Weapon Name',
           defaultValue: '',

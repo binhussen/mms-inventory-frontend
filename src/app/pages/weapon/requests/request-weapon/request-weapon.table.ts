@@ -61,7 +61,7 @@ const requestItemsForWeaponTable: TableState = {
     updatePath: `${dataSourceUrl}/[id]`,
     deletePath: `${dataSourceUrl}/[id]`,
   },
-  actions,
+  actions : actions.slice(1),
   relations: [],
   childOf: {
     requestWeaponsId: 0,

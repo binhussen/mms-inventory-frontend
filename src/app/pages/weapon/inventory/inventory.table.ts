@@ -9,10 +9,6 @@ const actions: Array<Action> = [
   { name: 'Edit', type: 'edit' },
 ];
 
-const itemActions: Array<Action> = [
-  { name: 'Edit', type: 'edit' },
-];
-
 const inventoryTableState: TableState = {
   id: 'Inventory table',
   title: 'List Of Records In Inventory',
@@ -56,7 +52,7 @@ const inventoryItemsTableState: TableState = {
     updatePath: `${dataSourceUrl}/[id]`,
     deletePath: `${dataSourceUrl}/[id]`,
   },
-  actions,
+  actions: actions.slice(1, 2),
   relations: [],
   childOf: {
     weaponInventoriesId: 0,
