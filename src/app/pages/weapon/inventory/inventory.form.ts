@@ -37,20 +37,20 @@ const inventoryForm: Form = {
       validations: [{ type: 'required', value: true }],
     },
     {
-      name: 'weaponItems',
+      name: 'storeItems',
       type: 'formArray',
       placeholder: 'Weapon Items',
       defaultValue: '',
       formArrayItems: [
         {
-          name: 'weaponItemDescription',
+          name: 'itemDescription',
           type: 'text',
           placeholder: 'Weapon Item Description',
           defaultValue: '',
           size: 6,
         },
         {
-          name: 'weaponType',
+          name: 'type',
           type: 'select',
           placeholder: 'Weapon Type',
           defaultValue: '',
@@ -63,14 +63,14 @@ const inventoryForm: Form = {
           validations: [{ type: 'required', value: true }],
         },
         {
-          name: 'weaponModel',
+          name: 'model',
           type: 'text',
           placeholder: 'Weapon Model',
           defaultValue: '',
           size: 6,
         },
         {
-          name: 'weaponSerialNo',
+          name: 'serialNo',
           type: 'text',
           placeholder: 'Weapon Serial No.',
           defaultValue: '',
@@ -102,7 +102,7 @@ const inventoryForm: Form = {
           size: 4,
         },
         {
-          name: 'weaponAvailability',
+          name: 'availability',
           type: 'hidden',
           placeholder: 'Weapon Availability',
           defaultValue: '1',
@@ -138,21 +138,34 @@ const inventoryItemForm: Form = {
   title: 'Inventory Item',
   elements: [
     {
-      name: 'weaponItemDescription',
+      name: 'type',
+      type: 'select',
+      placeholder: 'Weapon Type',
+      defaultValue: '',
+      size: 4,
+      options: [
+        { value: 'Weapon', label: 'Weapon' },
+        { value: 'Bullet', label: 'Bullet' },
+        { value: 'Other', label: 'Other' },
+      ],
+      validations: [{ type: 'required', value: true }],
+    },
+    {
+      name: 'itemDescription',
       type: 'text',
       placeholder: 'Weapon Item Description',
       defaultValue: '',
       size: 3,
     },
     {
-      name: 'weaponModel',
+      name: 'model',
       type: 'text',
       placeholder: 'Weapon Model',
       defaultValue: '',
       size: 3,
     },
     {
-      name: 'weaponSerialNo',
+      name: 'serialNo',
       type: 'text',
       placeholder: 'Weapon Serial No.',
       defaultValue: '',
@@ -182,6 +195,13 @@ const inventoryItemForm: Form = {
         operator: '*',
       },
       size: 3,
+    },
+    {
+      name: 'availability',
+      type: 'text',
+      placeholder: 'Weapon Availability',
+      defaultValue: '1',
+      size: 0,
     },
     {
       name: 'storeNo',

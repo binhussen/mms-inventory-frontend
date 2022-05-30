@@ -104,6 +104,7 @@ export class TableComponent implements OnInit, AfterViewInit {
   }
   command(action: Action, row: any, link?: string) {
     switch (action.type) {
+      
       case 'create':
         this.openDialog(
           'Create',

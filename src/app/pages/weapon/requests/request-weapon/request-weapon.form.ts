@@ -4,13 +4,13 @@ const requestForWeaponForm: Form = {
   title: 'Request For Weapon',
   elements: [
     {
-      name: 'requestWeaponItems',
+      name: 'requestItems',
       type: 'formArray',
       placeholder: 'Request Items',
       defaultValue: '',
       formArrayItems: [
         {
-          name: 'weaponType',
+          name: 'type',
           type: 'select',
           placeholder: 'Weapon Type',
           defaultValue: '',
@@ -31,7 +31,7 @@ const requestForWeaponForm: Form = {
           validations: [{ type: 'required', value: true }],
         },
         {
-          name: 'weaponModel',
+          name: 'model',
           type: 'text',
           placeholder: 'Weapon Model',
           defaultValue: '',
@@ -76,7 +76,7 @@ const requestItemForWeaponForm: Form = {
   elements:
     (
       requestForWeaponForm.elements.find(
-        (element) => element.name === 'requestWeaponItems'
+        (element) => element.name === 'requestItems'
       ) ?? { formArrayItems: [] }
     ).formArrayItems ?? [],
 };
@@ -85,7 +85,7 @@ const requestApprovalElements = requestForWeaponForm.elements.map(
     if (element.name === 'requestStatus') {
       return { ...element, defaultValue: 'APPROVED' };
     }
-    if (element.name === 'requestWeaponItems') {
+    if (element.name === 'requestItems') {
       return {
         ...element,
         placeholder: 'Requested Items',

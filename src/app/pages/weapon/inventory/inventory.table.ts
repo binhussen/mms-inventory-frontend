@@ -1,10 +1,15 @@
 import { Action } from 'src/app/mms-common/organisms/table/table.component';
 import { TableState } from 'src/app/store/models/table.state';
+import { environment } from 'src/environments/environment';
 
-const baseApiUrl = 'http://localhost:3000';
-const dataSourceUrl = `${baseApiUrl}/weaponInventories`;
+const baseApiUrl = environment.baseApiUrl;
+const dataSourceUrl = `${baseApiUrl}storeheaders`;
 const actions: Array<Action> = [
-  { name: 'Expand', type: 'expand', path: 'inventory' },
+  { name: 'Expand', type: 'expand', path: 'storeheaders' },
+  { name: 'Edit', type: 'edit' },
+];
+
+const itemActions: Array<Action> = [
   { name: 'Edit', type: 'edit' },
 ];
 
@@ -23,18 +28,18 @@ const inventoryTableState: TableState = {
     deletePath: `${dataSourceUrl}/[id]`,
   },
   actions,
-  relations: [
-    {
-      type: 'weaponItems',
-      links: {
-        getPath: `${baseApiUrl}/weaponItems?weaponInventoriesId=[id]`,
-        createPath: `${baseApiUrl}/weaponItems`,
-        updatePath: `${baseApiUrl}/weaponItems/[id]`,
-        deletePath: `${baseApiUrl}/weaponItems/[id]`,
-      },
-      relationType: 'many',
-    },
-  ],
+  // relations: [
+  //   {
+  //     type: 'weaponItems',
+  //     links: {
+  //       getPath: `${baseApiUrl}/weaponItems?weaponInventoriesId=[id]`,
+  //       createPath: `${baseApiUrl}/weaponItems`,
+  //       updatePath: `${baseApiUrl}/weaponItems/[id]`,
+  //       deletePath: `${baseApiUrl}/weaponItems/[id]`,
+  //     },
+  //     relationType: 'many',
+  //   },
+  // ],
 };
 
 const inventoryItemsTableState: TableState = {
@@ -46,10 +51,10 @@ const inventoryItemsTableState: TableState = {
   data: [],
   excludedColumns: ['id', 'weaponInventoriesId'],
   links: {
-    getPath: `${baseApiUrl}/weaponItems`,
-    createPath: `${baseApiUrl}/weaponItems`,
-    updatePath: `${baseApiUrl}/weaponItems/[id]`,
-    deletePath: `${baseApiUrl}/weaponItems/[id]`,
+    getPath: dataSourceUrl,
+    createPath: `${dataSourceUrl}`,
+    updatePath: `${dataSourceUrl}/[id]`,
+    deletePath: `${dataSourceUrl}/[id]`,
   },
   actions,
   relations: [],
