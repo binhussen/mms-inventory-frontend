@@ -149,7 +149,7 @@ export class CrudHttpService extends BaseService<any> {
         observer.next(null);
       });
     }
-    console.log(data,url)
+    console.log(this.getUrl(url, data.id))
     return this.httpClient.put(`${this.getUrl(url, data.id)}`, data, {
       headers: this.headers,
     });
