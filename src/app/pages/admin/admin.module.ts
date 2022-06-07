@@ -22,12 +22,13 @@ const routes: Routes = [
         loadChildren: () =>
         import('../user-menu/user-menu.module').then((m) => m.UserMenuModule) ,
         canActivate:[AuthGuard],
-        data:{role:Role.admin}
+        
       },
       {
         path: 'weapon',
         loadChildren: () =>
           import('../weapon/weapon.module').then((m) => m.WeaponModule),
+          canActivate: [AuthGuard]
       },
       {
         path: 'dashboard',
@@ -35,6 +36,7 @@ const routes: Routes = [
           import('../dashboard/dashboard.module').then(
             (m) => m.DashboardModule
           ),
+          canActivate: [AuthGuard]
       },
     ],
   },

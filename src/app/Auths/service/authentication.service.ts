@@ -50,18 +50,18 @@ export class AuthenticationService {
       return false;
     }
 
-    const expiration = localStorage.getItem(this.expirationTokenKey);
-    const expirationDate = new Date(expiration);
+    // const expiration = localStorage.getItem(this.expirationTokenKey);
+    // const expirationDate = new Date(expiration);
 
-    if (expirationDate <= new Date()) {
-      this.logout();
-      return false;
-    }
+    // if (expirationDate <= new Date()) {
+    //   this.logout();
+    //   return false;
+    // }
 
     return true;
   }
 
-  getFieldFromJWT(field: string): string {
+  getFieldFromJWT(field: string) {
     const token = localStorage.getItem(this.tokenKey);
     if (!token) {
       return '';

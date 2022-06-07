@@ -3,6 +3,8 @@ import loginForm from './login.form';
 import { Form } from '../../mms-common/models/form';
 import { transition, trigger, useAnimation } from '@angular/animations';
 import { fadeIn } from 'ng-animate';
+import { AuthenticationService } from 'src/app/Auths/service/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +23,8 @@ import { fadeIn } from 'ng-animate';
 })
 export class LoginComponent implements OnInit {
   form!: Form;
-  constructor() {}
+  formComponent: any;
+  constructor( private authicationService: AuthenticationService, private router: Router) {}
 
   ngOnInit(): void {
     this.form = loginForm;
@@ -29,5 +32,16 @@ export class LoginComponent implements OnInit {
 
   onSubmit(event: any) {
     console.log(event);
+
+    this.authicationService.login(event).subscribe(
+      (authenticationResponse) => {
+        this.authicationService.saveToken(authenticationResponse);
+        this.router.navigate(['/']);
+      },
+      // error handler
+      (error) => (
+        console.log('incorrect credential')
+          )
+  );
   }
 }
