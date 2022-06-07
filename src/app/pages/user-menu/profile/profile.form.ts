@@ -22,7 +22,7 @@ const profileForm: Form = {
         ]
       },
       {
-        name: 'password',
+        name: 'email',
         type: 'email',
         placeholder: 'Email Address',
         defaultValue: '',
