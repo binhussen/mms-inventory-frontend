@@ -6,7 +6,7 @@ const baseApiUrl = environment.baseApiUrl;
 const dataSourceUrl = `${baseApiUrl}notifyheaders`;
 const actions: Array<Action> = [
   { name: 'Expand', type: 'expand', path: 'notifyheaders' },
-  { name: 'Edit', type: 'edit' }
+  { name: 'Edit', type: 'edit' },
 ];
 
 const notifyTableState: TableState = {
@@ -24,18 +24,18 @@ const notifyTableState: TableState = {
     deletePath: `${dataSourceUrl}/[id]`,
   },
   actions,
-  relations: [
-    {
-      type: 'notifyItems',
-      links: {
-        getPath: `${baseApiUrl}/notifyheaders/[id]/notifyitems`,
-        createPath: `${baseApiUrl}/notifyheaders/[id]/notifyitems`,
-        updatePath: `${baseApiUrl}/notifyitems/[id]`,
-        deletePath: `${baseApiUrl}/notifyitems/[id]`,
-      },
-      relationType: 'many',
-    },
-  ],
+  // relations: [
+  //   {
+  //     type: 'notifyItems',
+  //     links: {
+  //       getPath: `${baseApiUrl}notifyheaders/[id]/notifyitems`,
+  //       createPath: `${baseApiUrl}notifyheaders/[id]/notifyitems`,
+  //       updatePath: `${baseApiUrl}notifyheaders/[id]/notifyitems/[id]`,
+  //       deletePath: `${baseApiUrl}notifyheaders/[id]/notifyitems/[id]`,
+  //     },
+  //     relationType: 'many',
+  //   },
+  // ],
 };
 
 // set this state to the store

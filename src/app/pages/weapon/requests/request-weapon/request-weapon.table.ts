@@ -1,9 +1,10 @@
 import { Action } from 'src/app/mms-common/organisms/table/table.component';
 import { TableState } from 'src/app/store/models/table.state';
+import { environment } from 'src/environments/environment';
 import requestWeaponForm from './request-weapon.form';
 
-const baseApiUrl = 'http://localhost:3000';
-const dataSourceUrl = `${baseApiUrl}/requestWeapons`;
+const baseApiUrl = environment.baseApiUrl;
+const dataSourceUrl = `${baseApiUrl}requestheaders`;
 const actions: Array<Action> = [
   { name: 'Expand', type: 'expand', path: 'request-for-weapon' },
   { name: 'Edit', type: 'edit' },
@@ -31,7 +32,7 @@ const requestForWeaponTable: TableState = {
     updatePath: `${dataSourceUrl}/[id]`,
     deletePath: `${dataSourceUrl}/[id]`,
   },
-  actions,
+  actions:actions.slice(0, 2),
   relations: [
     {
       type: 'requestWeaponItems',
@@ -55,12 +56,12 @@ const requestItemsForWeaponTable: TableState = {
   data: [],
   excludedColumns: ['id', 'requestWeaponsId'],
   links: {
-    getPath: `${baseApiUrl}/requestWeaponItems`,
-    createPath: `${baseApiUrl}/requestWeaponItems`,
-    updatePath: `${baseApiUrl}/requestWeaponItems/[id]`,
-    deletePath: `${baseApiUrl}/requestWeaponItems/[id]`,
+    getPath: dataSourceUrl,
+    createPath: `${dataSourceUrl}`,
+    updatePath: `${dataSourceUrl}/[id]`,
+    deletePath: `${dataSourceUrl}/[id]`,
   },
-  actions: actions.slice(1, 2),
+  actions : actions.slice(1),
   relations: [],
   childOf: {
     requestWeaponsId: 0,

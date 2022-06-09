@@ -43,7 +43,6 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { DndDirective } from './atoms/file-input/dnd.directive';
 import { BasicComponent } from './templates/basic/basic.component';
 import { RouterModule } from '@angular/router';
-import { CrudHttpService } from './organisms/form-dialog/crudHttp.service';
 import { TableService } from './organisms/table/table.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { SideNavHeaderComponent } from './molecules/side-nav-header/side-nav-header.component';
@@ -105,8 +104,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG,
-    },
-    CrudHttpService,
+    }
   ],
   exports: [
     LayoutComponent,
