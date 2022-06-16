@@ -17,7 +17,7 @@ import { TableEffect } from './store/effects/table.effect';
 /* internationalization */
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { JwtInterceptor } from './Auths/interceptor/jwt.interceptor';
+import { TokenInterceptor } from './Auths/interceptor/token.interceptor';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -49,7 +49,7 @@ export function createTranslateLoader(http: HttpClient) {
     }),
   ],
   providers: [
-    {provide:HTTP_INTERCEPTORS, useClass:JwtInterceptor, multi:true}
+    {provide:HTTP_INTERCEPTORS, useClass:TokenInterceptor, multi:true}
   ],
   bootstrap: [AppComponent],
 })

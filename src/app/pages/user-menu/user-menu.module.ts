@@ -11,14 +11,18 @@ import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
-    ProfileComponent,SettingComponent,HelpComponent
-  ],
+    ProfileComponent,SettingComponent,HelpComponent],
   imports: [
     CommonModule,
     MmsCommonModule,
     MatCardModule,
     MatButtonModule,
     RouterModule.forChild([
+      {
+        path: 'create-user-account',
+        loadChildren: () =>
+          import('./create-account/create-account.module').then((m) => m.CreateAccountModule),
+      },
       {
         path:'profile', component:ProfileComponent
       },

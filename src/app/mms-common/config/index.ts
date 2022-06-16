@@ -47,7 +47,7 @@ export const menus: Array<Menu> = [
   {
     name: 'User Management',
     icon: 'person',
-    link: 'dashboard',
+    link: 'user-menu/create-user-account',
     open: false,
     trans: 'menus.userManagement',
   },

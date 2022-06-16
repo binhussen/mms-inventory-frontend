@@ -9,8 +9,7 @@ const actions: Array<Action> = [
   { name: 'Expand', type: 'expand', path: 'request-for-weapon' },
   { name: 'Edit', type: 'edit' },
   {
-    name: 'Approve',
-    type: 'approve',
+    name: 'Approve',type: 'approve',
     urlToPopulateForm: `${baseApiUrl}/requestWeapons/[id]`,
     form: requestWeaponForm.requestApprovalForm,
     submittedUrl: `${baseApiUrl}/requestWeaponApprovals`,

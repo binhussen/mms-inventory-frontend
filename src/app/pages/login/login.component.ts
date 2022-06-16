@@ -36,12 +36,13 @@ export class LoginComponent implements OnInit {
     this.authicationService.login(event).subscribe(
       (authenticationResponse) => {
         this.authicationService.saveToken(authenticationResponse);
-        this.router.navigate(['/']);
+        this.router.navigate(['admin/dashboard']);
       },
       // error handler
       (error) => (
-        console.log('incorrect credential')
-          )
+        window.alert('Incorrect Credential')
+          ),
+    
   );
   }
 }

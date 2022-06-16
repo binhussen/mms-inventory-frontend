@@ -4,7 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin.component';
 import { MmsCommonModule } from '../../mms-common/mms-common.module';
 import { AuthGuard } from 'src/app/Auths/guards/auth.guard';
-import { Role } from 'src/app/Auths/model/role.model';
 
 const routes: Routes = [
   {
@@ -15,20 +14,20 @@ const routes: Routes = [
         path: '',
         redirectTo: 'dashboard',
         pathMatch: 'full',
-        canActivate:[AuthGuard]
+        //canActivate:[AuthGuard]
       },
       {
         path:'user-menu',
         loadChildren: () =>
         import('../user-menu/user-menu.module').then((m) => m.UserMenuModule) ,
-        canActivate:[AuthGuard],
+        //canActivate:[AuthGuard],
         
       },
       {
         path: 'weapon',
         loadChildren: () =>
           import('../weapon/weapon.module').then((m) => m.WeaponModule),
-          canActivate: [AuthGuard]
+          //canActivate: [AuthGuard]
       },
       {
         path: 'dashboard',
@@ -36,7 +35,7 @@ const routes: Routes = [
           import('../dashboard/dashboard.module').then(
             (m) => m.DashboardModule
           ),
-          canActivate: [AuthGuard]
+         // canActivate: [AuthGuard]
       },
     ],
   },
