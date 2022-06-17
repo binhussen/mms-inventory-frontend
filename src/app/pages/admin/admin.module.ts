@@ -43,6 +43,6 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [AdminComponent],
-  imports: [CommonModule, RouterModule.forChild(routes), MmsCommonModule],
+  imports: [CommonModule, RouterModule.forChild(routes), MmsCommonModule],  
 })
 export class AdminModule {}
