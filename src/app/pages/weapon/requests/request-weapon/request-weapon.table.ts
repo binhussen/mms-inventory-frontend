@@ -15,7 +15,7 @@ const actions: Array<Action> = [
     form: requestWeaponForm.requestApprovalForm,
     submittedUrl: `${baseApiUrl}/requestWeaponApprovals`,
   },
-  { name: 'Reject', type: 'reject' },
+  { name: 'Reject', type: 'reject', path: `${baseApiUrl}requestapprove/[id]` },
 ];
 
 const requestForWeaponTable: TableState = {

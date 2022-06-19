@@ -150,6 +150,18 @@ export class TableComponent implements OnInit, AfterViewInit {
             );
           });
         break;
+        case 'reject':
+          // reject
+          const f = {
+            value: {
+              id: row.id,
+              submittedToUrl: action.path,
+              action: action.type,
+            },
+          };
+          this.store$.dispatch(formActions.setRejectingForm(f));
+          
+          break;
       default:
         console.log('unknown action');
     }

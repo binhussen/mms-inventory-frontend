@@ -155,6 +155,13 @@ export class CrudHttpService extends BaseService<any> {
     });
   }
 
+  rejectResource(id: any, url: string): Observable<any> {
+    console.log(this.getUrl(url, id))
+    return this.httpClient.post(`${this.getUrl(url,id)}?status=Reject`, {
+      headers: this.headers,
+    });
+  }
+
   getSingleAndBulk(
     data: any,
     relations: any,

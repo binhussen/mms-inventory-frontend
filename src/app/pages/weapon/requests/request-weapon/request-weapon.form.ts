@@ -39,7 +39,7 @@ const requestForWeaponForm: Form = {
           validations: [{ type: 'required', value: true }],
         },
         {
-          name: 'quantity',
+          name: 'requestedQuantity',
           type: 'number',
           placeholder: 'Quantity',
           defaultValue: '',

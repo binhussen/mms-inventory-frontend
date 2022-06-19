@@ -21,6 +21,11 @@ const setUpdatingForm = createAction(
   props<{ value: FormData }>()
 );
 
+const setRejectingForm = createAction(
+  '[Form] reject form',
+  props<{ value: FormData }>()
+);
+
 const setUpdatingFormWithRelations = createAction(
   '[Form] update form with relations',
   props<{ value: FormData }>()
@@ -33,6 +38,7 @@ export default {
   formSubmittingSuccess,
   formSubmittingFailure,
   setUpdatingForm,
+  setRejectingForm,
   setUpdatingFormWithRelations,
   clearData,
 };

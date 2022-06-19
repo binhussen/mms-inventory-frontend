@@ -39,6 +39,21 @@ export class FormEffect {
       )
     )
   );
+
+  $rejectForm = createEffect(() =>
+    this.actions$.pipe(
+      ofType(formActions.setRejectingForm.type),
+      switchMap((action: { value: FormData }) =>
+        this.crudHttpService.rejectResource(action.value.id,action.value.submittedToUrl).pipe(
+          map((response) =>
+            formActions.formSubmittingSuccess({ value: response })
+          ),
+          catchError((err) => of(formActions.formSubmittingFailure(err)))
+        )
+      )
+    )
+  );
+
   constructor(
     private actions$: Actions,
     private crudHttpService: CrudHttpService
