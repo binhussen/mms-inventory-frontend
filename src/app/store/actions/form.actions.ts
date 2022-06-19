@@ -23,7 +23,7 @@ const setUpdatingForm = createAction(
 
 const setApprovingForm = createAction(
   '[Form] approve form',
-  props<{ value: FormData }>()
+  props<{ value: Partial<FormState> }>()
 );
 
 const setRejectingForm = createAction(

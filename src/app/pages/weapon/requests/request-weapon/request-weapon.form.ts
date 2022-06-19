@@ -117,7 +117,7 @@ const requestApprovalForm:Form = {
   // elements: requestApprovalElements,
   elements: [
     {
-      name: 'type',
+      name: 'id',
       type: 'select',
       placeholder: 'Status',
       defaultValue: 'Pending',
