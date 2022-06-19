@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MmsCommonModule } from 'src/app/mms-common/mms-common.module';
 import { RouterModule } from '@angular/router';
-import { PageComponent } from '../../page/page.component';
-import userPage from './create-account.page';
+import { PageComponent } from '../page/page.component';
+import customerPage from './customer.page';
+import { PageModule } from '../page/page.module';
 
 
 
@@ -12,9 +13,11 @@ import userPage from './create-account.page';
   imports: [
     CommonModule,
     MmsCommonModule,
+    PageModule,
     RouterModule.forChild([
-      { path:'', component:PageComponent, data:userPage }
+      { path:'',component:PageComponent, data: customerPage}
     ])
+    
   ]
 })
-export class CreateAccountModule { }
+export class CustomerModule { }

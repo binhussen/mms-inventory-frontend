@@ -30,7 +30,9 @@
         "inventory": "Store Weapon",
         "request": "Request Weapon",
         "reportDamages":"report Damages",
-        "userManagement":"User Managment"
+        "userManagement":"User Managment",
+        "customer":"customers"
+
     },
     
         "createNew":{

@@ -17,6 +17,14 @@ const routes: Routes = [
         //canActivate:[AuthGuard]
       },
       {
+        path: 'customers',
+        loadChildren: () =>
+          import('../customer/customer.module').then(
+            (m) => m.CustomerModule
+          ),
+         // canActivate: [AuthGuard]
+      },
+      {
         path:'user-menu',
         loadChildren: () =>
         import('../user-menu/user-menu.module').then((m) => m.UserMenuModule) ,

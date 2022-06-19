@@ -8,7 +8,6 @@ import { MmsCommonModule } from 'src/app/mms-common/mms-common.module';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 
-
 @NgModule({
   declarations: [
     ProfileComponent,SettingComponent,HelpComponent],

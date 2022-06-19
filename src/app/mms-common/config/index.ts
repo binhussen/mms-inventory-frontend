@@ -45,6 +45,13 @@ export const menus: Array<Menu> = [
     ],
   },
   {
+    name: 'customers',
+    icon: 'people',
+    link: 'customers',
+    open: false,
+    trans: 'menus.customer',
+  },
+  {
     name: 'User Management',
     icon: 'person',
     link: 'user-menu/create-user-account',
