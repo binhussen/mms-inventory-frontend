@@ -40,6 +40,20 @@ export class FormEffect {
     )
   );
 
+  $approveForm = createEffect(() =>
+    this.actions$.pipe(
+      ofType(formActions.setApprovingForm.type),
+      switchMap((action: { value: FormData }) =>
+        this.crudHttpService.approveResource(action.value.id,action.value.data.approvedQuantity,action.value.submittedToUrl).pipe(
+          map((response) =>
+            formActions.formSubmittingSuccess({ value: response })
+          ),
+          catchError((err) => of(formActions.formSubmittingFailure(err)))
+        )
+      )
+    )
+  );
+
   $rejectForm = createEffect(() =>
     this.actions$.pipe(
       ofType(formActions.setRejectingForm.type),

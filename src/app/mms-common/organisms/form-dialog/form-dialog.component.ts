@@ -51,7 +51,34 @@ export class FormDialogComponent implements OnInit {
         action: this.actionType,
       },
     };
-    this.store$.dispatch(formActions.setSubmittingForm(f));
+
+    if(this.actionType=='create')
+    {
+      this.store$.dispatch(formActions.setSubmittingForm(f));
+    }
+    else if(formData.type=='Approve'){
+      const f = {
+        value: {
+          id: this.row,
+          data: formData,
+          submittedToUrl: this.dataSourceUrl,
+          action: formData.type,
+        },
+      };
+      this.store$.dispatch(formActions.setApprovingForm(f));
+    }
+    else if(formData.type=='Reject'){
+      const f = {
+        value: {
+          id: this.row,
+          submittedToUrl: this.dataSourceUrl,
+          action: formData.type,
+        },
+      };
+      this.store$.dispatch(formActions.setRejectingForm(f));
+    }
+    
+
 
     this.store$
       .select((state) => state.form)

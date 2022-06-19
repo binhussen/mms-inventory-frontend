@@ -11,9 +11,8 @@ const actions: Array<Action> = [
   {
     name: 'Approve',
     type: 'approve',
-    urlToPopulateForm: `${baseApiUrl}/requestWeapons/[id]`,
     form: requestWeaponForm.requestApprovalForm,
-    submittedUrl: `${baseApiUrl}/requestWeaponApprovals`,
+    submittedUrl: `${baseApiUrl}requestapprove/[id]`,
   },
   { name: 'Reject', type: 'reject', path: `${baseApiUrl}requestapprove/[id]` },
 ];

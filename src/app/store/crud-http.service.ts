@@ -162,6 +162,12 @@ export class CrudHttpService extends BaseService<any> {
     });
   }
 
+  approveResource(id: any,quantity:number, url: string): Observable<any> {
+    return this.httpClient.post(`${this.getUrl(url,id)}?qty=${quantity}&status=Approve`, {
+      headers: this.headers,
+    });
+  }
+
   getSingleAndBulk(
     data: any,
     relations: any,
