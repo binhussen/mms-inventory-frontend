@@ -7,7 +7,7 @@ const customerForm: Form = {
       type: 'text',
       placeholder: 'name',
       defaultValue: '',
-      size: 4,
+      size: 3,
       validations: [{ type: 'required', value: true }],
     },
     {
@@ -15,7 +15,7 @@ const customerForm: Form = {
       type: 'text',
       placeholder: 'Region',
       defaultValue: '',
-      size: 4,
+      size: 3,
       validations: [{ type: 'required', value: true }],
     },
     {
@@ -23,7 +23,7 @@ const customerForm: Form = {
       type: 'text',
       placeholder: 'Sub City',
       defaultValue: '',
-      size: 4,
+      size: 3,
       validations: [{ type: 'required', value: true }],
     },   
   {
@@ -31,7 +31,7 @@ const customerForm: Form = {
       type: 'text',
       placeholder: 'Woreda',
       defaultValue: '',
-      size: 4,
+      size: 3,
       validations: [{ type: 'required', value: true }],
     },
     {
@@ -39,7 +39,7 @@ const customerForm: Form = {
       type: 'select',
       placeholder: 'sex',
       defaultValue: '',
-      size: 4,
+      size: 3,
       options: [
         { value: 'Male', label: 'Male' },
         { value: 'Female', label: 'Female' },
@@ -51,7 +51,7 @@ const customerForm: Form = {
       type: 'text',
       placeholder: 'Phone Number',
       defaultValue: '',
-      size: 4,
+      size: 3,
       validations: [{ type: 'required', value: true }],
     },
     {
@@ -59,7 +59,7 @@ const customerForm: Form = {
       type: 'text',
       placeholder: 'Birth Place',
       defaultValue: '',
-      size: 4,
+      size: 3,
       validations: [{ type: 'required', value: true }],
     },
     {
@@ -67,7 +67,7 @@ const customerForm: Form = {
       type: 'date',
       placeholder: 'Birth Date',
       defaultValue: '',
-      size: 4,
+      size: 3,
       validations: [{ type: 'required', value: true }],
     },   
   {
@@ -75,7 +75,7 @@ const customerForm: Form = {
       type: 'text',
       placeholder: 'Occupation',
       defaultValue: '',
-      size: 4,
+      size: 3,
       validations: [{ type: 'required', value: true }],
     },
     {
@@ -83,15 +83,21 @@ const customerForm: Form = {
       type: 'text',
       placeholder: 'Home Number',
       defaultValue: '',
-      size: 4,
+      size: 3,
       validations: [{ type: 'required', value: true }],
     },
+    {
+      name: 'Warrantier Information',
+      type: 'formArray',
+      placeholder: 'Warrainter Information',
+      defaultValue: '',
+      formArrayItems: [
     {
       name: 'warantiyname',
       type: 'text',
       placeholder: 'Warrantier Name',
       defaultValue: '',
-      size: 4,
+      size: 3,
       validations: [{ type: 'required', value: true }],
     },
     {
@@ -99,7 +105,7 @@ const customerForm: Form = {
       type: 'text',
       placeholder: 'Warrantier Address',
       defaultValue: '',
-      size: 4,
+      size: 3,
       validations: [{ type: 'required', value: true }],
     }, 
     {
@@ -107,7 +113,7 @@ const customerForm: Form = {
       type: 'text',
       placeholder: 'Warrantier Region',
       defaultValue: '',
-      size: 4,
+      size: 3,
       validations: [{ type: 'required', value: true }],
     },  
   {
@@ -115,7 +121,7 @@ const customerForm: Form = {
       type: 'text',
       placeholder: 'Warrantier Sub City',
       defaultValue: '',
-      size: 4,
+      size: 3,
       validations: [{ type: 'required', value: true }],
     },
     {
@@ -123,17 +129,20 @@ const customerForm: Form = {
       type: 'text',
       placeholder: 'Warrantier Woreda',
       defaultValue: '',
-      size: 4,
+      size: 3,
       validations: [{ type: 'required', value: true }],
     },
-    {
-      name: 'timeLimit',
-      type: 'date',
-      placeholder: 'Time Limit',
-      defaultValue: '',
-      size: 4,
-      validations: [{ type: 'required', value: true }],
-    },  
+    
+  ]
+} ,
+{
+  name: 'timeLimit',
+  type: 'date',
+  placeholder: 'Time Limit',
+  defaultValue: '',
+  size: 3,
+  validations: [{ type: 'required', value: true }],
+}, 
   ],
 };
 

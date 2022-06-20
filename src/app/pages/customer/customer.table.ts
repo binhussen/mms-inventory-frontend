@@ -20,7 +20,7 @@ const customerTableState: TableState = {
   excludedColumns: ['id'],
   links: {
     getPath: dataSourceUrl,
-    createPath: `${dataSourceUrl}customers`,
+    createPath: `${dataSourceUrl}`,
     updatePath: `${dataSourceUrl}/[id]`,
     deletePath: `${dataSourceUrl}/[id]`,
   },
