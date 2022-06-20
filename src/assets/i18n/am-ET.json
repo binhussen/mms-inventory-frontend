@@ -37,7 +37,9 @@
         "inventory": "የጦር መሳሪያ መከማቻ",
         "request": "የጦር መሳሪያ መጠየቅ",
         "reportDamages":"የሚወገዱ ጦር መሳሪያዎች",
-        "userManagement":"የተጠቃሚ አስተዳደር"
+        "userManagement":"የተጠቃሚ አስተዳደር",
+        "customer":"ከተቆሙ የሚታጠቁ ደንበኞች"
+
     },
     
         "createNew":{

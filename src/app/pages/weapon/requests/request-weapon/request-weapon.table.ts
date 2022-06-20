@@ -9,6 +9,9 @@ const actions: Array<Action> = [
   { name: 'Expand', type: 'expand', path: 'request-for-weapon' },
   { name: 'Edit', type: 'edit' },
   {
+ AuthenticationAndCustomer_crude
+    name: 'Approve',type: 'approve',
+    urlToPopulateForm: `${baseApiUrl}/requestWeapons/[id]`,
     name: 'Approve',
     type: 'approve',
     form: requestWeaponForm.requestApprovalForm,
