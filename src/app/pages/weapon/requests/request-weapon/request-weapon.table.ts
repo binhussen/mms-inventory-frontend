@@ -13,8 +13,7 @@ const actions: Array<Action> = [
     type: 'approve',
     form: requestWeaponForm.requestApprovalForm,
     submittedUrl: `${baseApiUrl}requestapprove/[id]`,
-  },
-  { name: 'Reject', type: 'reject', path: `${baseApiUrl}requestapprove/[id]` },
+  }
 ];
 
 const requestForWeaponTable: TableState = {

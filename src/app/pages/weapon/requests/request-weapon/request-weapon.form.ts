@@ -117,11 +117,11 @@ const requestApprovalForm:Form = {
   // elements: requestApprovalElements,
   elements: [
     {
-      name: 'id',
+      name: 'status',
       type: 'select',
       placeholder: 'Status',
       defaultValue: 'Pending',
-      size: 3,
+      size: 6,
       options: [
         { value: 'Pending', label: 'Pending' },
         { value: 'Approve', label: 'Approve' },
@@ -134,7 +134,7 @@ const requestApprovalForm:Form = {
       type: 'number',
       placeholder: 'Approved Quantity',
       defaultValue: 0,
-      size: 12,
+      size: 6,
       validations: [{ type: 'required', value: true }],
     },
     {

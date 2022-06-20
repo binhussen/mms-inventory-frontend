@@ -56,7 +56,7 @@ export class FormDialogComponent implements OnInit {
     {
       this.store$.dispatch(formActions.setSubmittingForm(f));
     }
-    else if(formData.id=='Approve'){
+    else if(formData.status=='Approve'){
       const f = {
         value: {
           id: this.form.title,
@@ -67,11 +67,11 @@ export class FormDialogComponent implements OnInit {
       };
       this.store$.dispatch(formActions.setApprovingForm(f));
     }
-    else if(formData.id=='Reject'){
+    else if(formData.status=='Reject'){
       const f = {
         value: {
           id: this.form.title,
-          data: {id:this.row},
+          data: {...formData,id:this.row,approvedQuantity:0},
           submittedToUrl: this.dataSourceUrl,
           action: formData.type,
         },
