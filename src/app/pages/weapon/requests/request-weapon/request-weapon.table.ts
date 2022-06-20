@@ -11,11 +11,9 @@ const actions: Array<Action> = [
   {
     name: 'Approve',
     type: 'approve',
-    urlToPopulateForm: `${baseApiUrl}/requestWeapons/[id]`,
     form: requestWeaponForm.requestApprovalForm,
-    submittedUrl: `${baseApiUrl}/requestWeaponApprovals`,
-  },
-  { name: 'Reject', type: 'reject' },
+    submittedUrl: `${baseApiUrl}requestapprove/[id]`,
+  }
 ];
 
 const requestForWeaponTable: TableState = {

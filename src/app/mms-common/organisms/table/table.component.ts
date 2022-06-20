@@ -130,26 +130,48 @@ export class TableComponent implements OnInit, AfterViewInit {
       case 'delete':
         // delete the row
         break;
+      // case 'approve':
+      //   // fetch data from the server using actionType.urlToPopulateForm by replacing [id] with the current row id
+      //   this.httpClient
+      //     .get(action?.urlToPopulateForm?.replace('[id]', row.id) ?? '')
+      //     .subscribe((r) => {
+      //       console.log(r);
+      //       this.store$.dispatch(
+      //         formActions.setUpdatingForm({
+      //           value: { ...r },
+      //         })
+      //       );
+      //       this.openDialog(
+      //         'Approve',
+      //         action.form ?? this.form,
+      //         action.submittedUrl ?? '',
+      //         action.type,
+      //         row
+      //       );
+      //     });
+      //   break;
       case 'approve':
-        // fetch data from the server using actionType.urlToPopulateForm by replacing [id] with the current row id
-        this.httpClient
-          .get(action?.urlToPopulateForm?.replace('[id]', row.id) ?? '')
-          .subscribe((r) => {
-            console.log(r);
-            this.store$.dispatch(
-              formActions.setUpdatingForm({
-                value: { ...r },
-              })
-            );
-            this.openDialog(
-              'Approve',
-              action.form ?? this.form,
-              action.submittedUrl ?? '',
-              action.type,
-              row
-            );
-          });
-        break;
+          // approve
+          this.openDialog(
+            'Save',
+            action.form??this.form,
+            action.submittedUrl ?? '',
+            action.type,
+            row.id
+          );
+          break;
+        case 'reject':
+          // reject
+          const f = {
+            value: {
+              id: row.id,
+              submittedToUrl: action.path,
+              action: action.type,
+            },
+          };
+          this.store$.dispatch(formActions.setRejectingForm(f));
+          
+          break;
       default:
         console.log('unknown action');
     }

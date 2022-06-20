@@ -39,7 +39,7 @@ const requestForWeaponForm: Form = {
           validations: [{ type: 'required', value: true }],
         },
         {
-          name: 'quantity',
+          name: 'requestedQuantity',
           type: 'number',
           placeholder: 'Quantity',
           defaultValue: '',
@@ -80,6 +80,7 @@ const requestItemForWeaponForm: Form = {
       ) ?? { formArrayItems: [] }
     ).formArrayItems ?? [],
 };
+
 const requestApprovalElements = requestForWeaponForm.elements.map(
   (element: FormElement) => {
     if (element.name === 'requestStatus') {
@@ -111,9 +112,38 @@ requestApprovalElements.push({
   placeholder: 'Request Weapons Id',
   defaultValue: '',
 });
-const requestApprovalForm = {
+const requestApprovalForm:Form = {
   title: 'Request Approval Form',
-  elements: requestApprovalElements,
+  // elements: requestApprovalElements,
+  elements: [
+    {
+      name: 'status',
+      type: 'select',
+      placeholder: 'Status',
+      defaultValue: 'Pending',
+      size: 6,
+      options: [
+        { value: 'Pending', label: 'Pending' },
+        { value: 'Approve', label: 'Approve' },
+        { value: 'Reject', label: 'Reject' },
+      ],
+      validations: [{ type: 'required', value: true }],
+    },
+    {
+      name: 'approvedQuantity',
+      type: 'number',
+      placeholder: 'Approved Quantity',
+      defaultValue: 0,
+      size: 6,
+      validations: [{ type: 'required', value: true }],
+    },
+    {
+      name: 'attachments',
+      type: 'file',
+      placeholder: 'Request Attachments',
+      defaultValue: '',
+    },
+  ],
 };
 
 export default {
