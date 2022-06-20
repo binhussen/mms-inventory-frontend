@@ -16,6 +16,11 @@ const updatePageNumber = createAction(
   props<{ value: { pageNumber: number; pageSize: number; getPath: string } }>()
 );
 
+const updateTableColumn = createAction(
+  '[Table] update table column',
+  props<{ value: { data:FormData } }>()
+);
+
 const addData = createAction(
   '[Table] add data',
   props<{ value: { data: any[]; totalItems: number } }>()
@@ -26,6 +31,7 @@ export default {
   setTableState,
   updateTableState,
   updatePageNumber,
+  updateTableColumn,
   addData,
   addRow,
 };

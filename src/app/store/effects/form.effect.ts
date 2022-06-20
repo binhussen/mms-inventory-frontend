@@ -39,6 +39,40 @@ export class FormEffect {
       )
     )
   );
+
+  $approveForm = createEffect(() =>
+    this.actions$.pipe(
+      ofType(formActions.setApprovingForm.type),
+      switchMap((action: { value: FormData }) =>
+        this.crudHttpService.approveResource(action.value.data.id,action.value.data.approvedQuantity,action.value.submittedToUrl).pipe(
+          map((response) =>{
+            return tableActions.updateTableColumn(action.value.data);
+            return formActions.formSubmittingSuccess({ value: response })
+          }
+          ),
+          catchError((err) => of(formActions.formSubmittingFailure(err)))
+        )
+      )
+    )
+  );
+
+  $rejectForm = createEffect(() =>
+    this.actions$.pipe(
+      ofType(formActions.setRejectingForm.type),
+      switchMap((action: { value: FormData }) =>
+        this.crudHttpService.rejectResource(action.value.data.id,action.value.submittedToUrl).pipe(
+          map((response) =>
+          {
+            tableActions.updateTableColumn(action.value.data);
+            return formActions.formSubmittingSuccess({ value: response });
+          }
+          ),
+          catchError((err) => of(formActions.formSubmittingFailure(err)))
+        )
+      )
+    )
+  );
+
   constructor(
     private actions$: Actions,
     private crudHttpService: CrudHttpService
