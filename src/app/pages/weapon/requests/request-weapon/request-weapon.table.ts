@@ -30,18 +30,18 @@ const requestForWeaponTable: TableState = {
     deletePath: `${dataSourceUrl}/[id]`,
   },
   actions:actions.slice(0, 2),
-  relations: [
-    {
-      type: 'requestWeaponItems',
-      links: {
-        getPath: `${baseApiUrl}/requestWeaponItems?requestWeaponsId=[id]`,
-        createPath: `${baseApiUrl}/requestWeaponItems`,
-        updatePath: `${baseApiUrl}/requestWeaponItems/[id]`,
-        deletePath: `${baseApiUrl}/requestWeaponItems/[id]`,
-      },
-      relationType: 'many',
-    },
-  ],
+  // relations: [
+  //   {
+  //     type: 'requestWeaponItems',
+  //     links: {
+  //       getPath: `${baseApiUrl}/requestWeaponItems?requestWeaponsId=[id]`,
+  //       createPath: `${baseApiUrl}/requestWeaponItems`,
+  //       updatePath: `${baseApiUrl}/requestWeaponItems/[id]`,
+  //       deletePath: `${baseApiUrl}/requestWeaponItems/[id]`,
+  //     },
+  //     relationType: 'many',
+  //   },
+  // ],
 };
 
 const requestItemsForWeaponTable: TableState = {
@@ -59,6 +59,7 @@ const requestItemsForWeaponTable: TableState = {
     deletePath: `${dataSourceUrl}/[id]`,
   },
   actions : actions.slice(1),
+  path:"items",
   relations: [],
   childOf: {
     requestWeaponsId: 0,

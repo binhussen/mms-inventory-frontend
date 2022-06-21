@@ -54,6 +54,7 @@ const inventoryItemsTableState: TableState = {
   },
   actions: actions.slice(1, 2),
   relations: [],
+  path:"items",
   childOf: {
     weaponInventoriesId: 0,
   },

@@ -20,6 +20,7 @@ const notifyItemsTableState: TableState = {
     deletePath: `${dataSourceUrl}/[id]`,
   },
   actions,
+  path:"items",
   relations: [],
   childOf: {
     notifiesId: 0,
