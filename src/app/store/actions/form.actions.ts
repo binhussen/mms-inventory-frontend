@@ -21,6 +21,11 @@ const setUpdatingForm = createAction(
   props<{ value: FormData }>()
 );
 
+const submitUpdatingForm = createAction(
+  '[Form] submit update form',
+  props<{ value: any }>()
+);
+
 const setApprovingForm = createAction(
   '[Form] approve form',
   props<{ value: Partial<FormState> }>()
@@ -31,10 +36,10 @@ const setRejectingForm = createAction(
   props<{ value: FormData }>()
 );
 
-const setUpdatingFormWithRelations = createAction(
-  '[Form] update form with relations',
-  props<{ value: FormData }>()
-);
+// const setUpdatingFormWithRelations = createAction(
+//   '[Form] update form with relations',
+//   props<{ value: FormData }>()
+// );
 
 const clearData = createAction('[Form] clear data');
 
@@ -43,8 +48,9 @@ export default {
   formSubmittingSuccess,
   formSubmittingFailure,
   setUpdatingForm,
+  submitUpdatingForm,
   setApprovingForm,
   setRejectingForm,
-  setUpdatingFormWithRelations,
+  // setUpdatingFormWithRelations,
   clearData,
 };

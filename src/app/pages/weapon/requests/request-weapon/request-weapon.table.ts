@@ -12,6 +12,10 @@ const actions: Array<Action> = [
     name: 'Approve',type: 'approve',
     form: requestWeaponForm.requestApprovalForm,
     submittedUrl: `${baseApiUrl}requestapprove/[id]`,
+  },
+  {
+    name: 'Distribute',type: 'expand',
+    path:'approves'
   }
 ];
 

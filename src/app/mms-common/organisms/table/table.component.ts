@@ -31,6 +31,7 @@ export type ActionType =
   | 'approve'
   | 'reject'
   | 'view'
+  | 'distribute'
   | null;
 
 export interface Action {

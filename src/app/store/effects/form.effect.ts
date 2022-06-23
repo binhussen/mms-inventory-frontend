@@ -26,30 +26,45 @@ export class FormEffect {
     )
   );
 
-  $fechDataFromRelations = createEffect(() =>
+  $updateForm = createEffect(() =>
     this.actions$.pipe(
-      ofType(formActions.setUpdatingForm.type),
-      switchMap((action: { value: FormData }) =>
-        this.crudHttpService.fetchDataFromRelations(action.value).pipe(
-          map((response) =>
-            formActions.setUpdatingFormWithRelations({ value: response })
-          ),
-          catchError((err) => of(formActions.formSubmittingFailure(err)))
+      ofType(formActions.submitUpdatingForm.type),
+      switchMap((action: { value: Omit<FormState, 'response'> }) =>
+        this.crudHttpService.updateResource(action.value.data,action.value.submittedToUrl??'').pipe(
+          mergeMap((response) => [
+            formActions.formSubmittingSuccess({ value: response }),
+            tableActions.updateTableColumn({value:action.value.data})
+          ]),
+          catchError((error) =>
+            of(formActions.formSubmittingFailure({ value: error }))
+          )
         )
       )
     )
   );
+  // $fechDataFromRelations = createEffect(() =>
+  //   this.actions$.pipe(
+  //     ofType(formActions.setUpdatingForm.type),
+  //     switchMap((action: { value: FormData }) =>
+  //       this.crudHttpService.fetchDataFromRelations(action.value).pipe(
+  //         map((response) =>
+  //           formActions.setUpdatingFormWithRelations({ value: response })
+  //         ),
+  //         catchError((err) => of(formActions.formSubmittingFailure(err)))
+  //       )
+  //     )
+  //   )
+  // );
 
   $approveForm = createEffect(() =>
     this.actions$.pipe(
       ofType(formActions.setApprovingForm.type),
       switchMap((action: { value: FormData }) =>
         this.crudHttpService.approveResource(action.value.data.id,action.value.data.approvedQuantity,action.value.submittedToUrl).pipe(
-          map((response) =>{
-            return tableActions.updateTableColumn(action.value.data);
-            return formActions.formSubmittingSuccess({ value: response })
-          }
-          ),
+          mergeMap((response) =>[
+            formActions.formSubmittingSuccess({ value: response }),
+            tableActions.updateTableColumn({value:action.value.data})
+          ]),
           catchError((err) => of(formActions.formSubmittingFailure(err)))
         )
       )
@@ -61,12 +76,10 @@ export class FormEffect {
       ofType(formActions.setRejectingForm.type),
       switchMap((action: { value: FormData }) =>
         this.crudHttpService.rejectResource(action.value.data.id,action.value.submittedToUrl).pipe(
-          map((response) =>
-          {
-            tableActions.updateTableColumn(action.value.data);
-            return formActions.formSubmittingSuccess({ value: response });
-          }
-          ),
+          mergeMap((response) =>[
+            formActions.formSubmittingSuccess({ value: response }),
+            tableActions.updateTableColumn({value:action.value.data})
+          ]),
           catchError((err) => of(formActions.formSubmittingFailure(err)))
         )
       )
