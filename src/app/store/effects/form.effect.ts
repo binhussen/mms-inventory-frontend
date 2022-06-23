@@ -61,11 +61,10 @@ export class FormEffect {
       ofType(formActions.setApprovingForm.type),
       switchMap((action: { value: FormData }) =>
         this.crudHttpService.approveResource(action.value.data.id,action.value.data.approvedQuantity,action.value.submittedToUrl).pipe(
-          map((response) =>{
-            return tableActions.updateTableColumn(action.value.data);
-            return formActions.formSubmittingSuccess({ value: response })
-          }
-          ),
+          mergeMap((response) =>[
+            formActions.formSubmittingSuccess({ value: response }),
+            tableActions.updateTableColumn({value:action.value.data})
+          ]),
           catchError((err) => of(formActions.formSubmittingFailure(err)))
         )
       )
@@ -77,12 +76,10 @@ export class FormEffect {
       ofType(formActions.setRejectingForm.type),
       switchMap((action: { value: FormData }) =>
         this.crudHttpService.rejectResource(action.value.data.id,action.value.submittedToUrl).pipe(
-          map((response) =>
-          {
-            tableActions.updateTableColumn(action.value.data);
-            return formActions.formSubmittingSuccess({ value: response });
-          }
-          ),
+          mergeMap((response) =>[
+            formActions.formSubmittingSuccess({ value: response }),
+            tableActions.updateTableColumn({value:action.value.data})
+          ]),
           catchError((err) => of(formActions.formSubmittingFailure(err)))
         )
       )
