@@ -42,10 +42,10 @@ export const formReducer = createReducer(
     ...value,
     status: 'PENDING',
   })),
-  on(formActions.setUpdatingFormWithRelations, (state, { value }) => ({
-    ...state,
-    updating: value,
-  })),
+  // on(formActions.setUpdatingFormWithRelations, (state, { value }) => ({
+  //   ...state,
+  //   updating: value,
+  // })),
   on(formActions.clearData, (state) => ({
     ...state,
     ...initialState,

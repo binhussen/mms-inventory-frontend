@@ -146,9 +146,9 @@ export class DistributeComponent implements OnInit {
         weaponItemsId: item.id,
       })),
     };
-    this.store$.dispatch(
-      formActions.setUpdatingFormWithRelations({ value: temp })
-    );
+    // this.store$.dispatch(
+    //   formActions.setUpdatingFormWithRelations({ value: temp })
+    // );
   }
 
   getWeaponItems() {

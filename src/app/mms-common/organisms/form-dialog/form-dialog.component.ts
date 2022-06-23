@@ -26,6 +26,7 @@ export class FormDialogComponent implements OnInit {
   actionType!: ActionType;
   loading$ = this.store$.select((state) => state.form.status === 'PENDING');
   row = {};
+  id!:string;
   constructor(
     public dialogRef: MatDialogRef<FormDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public inputData: FormProps,
@@ -40,9 +41,9 @@ export class FormDialogComponent implements OnInit {
     this.dataSourceUrl = dataSourceUrl;
     this.actionType = actionType;
     this.row = row;
+    this.id=row.id??'';
   }
   onSubmit(formData: any) {
-    console.log(formData);
     const f = {
       value: {
         id: this.form.title,
@@ -55,6 +56,18 @@ export class FormDialogComponent implements OnInit {
     if(this.actionType=='create')
     {
       this.store$.dispatch(formActions.setSubmittingForm(f));
+    }
+    else if(this.actionType=='edit')
+    {
+      const f = {
+      value: {
+        id: this.form.title,
+        data: {...formData,id:this.id},
+        submittedToUrl: this.dataSourceUrl,
+        action: this.actionType,
+      },
+    };
+      this.store$.dispatch(formActions.submitUpdatingForm(f));
     }
     else if(formData.status=='Approve'){
       const f = {
@@ -87,7 +100,7 @@ export class FormDialogComponent implements OnInit {
         if (f.status !== 'PENDING') {
           setTimeout(() => {
             this.dialogRef.close();
-          }, 1000);
+          }, 100);
         }
       });
   }

@@ -18,7 +18,7 @@ const updatePageNumber = createAction(
 
 const updateTableColumn = createAction(
   '[Table] update table column',
-  props<{ value: { data:FormData } }>()
+  props<{ value: Partial<TableState> }>()
 );
 
 const addData = createAction(

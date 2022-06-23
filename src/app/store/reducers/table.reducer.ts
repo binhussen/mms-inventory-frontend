@@ -28,8 +28,10 @@ export const tableReducer = createReducer(
     ...state,
     data: value ? [...(state?.data ?? []), value] : state.data,
   })),
-  // on(tableActions.updateTableColumn, (state, { value }) => ({
-  //   ...state,
-  //   data: value.,
-  // }))
+  on(tableActions.updateTableColumn, (state, { value }) => ({
+    ...state,
+    data:state.data?.map(e =>e.id!==value.id?e:{
+      ...value
+    })
+  }))
 );
