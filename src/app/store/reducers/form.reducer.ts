@@ -29,6 +29,7 @@ export const formReducer = createReducer(
   })),
   on(formActions.setUpdatingForm, (state, { value }) => ({
     ...state,
+    ...value,
     updating: value,
     status:'PENDING'
   })),

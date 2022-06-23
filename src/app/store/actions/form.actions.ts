@@ -18,7 +18,7 @@ const formSubmittingFailure = createAction(
 
 const setUpdatingForm = createAction(
   '[Form] update form',
-  props<{ value: FormData }>()
+  props<{ value: Partial<FormState> }>()
 );
 
 const submitUpdatingForm = createAction(
