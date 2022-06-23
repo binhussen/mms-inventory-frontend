@@ -6,6 +6,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '../../../store/models/app.state';
 import { filter } from 'rxjs/operators';
 import { ActionType } from '../table/table.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 interface FormProps {
   form: Form;
   actionTitle: string;
@@ -30,7 +31,8 @@ export class FormDialogComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<FormDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public inputData: FormProps,
-    private store$: Store<AppState>
+    private store$: Store<AppState>,
+    private sanckbar:MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -56,6 +58,32 @@ export class FormDialogComponent implements OnInit {
     if(this.actionType=='create')
     {
       this.store$.dispatch(formActions.setSubmittingForm(f));
+      this.store$
+      .select((state) => state.form)
+      .pipe(filter((f) => f.id === this.form.title))
+      .subscribe((f) => {
+        if (f.status == 'FAILED') {
+          // setTimeout(() => {
+          // }, 100);
+          this.dialogRef.close();
+            this.sanckbar.
+            open('Create Failed', 'close', {
+              horizontalPosition: 'end',
+              verticalPosition: 'top',
+              panelClass: 'notif-success',
+            });
+        }else if (f.status == 'SUCCESS') {
+          // setTimeout(() => {
+          // }, 100);
+          this.dialogRef.close();
+            this.sanckbar.
+            open('Created Successfully', 'close', {
+              horizontalPosition: 'end',
+              verticalPosition: 'top',
+              panelClass: 'notif-success',
+            });
+        }
+      });
     }
     else if(this.actionType=='edit')
     {
@@ -68,6 +96,32 @@ export class FormDialogComponent implements OnInit {
       },
     };
       this.store$.dispatch(formActions.submitUpdatingForm(f));
+      this.store$
+      .select((state) => state.form)
+      .pipe()
+      .subscribe((f) => {
+        if (f.status == 'FAILED') {
+          // setTimeout(() => {
+          // }, 100);
+          this.dialogRef.close();
+            this.sanckbar.
+            open('Update Failed', 'close', {
+              horizontalPosition: 'end',
+              verticalPosition: 'top',
+              panelClass: 'notif-success',
+            });
+        }else if (f.status == 'SUCCESS') {
+          // setTimeout(() => {
+          // }, 100);
+          this.dialogRef.close();
+            this.sanckbar.
+            open('Updated Successfully', 'close', {
+              horizontalPosition: 'end',
+              verticalPosition: 'top',
+              panelClass: 'notif-success',
+            });
+        }
+      });
     }
     else if(formData.status=='Approve'){
       const f = {
@@ -79,6 +133,32 @@ export class FormDialogComponent implements OnInit {
         },
       };
       this.store$.dispatch(formActions.setApprovingForm(f));
+      this.store$
+      .select((state) => state.form)
+      .pipe(filter((f) => f.id === this.form.title))
+      .subscribe((f) => {
+        if (f.status == 'FAILED') {
+          // setTimeout(() => {
+          // }, 100);
+          this.dialogRef.close();
+            this.sanckbar.
+            open('Approve Failed', 'close', {
+              horizontalPosition: 'end',
+              verticalPosition: 'top',
+              panelClass: 'notif-success',
+            });
+        }else if (f.status == 'SUCCESS') {
+          // setTimeout(() => {
+          // }, 100);
+          this.dialogRef.close();
+            this.sanckbar.
+            open('Approved Successfully', 'close', {
+              horizontalPosition: 'end',
+              verticalPosition: 'top',
+              panelClass: 'notif-success',
+            });
+        }
+      });
     }
     else if(formData.status=='Reject'){
       const f = {
@@ -90,18 +170,32 @@ export class FormDialogComponent implements OnInit {
         },
       };
       this.store$.dispatch(formActions.setRejectingForm(f));
-    }
-    
-    this.store$
+      this.store$
       .select((state) => state.form)
       .pipe(filter((f) => f.id === this.form.title))
       .subscribe((f) => {
-        console.log(f);
-        if (f.status !== 'PENDING') {
-          setTimeout(() => {
-            this.dialogRef.close();
-          }, 100);
+        if (f.status == 'FAILED') {
+          // setTimeout(() => {
+          // }, 100);
+          this.dialogRef.close();
+            this.sanckbar.
+            open('Rejecte Failed', 'close', {
+              horizontalPosition: 'end',
+              verticalPosition: 'top',
+              panelClass: 'notif-success',
+            });
+        }else if (f.status == 'SUCCESS') {
+          // setTimeout(() => {
+          // }, 100);
+          this.dialogRef.close();
+            this.sanckbar.
+            open('Rejected Successfully', 'close', {
+              horizontalPosition: 'end',
+              verticalPosition: 'top',
+              panelClass: 'notif-success',
+            });
         }
       });
+    }
   }
 }

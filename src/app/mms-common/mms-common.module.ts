@@ -46,9 +46,16 @@ import { RouterModule } from '@angular/router';
 import { TableService } from './organisms/table/table.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { SideNavHeaderComponent } from './molecules/side-nav-header/side-nav-header.component';
+import { MatSnackBarConfig, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
+};
+
+const matSnackbarDefaultConfig: MatSnackBarConfig = {
+  verticalPosition: 'top',
+  horizontalPosition: 'right',
+  duration: 4000,
 };
 
 @NgModule({
@@ -64,7 +71,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FileInputComponent,
     DndDirective,
     BasicComponent,
-    SideNavHeaderComponent,
+    SideNavHeaderComponent
   ],
   imports: [
     CommonModule,
@@ -104,6 +111,10 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG,
+    },
+    {
+      provide: MAT_SNACK_BAR_DEFAULT_OPTIONS,
+      useValue: matSnackbarDefaultConfig,
     }
   ],
   exports: [
