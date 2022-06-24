@@ -4,7 +4,7 @@ import { environment } from 'src/environments/environment';
 import requestWeaponForm from './request-weapon.form';
 
 const baseApiUrl = environment.baseApiUrl;
-const dataSourceUrl = `${baseApiUrl}requestheaders`;
+const dataSourceUrl = `${baseApiUrl}approves`;
 const actions: Array<Action> = [
   {
     name: 'Distribute',type: 'distribute',
@@ -27,7 +27,6 @@ const approvedTable: TableState = {
     deletePath: `${dataSourceUrl}/[id]`,
   },
   actions : actions.slice(1),
-  path:"items",
   relations: [],
   childOf: {
     requestWeaponsId: 0,

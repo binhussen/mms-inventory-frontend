@@ -60,7 +60,7 @@ export class FormEffect {
     this.actions$.pipe(
       ofType(formActions.setApprovingForm.type),
       switchMap((action: { value: FormData }) =>
-        this.crudHttpService.approveResource(action.value.data.id,action.value.data.approvedQuantity,action.value.submittedToUrl).pipe(
+        this.crudHttpService.approveResource(action.value).pipe(
           mergeMap((response) =>[
             formActions.formSubmittingSuccess({ value: response }),
             tableActions.updateTableColumn({value:action.value.data})
@@ -75,7 +75,7 @@ export class FormEffect {
     this.actions$.pipe(
       ofType(formActions.setRejectingForm.type),
       switchMap((action: { value: FormData }) =>
-        this.crudHttpService.rejectResource(action.value.data.id,action.value.submittedToUrl).pipe(
+        this.crudHttpService.rejectResource(action.value).pipe(
           mergeMap((response) =>[
             formActions.formSubmittingSuccess({ value: response }),
             tableActions.updateTableColumn({value:action.value.data})

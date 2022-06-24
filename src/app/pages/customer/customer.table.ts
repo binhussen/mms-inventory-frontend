@@ -5,7 +5,7 @@ import { environment } from 'src/environments/environment';
 const baseApiUrl = environment.baseApiUrl;
 const dataSourceUrl = `${baseApiUrl}customers`;
 const actions: Array<Action> = [
-  { name: 'Expand', type: 'expand', path: 'users' },
+  { name: 'Warranties', type: 'expand', path: 'users' },
   { name: 'Edit', type: 'edit' },
 ];
 

@@ -23,7 +23,7 @@ import approvepage from './approves.page';
         data: requestWeaponDetailPage,
       },
       {
-        path: ':id/approves',
+        path: ':id/approves/:id',
         component: PageDetailComponent,
         data: approvepage,
       },

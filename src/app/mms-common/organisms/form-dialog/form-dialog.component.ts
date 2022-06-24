@@ -164,7 +164,7 @@ export class FormDialogComponent implements OnInit {
       const f = {
         value: {
           id: this.form.title,
-          data: {...formData,id:this.row,approvedQuantity:0},
+          data: {...formData,id:this.row},
           submittedToUrl: this.dataSourceUrl,
           action: formData.type,
         },

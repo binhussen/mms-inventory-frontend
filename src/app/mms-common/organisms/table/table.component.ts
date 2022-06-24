@@ -171,8 +171,10 @@ export class TableComponent implements OnInit, AfterViewInit {
             },
           };
           this.store$.dispatch(formActions.setRejectingForm(f));
-          
           break;
+        case 'distribute':
+          this.router.navigate([`${this.router.url}/approves/${row['id']}`]);
+        break;
       default:
         console.log('unknown action');
     }
