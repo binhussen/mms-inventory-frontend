@@ -155,15 +155,14 @@ export class CrudHttpService extends BaseService<any> {
     });
   }
 
-  rejectResource(id: any, url: string): Observable<any> {
-    console.log(this.getUrl(url, id))
-    return this.httpClient.post(`${this.getUrl(url,id)}?status=Reject`, {
+  rejectResource(value:any): Observable<any> {
+    return this.httpClient.post(`${this.getUrl(value.submittedToUrl,value.data.id)}?status=Reject&status=Approve&attachments=${value.data.attachments}`, {
       headers: this.headers,
     });
   }
 
-  approveResource(id: any,quantity:number, url: string): Observable<any> {
-    return this.httpClient.post(`${this.getUrl(url,id)}?qty=${quantity}&status=Approve`, {
+  approveResource(value:any): Observable<any> {
+    return this.httpClient.post(`${this.getUrl(value.submittedToUrl,value.data.id)}?qty=${value.data.approvedQuantity}&status=Approve&attachments=${value.data.attachments}`, {
       headers: this.headers,
     });
   }
