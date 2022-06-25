@@ -1,7 +1,6 @@
 import { Action } from 'src/app/mms-common/organisms/table/table.component';
 import { TableState } from 'src/app/store/models/table.state';
 import { environment } from 'src/environments/environment';
-import requestWeaponForm from './request-weapon.form';
 
 const baseApiUrl = environment.baseApiUrl;
 const dataSourceUrl = `${baseApiUrl}approves`;
