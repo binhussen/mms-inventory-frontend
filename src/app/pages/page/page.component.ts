@@ -28,6 +28,10 @@ export class PageComponent implements OnInit, OnDestroy {
         distinctUntilChanged(),
         mergeMap((data) => {
           console.log(data);
+
+          this.activatedRoute.snapshot.params.id?
+          data.table.links.getPath = `${data.table.links.getPath}/${this.activatedRoute.snapshot.params.id}`:data.table.links.getPath;
+          
           this.titleService.setTitle(data.title ?? 'MMS - MMS');
           this.store$.dispatch(
             tableActions.setTableState({ value: data.table })

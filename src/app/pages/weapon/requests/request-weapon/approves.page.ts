@@ -1,10 +1,11 @@
 import requestWeaponForm from './request-weapon.form';
 import approvedTable from './approves.table';
+import distributeForm from './approves.form';
 
 const approvePage = {
   title: 'Approved Requests',
   type: 'default page',
-  // form: requestWeaponForm.requestApprovalForm,
+  form: distributeForm,
   table: approvedTable,
 };
 
