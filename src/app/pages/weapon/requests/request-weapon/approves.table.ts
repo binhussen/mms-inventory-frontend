@@ -21,11 +21,12 @@ const approvedTable: TableState = {
   data: [],
   excludedColumns: ['id'],
   links: {
-    getPath: dataSourceUrl,
+    getPath: `${dataSourceUrl}`,
     createPath: `${dataSourceUrl}`,
     updatePath: `${dataSourceUrl}/[id]`,
     deletePath: `${dataSourceUrl}/[id]`,
   },
   actions
 };
-export default { approvedTable };
+
+export default  approvedTable;
