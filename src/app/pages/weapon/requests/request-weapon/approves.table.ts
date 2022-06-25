@@ -8,13 +8,13 @@ const dataSourceUrl = `${baseApiUrl}approves`;
 const actions: Array<Action> = [
   {
     name: 'Distribute',type: 'distribute',
-    form: requestWeaponForm.requestApprovalForm,
-    submittedUrl: `${baseApiUrl}requestapprove/[id]`,
+    // form: requestWeaponForm.requestApprovalForm,
+    // submittedUrl: `${baseApiUrl}requestapprove/[id]`,
   }
 ];
 const approvedTable: TableState = {
   id: 'approved requests table',
-  title: 'List of approvement for request',
+  title: 'List of Approved for Distribution',
   pageNumber: 0,
   pageSize: 5,
   totalItems: 0,
@@ -26,11 +26,6 @@ const approvedTable: TableState = {
     updatePath: `${dataSourceUrl}/[id]`,
     deletePath: `${dataSourceUrl}/[id]`,
   },
-  actions : actions.slice(1),
-  relations: [],
-  childOf: {
-    requestWeaponsId: 0,
-  },
+  actions
 };
-
 export default { approvedTable };

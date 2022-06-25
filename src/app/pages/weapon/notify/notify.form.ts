@@ -37,6 +37,20 @@ const notifyForm: Form = {
   title: 'Notify Weapon',
   elements: [
     {
+      name: 'itemDescription',
+      type: 'text',
+      placeholder: 'Weapon Description',
+      defaultValue: '',
+      size: 12,
+      validations: [{ type: 'required', value: true }],
+    },
+    {
+      name: 'attachments',
+      type: 'file',
+      placeholder: 'Attachments',
+      defaultValue: '',
+    },
+    {
       name: 'notifyItems',
       type: 'formArray',
       placeholder: 'Notify Items',
@@ -72,21 +86,7 @@ const notifyForm: Form = {
           validations: [{ type: 'required', value: true }],
         },
       ],
-    },
-    {
-      name: 'itemDescription',
-      type: 'text',
-      placeholder: 'Weapon Description',
-      defaultValue: '',
-      size: 12,
-      validations: [{ type: 'required', value: true }],
-    },
-    {
-      name: 'attachments',
-      type: 'file',
-      placeholder: 'Attachments',
-      defaultValue: '',
-    },
+    }
   ],
 };
 

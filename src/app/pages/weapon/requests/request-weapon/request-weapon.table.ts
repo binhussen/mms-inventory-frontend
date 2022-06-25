@@ -15,7 +15,7 @@ const actions: Array<Action> = [
   },
   {
     name: 'Distribute',type: 'distribute',
-    path:'approves'
+    // path:'approves'
   }
 ];
 
