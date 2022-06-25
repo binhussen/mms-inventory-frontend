@@ -154,7 +154,7 @@ const warrantyForm: Form = {
     type: 'text',
     placeholder: 'Warrantier Name',
     defaultValue: '',
-    size: 3,
+    size: 2,
     validations: [{ type: 'required', value: true }],
   },
   {
@@ -162,7 +162,7 @@ const warrantyForm: Form = {
     type: 'text',
     placeholder: 'Warrantier Address',
     defaultValue: '',
-    size: 3,
+    size: 2,
     validations: [{ type: 'required', value: true }],
   }, 
   {

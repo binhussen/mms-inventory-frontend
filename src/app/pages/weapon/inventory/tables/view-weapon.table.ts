@@ -4,10 +4,6 @@ import { environment } from 'src/environments/environment';
 
 const baseApiUrl = environment.baseApiUrl;
 const dataSourceUrl = `${baseApiUrl}items`;
-const actions: Array<Action> = [
-  { name: 'Expand', type: 'expand', path: 'inventory' },
-  { name: 'Edit', type: 'edit' },
-];
 
 const viewWeaponTable: TableState = {
   id: 'View Weapon table',
@@ -17,6 +13,12 @@ const viewWeaponTable: TableState = {
   totalItems: 0,
   data: [],
   excludedColumns: ['id'],
+  links: {
+    getPath: dataSourceUrl,
+    createPath: `${dataSourceUrl}`,
+    updatePath: `${dataSourceUrl}/[id]`,
+    deletePath: `${dataSourceUrl}/[id]`,
+  },
 };
 
 export default viewWeaponTable;

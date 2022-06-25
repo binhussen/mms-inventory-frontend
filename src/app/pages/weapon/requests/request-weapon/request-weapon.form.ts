@@ -3,6 +3,26 @@ import { Form, FormElement } from 'src/app/mms-common/models/form';
 const requestForWeaponForm: Form = {
   title: 'Request For Weapon',
   elements: [
+  //   {
+  //   name: 'requestStatus',
+  //   type: 'hidden',
+  //   placeholder: 'Request Status',
+  //   defaultValue: 'PENDING',
+  // },
+  {
+    name: 'description',
+    type: 'text',
+    placeholder: 'Request Description',
+    defaultValue: '',
+    size: 12,
+    validations: [{ type: 'required', value: true }],
+  },
+  {
+    name: 'attachments',
+    type: 'file',
+    placeholder: 'Request Attachments',
+    defaultValue: '',
+  },
     {
       name: 'requestItems',
       type: 'formArray',
@@ -47,26 +67,6 @@ const requestForWeaponForm: Form = {
           validations: [{ type: 'required', value: true }],
         },
       ],
-    },
-    {
-      name: 'requestStatus',
-      type: 'hidden',
-      placeholder: 'Request Status',
-      defaultValue: 'PENDING',
-    },
-    {
-      name: 'description',
-      type: 'text',
-      placeholder: 'Request Description',
-      defaultValue: '',
-      size: 12,
-      validations: [{ type: 'required', value: true }],
-    },
-    {
-      name: 'attachments',
-      type: 'file',
-      placeholder: 'Request Attachments',
-      defaultValue: '',
     },
   ],
 };

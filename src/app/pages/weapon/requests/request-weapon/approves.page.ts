@@ -1,11 +1,11 @@
 import requestWeaponForm from './request-weapon.form';
-import requestForWeaponTable from './request-weapon.table';
+import approvedTable from './approves.table';
 
-const approvepage = {
+const approvePage = {
   title: 'Approved Requests',
   type: 'default page',
-  form: requestWeaponForm.requestItemForWeaponForm,
-  table: requestForWeaponTable.requestItemsForWeaponTable,
+  // form: requestWeaponForm.requestApprovalForm,
+  table: approvedTable,
 };
 
-export default approvepage;
+export default approvePage;
