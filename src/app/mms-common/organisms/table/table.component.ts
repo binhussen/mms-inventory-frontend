@@ -179,6 +179,21 @@ export class TableComponent implements OnInit, AfterViewInit {
         console.log('unknown action');
     }
   }
+  //////////////////
+generateReport(){
+  let reportLogo = document.getElementById('logo')!.innerHTML;
+  let reportTitle = document.getElementById('tableTitle')!.innerHTML;
+  let reportedTable = document.getElementById('tableid')!.innerHTML;
+  let originalContents = document.body.innerHTML;
+  if(reportLogo!=null && reportedTable!=null && reportTitle!=null){
+    let contents =reportLogo +reportTitle + reportedTable;
+  document.body.innerHTML= contents;
+
+  }
+  window.print();
+  document.body.innerHTML = originalContents;
+}
+////////////////////////////////
 
   initTable(state$: Observable<TableState>, currentSize?: number) {
     return this.store$.select(tableSelectors.getTableState).pipe(
