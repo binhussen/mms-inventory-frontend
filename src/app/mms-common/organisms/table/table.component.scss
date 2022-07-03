@@ -94,6 +94,30 @@ mat-header-cell, mat-cell {
   top: -2.0em;
   left: -1.5em;
 }
+
+.headerdata{
+  display: none;
+}
+.reportheaderimage{
+  max-width: 100%;
+  height: auto;
+}
+@media print {
+
+  .hidedata{
+    display: none;
+   }
+   .forprint{
+     display: inline;
+   }
+   .headerdata{
+     display: none;
+   }
+  //  .image{
+  //     max-width: 100%;
+  //     height: auto;
+  //  }
+  }
 /*
 .mat-header-cell {
    truncate words and add ellipses

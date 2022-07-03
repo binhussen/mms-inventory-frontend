@@ -13,7 +13,7 @@ import { LayoutComponent } from './templates/layout/layout.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { MatCardModule } from '@angular/material/card';
+import { MatCardContent, MatCardHeader, MatCardModule, MatCardSubtitle } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -43,12 +43,19 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { DndDirective } from './atoms/file-input/dnd.directive';
 import { BasicComponent } from './templates/basic/basic.component';
 import { RouterModule } from '@angular/router';
-import { CrudHttpService } from './organisms/form-dialog/crudHttp.service';
 import { TableService } from './organisms/table/table.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { SideNavHeaderComponent } from './molecules/side-nav-header/side-nav-header.component';
+import { MatSnackBarConfig, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
+};
+
+const matSnackbarDefaultConfig: MatSnackBarConfig = {
+  verticalPosition: 'top',
+  horizontalPosition: 'right',
+  duration: 4000,
 };
 
 @NgModule({
@@ -64,6 +71,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FileInputComponent,
     DndDirective,
     BasicComponent,
+    SideNavHeaderComponent
   ],
   imports: [
     CommonModule,
@@ -97,13 +105,17 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     MatTabsModule,
     RouterModule,
     TranslateModule,
+
   ],
   providers: [
     {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG,
     },
-    CrudHttpService,
+    {
+      provide: MAT_SNACK_BAR_DEFAULT_OPTIONS,
+      useValue: matSnackbarDefaultConfig,
+    }
   ],
   exports: [
     LayoutComponent,

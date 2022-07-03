@@ -1,0 +1,17 @@
+
+<mat-card-title class="profile-header">user Profile </mat-card-title>
+<mat-card class="profile-card">
+    <img class="profile" mat-card-xl-image src="assets/img/profile.png">
+    <mat-card-title-group>
+      <app-form [form]="form"
+      (onFormSubmit)="onSubmit($event)"
+      #formComponent
+      ></app-form>
+    </mat-card-title-group>
+    <mat-card-content>
+    </mat-card-content>
+  </mat-card>
+  <div class="Buttons">
+    <button mat-button color="primary" (click)="formComponent.submit()"> Edit</button>
+    <button mat-stroked-button (click)="onClose()">Close</button>
+  </div>

@@ -31,6 +31,7 @@ export type ActionType =
   | 'approve'
   | 'reject'
   | 'view'
+  | 'distribute'
   | null;
 
 export interface Action {
@@ -104,6 +105,7 @@ export class TableComponent implements OnInit, AfterViewInit {
   }
   command(action: Action, row: any, link?: string) {
     switch (action.type) {
+      
       case 'create':
         this.openDialog(
           'Create',
@@ -129,30 +131,69 @@ export class TableComponent implements OnInit, AfterViewInit {
       case 'delete':
         // delete the row
         break;
+      // case 'approve':
+      //   // fetch data from the server using actionType.urlToPopulateForm by replacing [id] with the current row id
+      //   this.httpClient
+      //     .get(action?.urlToPopulateForm?.replace('[id]', row.id) ?? '')
+      //     .subscribe((r) => {
+      //       console.log(r);
+      //       this.store$.dispatch(
+      //         formActions.setUpdatingForm({
+      //           value: { ...r },
+      //         })
+      //       );
+      //       this.openDialog(
+      //         'Approve',
+      //         action.form ?? this.form,
+      //         action.submittedUrl ?? '',
+      //         action.type,
+      //         row
+      //       );
+      //     });
+      //   break;
       case 'approve':
-        // fetch data from the server using actionType.urlToPopulateForm by replacing [id] with the current row id
-        this.httpClient
-          .get(action?.urlToPopulateForm?.replace('[id]', row.id) ?? '')
-          .subscribe((r) => {
-            console.log(r);
-            this.store$.dispatch(
-              formActions.setUpdatingForm({
-                value: { ...r },
-              })
-            );
-            this.openDialog(
-              'Approve',
-              action.form ?? this.form,
-              action.submittedUrl ?? '',
-              action.type,
-              row
-            );
-          });
+          // approve
+          this.openDialog(
+            'Save',
+            action.form??this.form,
+            action.submittedUrl ?? '',
+            action.type,
+            row.id
+          );
+          break;
+        case 'reject':
+          // reject
+          const f = {
+            value: {
+              id: row.id,
+              submittedToUrl: action.path,
+              action: action.type,
+            },
+          };
+          this.store$.dispatch(formActions.setRejectingForm(f));
+          break;
+        case 'distribute':
+          this.router.navigate([`${this.router.url}/approves/${row['id']}`]);
         break;
       default:
         console.log('unknown action');
     }
   }
+  //////////////////
+generateReport(){
+  let reportLogo = document.getElementById('logo')!.innerHTML;
+  let reportTitle = document.getElementById('tableTitle')!.innerHTML;
+  let reportedTable = document.getElementById('tableid')!.innerHTML;
+  let originalContents = document.body.innerHTML;
+  if(reportLogo!=null && reportedTable!=null && reportTitle!=null){
+    let contents =reportLogo +reportTitle + reportedTable;
+  document.body.innerHTML= contents;
+
+  }
+  window.print();
+  document.body.innerHTML = originalContents;
+}
+////////////////////////////////
 
   initTable(state$: Observable<TableState>, currentSize?: number) {
     return this.store$.select(tableSelectors.getTableState).pipe(
@@ -165,6 +206,7 @@ export class TableComponent implements OnInit, AfterViewInit {
             this.data,
             excludedColumns ?? []
           );
+          console.log(totalItems);
           this.displayedColumns = this.tableService.getDisplayedColumns(
             this.columns
           );

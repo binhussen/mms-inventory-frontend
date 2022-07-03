@@ -1,8 +1,9 @@
 import { Action } from 'src/app/mms-common/organisms/table/table.component';
 import { TableState } from 'src/app/store/models/table.state';
+import { environment } from 'src/environments/environment';
 
-const baseApiUrl = 'http://localhost:3000';
-const dataSourceUrl = `${baseApiUrl}/notifyItems`;
+const baseApiUrl = environment.baseApiUrl;
+const dataSourceUrl = `${baseApiUrl}notifyheaders`;
 const actions: Array<Action> = [{ name: 'Edit', type: 'edit' }];
 
 const notifyItemsTableState: TableState = {
@@ -19,6 +20,7 @@ const notifyItemsTableState: TableState = {
     deletePath: `${dataSourceUrl}/[id]`,
   },
   actions,
+  path:"items",
   relations: [],
   childOf: {
     notifiesId: 0,

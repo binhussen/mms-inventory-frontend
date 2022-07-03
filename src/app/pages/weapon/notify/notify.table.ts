@@ -1,10 +1,11 @@
 import { Action } from 'src/app/mms-common/organisms/table/table.component';
 import { TableState } from 'src/app/store/models/table.state';
+import { environment } from 'src/environments/environment';
 
-const baseApiUrl = 'http://localhost:3000';
-const dataSourceUrl = `${baseApiUrl}/notifies`;
+const baseApiUrl = environment.baseApiUrl;
+const dataSourceUrl = `${baseApiUrl}notifyheaders`;
 const actions: Array<Action> = [
-  { name: 'Expand', type: 'expand', path: 'notifies' },
+  { name: 'Expand', type: 'expand', path: 'notifyheaders' },
   { name: 'Edit', type: 'edit' },
 ];
 
@@ -23,18 +24,18 @@ const notifyTableState: TableState = {
     deletePath: `${dataSourceUrl}/[id]`,
   },
   actions,
-  relations: [
-    {
-      type: 'notifyItems',
-      links: {
-        getPath: `${baseApiUrl}/notifyItems?notifiesId=[id]`,
-        createPath: `${baseApiUrl}/notifyItems`,
-        updatePath: `${baseApiUrl}/notifyItems/[id]`,
-        deletePath: `${baseApiUrl}/notifyItems/[id]`,
-      },
-      relationType: 'many',
-    },
-  ],
+  // relations: [
+  //   {
+  //     type: 'notifyItems',
+  //     links: {
+  //       getPath: `${baseApiUrl}notifyheaders/[id]/notifyitems`,
+  //       createPath: `${baseApiUrl}notifyheaders/[id]/notifyitems`,
+  //       updatePath: `${baseApiUrl}notifyheaders/[id]/notifyitems/[id]`,
+  //       deletePath: `${baseApiUrl}notifyheaders/[id]/notifyitems/[id]`,
+  //     },
+  //     relationType: 'many',
+  //   },
+  // ],
 };
 
 // set this state to the store

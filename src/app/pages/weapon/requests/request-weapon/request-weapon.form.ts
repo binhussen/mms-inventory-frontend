@@ -3,14 +3,34 @@ import { Form, FormElement } from 'src/app/mms-common/models/form';
 const requestForWeaponForm: Form = {
   title: 'Request For Weapon',
   elements: [
+  //   {
+  //   name: 'requestStatus',
+  //   type: 'hidden',
+  //   placeholder: 'Request Status',
+  //   defaultValue: 'PENDING',
+  // },
+  {
+    name: 'description',
+    type: 'text',
+    placeholder: 'Request Description',
+    defaultValue: '',
+    size: 12,
+    validations: [{ type: 'required', value: true }],
+  },
+  {
+    name: 'attachments',
+    type: 'file',
+    placeholder: 'Request Attachments',
+    defaultValue: '',
+  },
     {
-      name: 'requestWeaponItems',
+      name: 'requestItems',
       type: 'formArray',
       placeholder: 'Request Items',
       defaultValue: '',
       formArrayItems: [
         {
-          name: 'weaponType',
+          name: 'type',
           type: 'select',
           placeholder: 'Weapon Type',
           defaultValue: '',
@@ -23,7 +43,7 @@ const requestForWeaponForm: Form = {
           validations: [{ type: 'required', value: true }],
         },
         {
-          name: 'weaponName',
+          name: 'name',
           type: 'text',
           placeholder: 'Weapon Name',
           defaultValue: '',
@@ -31,7 +51,7 @@ const requestForWeaponForm: Form = {
           validations: [{ type: 'required', value: true }],
         },
         {
-          name: 'weaponModel',
+          name: 'model',
           type: 'text',
           placeholder: 'Weapon Model',
           defaultValue: '',
@@ -39,7 +59,7 @@ const requestForWeaponForm: Form = {
           validations: [{ type: 'required', value: true }],
         },
         {
-          name: 'weaponQuantity',
+          name: 'requestedQuantity',
           type: 'number',
           placeholder: 'Quantity',
           defaultValue: '',
@@ -47,26 +67,6 @@ const requestForWeaponForm: Form = {
           validations: [{ type: 'required', value: true }],
         },
       ],
-    },
-    {
-      name: 'requestStatus',
-      type: 'hidden',
-      placeholder: 'Request Status',
-      defaultValue: 'PENDING',
-    },
-    {
-      name: 'description',
-      type: 'text',
-      placeholder: 'Request Description',
-      defaultValue: '',
-      size: 12,
-      validations: [{ type: 'required', value: true }],
-    },
-    {
-      name: 'attachments',
-      type: 'file',
-      placeholder: 'Request Attachments',
-      defaultValue: '',
     },
   ],
 };
@@ -76,16 +76,17 @@ const requestItemForWeaponForm: Form = {
   elements:
     (
       requestForWeaponForm.elements.find(
-        (element) => element.name === 'requestWeaponItems'
+        (element) => element.name === 'requestItems'
       ) ?? { formArrayItems: [] }
     ).formArrayItems ?? [],
 };
+
 const requestApprovalElements = requestForWeaponForm.elements.map(
   (element: FormElement) => {
     if (element.name === 'requestStatus') {
       return { ...element, defaultValue: 'APPROVED' };
     }
-    if (element.name === 'requestWeaponItems') {
+    if (element.name === 'requestItems') {
       return {
         ...element,
         placeholder: 'Requested Items',
@@ -111,9 +112,38 @@ requestApprovalElements.push({
   placeholder: 'Request Weapons Id',
   defaultValue: '',
 });
-const requestApprovalForm = {
+const requestApprovalForm:Form = {
   title: 'Request Approval Form',
-  elements: requestApprovalElements,
+  // elements: requestApprovalElements,
+  elements: [
+    {
+      name: 'status',
+      type: 'select',
+      placeholder: 'Status',
+      defaultValue: 'Pending',
+      size: 6,
+      options: [
+        { value: 'Pending', label: 'Pending' },
+        { value: 'Approve', label: 'Approve' },
+        { value: 'Reject', label: 'Reject' },
+      ],
+      validations: [{ type: 'required', value: true }],
+    },
+    {
+      name: 'approvedQuantity',
+      type: 'number',
+      placeholder: 'Approved Quantity',
+      defaultValue: 0,
+      size: 6,
+      validations: [{ type: 'required', value: true }],
+    },
+    {
+      name: 'attachments',
+      type: 'file',
+      placeholder: 'Request Attachments',
+      defaultValue: '',
+    },
+  ],
 };
 
 export default {

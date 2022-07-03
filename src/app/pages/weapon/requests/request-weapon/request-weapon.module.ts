@@ -7,9 +7,11 @@ import { PageModule } from 'src/app/pages/page/page.module';
 import requestWeaponPage from './request-weapon.page';
 import { PageDetailComponent } from 'src/app/pages/page/page-detail/page-detail.component';
 import requestWeaponDetailPage from './request-weapon-detail.page';
+import approvePage from './approves.page';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+  ],
   imports: [
     CommonModule,
     MmsCommonModule,
@@ -20,6 +22,11 @@ import requestWeaponDetailPage from './request-weapon-detail.page';
         path: ':id',
         component: PageDetailComponent,
         data: requestWeaponDetailPage,
+      },
+      {
+        path: ':id/approves/:id',
+        component: PageComponent,
+        data: approvePage,
       },
     ]),
   ],
