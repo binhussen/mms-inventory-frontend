@@ -27,7 +27,7 @@
             </mat-menu> -->
           </mat-card-title>
         </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
+        <mat-card-content class="-card-contentdashboard">
 
           <div  *ngIf="card.title == 'board'" fxLayout="row" fxLayoutAlign="space-around center"  >
             <div *ngFor="let item of statCardList">
@@ -60,7 +60,7 @@
             </ngx-charts-line-chart>
           </div>
 
-          <ngx-charts-pie-chart
+          <ngx-charts-pie-chart class="pieChart"
           *ngIf="card.title == 'pieChart'"
             [results]="pieChartData"
             [gradient]="gradient"

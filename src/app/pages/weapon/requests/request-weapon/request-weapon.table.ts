@@ -1,20 +1,22 @@
 import { Action } from 'src/app/mms-common/organisms/table/table.component';
 import { TableState } from 'src/app/store/models/table.state';
+import { environment } from 'src/environments/environment';
 import requestWeaponForm from './request-weapon.form';
 
-const baseApiUrl = 'http://localhost:3000';
-const dataSourceUrl = `${baseApiUrl}/requestWeapons`;
+const baseApiUrl = environment.baseApiUrl;
+const dataSourceUrl = `${baseApiUrl}requestheaders`;
 const actions: Array<Action> = [
   { name: 'Expand', type: 'expand', path: 'request-for-weapon' },
   { name: 'Edit', type: 'edit' },
   {
-    name: 'Approve',
-    type: 'approve',
-    urlToPopulateForm: `${baseApiUrl}/requestWeapons/[id]`,
+    name: 'Approve',type: 'approve',
     form: requestWeaponForm.requestApprovalForm,
-    submittedUrl: `${baseApiUrl}/requestWeaponApprovals`,
+    submittedUrl: `${baseApiUrl}requestapprove/[id]`,
   },
-  { name: 'Reject', type: 'reject' },
+  {
+    name: 'Distribute',type: 'distribute',
+    // path:'approves'
+  }
 ];
 
 const requestForWeaponTable: TableState = {
@@ -31,19 +33,19 @@ const requestForWeaponTable: TableState = {
     updatePath: `${dataSourceUrl}/[id]`,
     deletePath: `${dataSourceUrl}/[id]`,
   },
-  actions,
-  relations: [
-    {
-      type: 'requestWeaponItems',
-      links: {
-        getPath: `${baseApiUrl}/requestWeaponItems?requestWeaponsId=[id]`,
-        createPath: `${baseApiUrl}/requestWeaponItems`,
-        updatePath: `${baseApiUrl}/requestWeaponItems/[id]`,
-        deletePath: `${baseApiUrl}/requestWeaponItems/[id]`,
-      },
-      relationType: 'many',
-    },
-  ],
+  actions:actions.slice(0, 2),
+  // relations: [
+  //   {
+  //     type: 'requestWeaponItems',
+  //     links: {
+  //       getPath: `${baseApiUrl}/requestWeaponItems?requestWeaponsId=[id]`,
+  //       createPath: `${baseApiUrl}/requestWeaponItems`,
+  //       updatePath: `${baseApiUrl}/requestWeaponItems/[id]`,
+  //       deletePath: `${baseApiUrl}/requestWeaponItems/[id]`,
+  //     },
+  //     relationType: 'many',
+  //   },
+  // ],
 };
 
 const requestItemsForWeaponTable: TableState = {
@@ -55,12 +57,13 @@ const requestItemsForWeaponTable: TableState = {
   data: [],
   excludedColumns: ['id', 'requestWeaponsId'],
   links: {
-    getPath: `${baseApiUrl}/requestWeaponItems`,
-    createPath: `${baseApiUrl}/requestWeaponItems`,
-    updatePath: `${baseApiUrl}/requestWeaponItems/[id]`,
-    deletePath: `${baseApiUrl}/requestWeaponItems/[id]`,
+    getPath: dataSourceUrl,
+    createPath: `${dataSourceUrl}`,
+    updatePath: `${dataSourceUrl}/[id]`,
+    deletePath: `${dataSourceUrl}/[id]`,
   },
-  actions: actions.slice(1, 2),
+  actions : actions.slice(1),
+  path:"items",
   relations: [],
   childOf: {
     requestWeaponsId: 0,

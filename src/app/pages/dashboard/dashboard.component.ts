@@ -177,8 +177,10 @@ export class DashboardComponent {
 
   getData(){
     // number of requests
-    this.dashboardService.findAll('http://localhost:3000/requests').subscribe(val =>
+    this.dashboardService.findAll('${baseApiUrl}').subscribe(val =>
     this.numberOfRequests = val.length);
+    console.log(this.numberOfRequests)
+
     // number of damages
     this.dashboardService.findAll('http://localhost:3000/damages').subscribe(val =>
      this.numberOfDamages = val.length);

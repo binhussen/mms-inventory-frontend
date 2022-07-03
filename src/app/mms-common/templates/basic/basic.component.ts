@@ -12,5 +12,6 @@ export class BasicComponent implements OnInit {
   form!: Form;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 }

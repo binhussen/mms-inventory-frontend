@@ -67,7 +67,7 @@ export class CrudHttpService extends BaseService<any> {
               form.submittedToUrl ?? '',
               form.childOf
             );
-            return this.createResource(single.data, single.submittedToUrl).pipe(
+            return this.createResource(form.data, single.submittedToUrl).pipe(
               tap((response) => console.log(response)),
               tap(async (response) => {
                 if (form.submittedToUrl?.includes('requestWeaponApprovals')) {
@@ -149,7 +149,20 @@ export class CrudHttpService extends BaseService<any> {
         observer.next(null);
       });
     }
-    return this.httpClient.patch(`${this.getUrl(url, data.id)}`, data, {
+    console.log(this.getUrl(url, data.id))
+    return this.httpClient.put(`${this.getUrl(url, data.id)}`, data, {
+      headers: this.headers,
+    });
+  }
+
+  rejectResource(value:any): Observable<any> {
+    return this.httpClient.post(`${this.getUrl(value.submittedToUrl,value.data.id)}?status=Reject&status=Approve&attachments=${value.data.attachments}`, {
+      headers: this.headers,
+    });
+  }
+
+  approveResource(value:any): Observable<any> {
+    return this.httpClient.post(`${this.getUrl(value.submittedToUrl,value.data.id)}?qty=${value.data.approvedQuantity}&status=Approve&attachments=${value.data.attachments}`, {
       headers: this.headers,
     });
   }

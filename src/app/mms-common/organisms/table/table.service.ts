@@ -56,8 +56,9 @@ export class TableService {
     dataSourceUrl: string
   ): Observable<{ count: number; data: Array<any> }> {
     let params = new HttpParams();
-    params = params.set('_page', pageNumber.toString());
-    params = params.set('_limit', limit.toString());
+    params = params.set('PageNumber', pageNumber.toString());
+    params = params.set('PageSize', limit.toString());
+    console.log(dataSourceUrl)
     const httpResponse = this.httpClient.get(dataSourceUrl, {
       observe: 'response',
       params,

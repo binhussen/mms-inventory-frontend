@@ -52,6 +52,7 @@ const requestForReturningWeaponItemsTable: TableState = {
   },
   actions: actions.slice(1),
   relations: [],
+  path:"items",
   childOf: {
     returnWeaponId: 0,
   },

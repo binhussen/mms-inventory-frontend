@@ -3,7 +3,7 @@ const notifyItemForm: Form = {
   title: 'Notify Item',
   elements: [
     {
-      name: 'weaponType',
+      name: 'type',
       type: 'select',
       placeholder: 'Weapon Type',
       defaultValue: '',
@@ -16,7 +16,7 @@ const notifyItemForm: Form = {
       validations: [{ type: 'required', value: true }],
     },
     {
-      name: 'weaponName',
+      name: 'name',
       type: 'text',
       placeholder: 'Weapon Name',
       defaultValue: '',
@@ -37,13 +37,27 @@ const notifyForm: Form = {
   title: 'Notify Weapon',
   elements: [
     {
+      name: 'itemDescription',
+      type: 'text',
+      placeholder: 'Weapon Description',
+      defaultValue: '',
+      size: 12,
+      validations: [{ type: 'required', value: true }],
+    },
+    {
+      name: 'attachments',
+      type: 'file',
+      placeholder: 'Attachments',
+      defaultValue: '',
+    },
+    {
       name: 'notifyItems',
       type: 'formArray',
       placeholder: 'Notify Items',
       defaultValue: '',
       formArrayItems: [
         {
-          name: 'weaponType',
+          name: 'type',
           type: 'select',
           placeholder: 'Weapon Type',
           defaultValue: '',
@@ -56,7 +70,7 @@ const notifyForm: Form = {
           validations: [{ type: 'required', value: true }],
         },
         {
-          name: 'weaponName',
+          name: 'name',
           type: 'text',
           placeholder: 'Weapon Name',
           defaultValue: '',
@@ -72,21 +86,7 @@ const notifyForm: Form = {
           validations: [{ type: 'required', value: true }],
         },
       ],
-    },
-    {
-      name: 'weaponDescription',
-      type: 'text',
-      placeholder: 'Weapon Description',
-      defaultValue: '',
-      size: 12,
-      validations: [{ type: 'required', value: true }],
-    },
-    {
-      name: 'attachments',
-      type: 'file',
-      placeholder: 'Attachments',
-      defaultValue: '',
-    },
+    }
   ],
 };
 

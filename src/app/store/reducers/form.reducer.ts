@@ -29,12 +29,24 @@ export const formReducer = createReducer(
   })),
   on(formActions.setUpdatingForm, (state, { value }) => ({
     ...state,
+    ...value,
     updating: value,
+    status:'PENDING'
   })),
-  on(formActions.setUpdatingFormWithRelations, (state, { value }) => ({
+  on(formActions.setApprovingForm, (state, { value }) => ({
     ...state,
-    updating: value,
+    ...value,
+    status: 'PENDING',
   })),
+  on(formActions.setRejectingForm, (state, { value }) => ({
+    ...state,
+    ...value,
+    status: 'PENDING',
+  })),
+  // on(formActions.setUpdatingFormWithRelations, (state, { value }) => ({
+  //   ...state,
+  //   updating: value,
+  // })),
   on(formActions.clearData, (state) => ({
     ...state,
     ...initialState,
