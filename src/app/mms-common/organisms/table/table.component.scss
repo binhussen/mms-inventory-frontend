@@ -98,6 +98,10 @@ mat-header-cell, mat-cell {
 .headerdata{
   display: none;
 }
+.reportheaderimage{
+  max-width: 100%;
+  height: auto;
+}
 @media print {
 
   .hidedata{
@@ -109,10 +113,10 @@ mat-header-cell, mat-cell {
    .headerdata{
      display: none;
    }
-   .image{
-      max-width: 100%;
-      height: auto;
-   }
+  //  .image{
+  //     max-width: 100%;
+  //     height: auto;
+  //  }
   }
 /*
 .mat-header-cell {
