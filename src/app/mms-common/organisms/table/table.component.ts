@@ -108,7 +108,7 @@ export class TableComponent implements OnInit, AfterViewInit {
       
       case 'create':
         this.openDialog(
-          'Create',
+          'createNew.create',
           this.form,
           this.links.createPath,
           action.type
@@ -121,7 +121,7 @@ export class TableComponent implements OnInit, AfterViewInit {
         // fill the form with the current row
         this.store$.dispatch(formActions.setUpdatingForm({ value: row }));
         this.openDialog(
-          'Update',
+          'createNew.update',
           this.form,
           this.links.updatePath,
           action.type,

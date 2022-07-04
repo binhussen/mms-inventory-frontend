@@ -11,6 +11,7 @@ import inventoryPageTabs from './inventory.tabs';
 import insertWeaponPage from './insert-weapon.page';
 import insertWeaponDetailPage from './insert-weapon-detail.page';
 import viewWeaponPage from './pages/view-weapon.page';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import viewWeaponPage from './pages/view-weapon.page';
     MmsCommonModule,
     PageModule,
     MatTabsModule,
+    TranslateModule,
     RouterModule.forChild([
       {
         path: '',

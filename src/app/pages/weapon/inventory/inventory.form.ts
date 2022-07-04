@@ -1,12 +1,12 @@
 import { Form } from 'src/app/mms-common/models/form';
 
 const inventoryForm: Form = {
-  title: 'Inventory',
+  title: 'inventory.insertWeapon.form.inventory',
   elements: [
     {
       name: 'itemNoInExpenditureRegister',
       type: 'text',
-      placeholder: 'Item No. in Expenditure Register',
+      placeholder: 'inventory.insertWeapon.form.itemNoInExpenditureRegister',
       defaultValue: '',
       size: 4,
       validations: [{ type: 'required', value: true }],
@@ -14,7 +14,7 @@ const inventoryForm: Form = {
     {
       name: 'noOfEntryInTheRegisterOfIncomingGoods',
       type: 'text',
-      placeholder: 'No. of Entry in the Register of Incoming Goods',
+      placeholder: 'inventory.insertWeapon.form.noOfEntryInTheRegisterOfIncomingGoods',
       defaultValue: '',
       size: 4,
       validations: [{ type: 'required', value: true }],
@@ -31,7 +31,7 @@ const inventoryForm: Form = {
     {
       name: 'donor',
       type: 'text',
-      placeholder: 'Donor',
+      placeholder: 'inventory.insertWeapon.form.donor',
       defaultValue: '',
       size: 4,
       validations: [{ type: 'required', value: true }],
@@ -39,13 +39,13 @@ const inventoryForm: Form = {
     {
       name: 'storeItems',
       type: 'formArray',
-      placeholder: 'Weapon Items',
+      placeholder: 'inventory.insertWeapon.form.weaponItems',
       defaultValue: '',
       formArrayItems: [
         {
           name: 'type',
           type: 'select',
-          placeholder: 'Weapon Type',
+          placeholder: 'inventory.insertWeapon.form.weaponType',
           defaultValue: '',
           size: 3,
           options: [
@@ -57,42 +57,42 @@ const inventoryForm: Form = {
         },{
           name: 'itemDescription',
           type: 'text',
-          placeholder: 'Weapon Item Description',
+          placeholder: 'inventory.insertWeapon.form.weaponItemDescription',
           defaultValue: '',
           size: 9,
         },
         {
           name: 'model',
           type: 'text',
-          placeholder: 'Weapon Model',
+          placeholder: 'inventory.insertWeapon.form.weaponModel',
           defaultValue: '',
           size: 3,
         },
         {
           name: 'serialNo',
           type: 'text',
-          placeholder: 'Weapon Serial No.',
+          placeholder: 'inventory.insertWeapon.form.weaponSerialNo',
           defaultValue: '',
           size: 3,
         },
         {
           name: 'quantity',
           type: 'number',
-          placeholder: 'Weapon Quantity',
+          placeholder: 'inventory.insertWeapon.form.weaponQuantity',
           defaultValue: '',
           size: 3,
         },
         {
           name: 'unitPrice',
           type: 'number',
-          placeholder: 'Weapon Unit Price',
+          placeholder: 'inventory.insertWeapon.form.weaponUnitPrice',
           defaultValue: '',
           size: 3,
         },
         {
           name: 'totalPrice',
           type: 'number',
-          placeholder: 'Weapon Total Price',
+          placeholder: 'inventory.insertWeapon.form.weaponTotalPrice',
           defaultValue: '',
           computeValueFrom: {
             elements: ['quantity', 'unitPrice'],
@@ -110,7 +110,7 @@ const inventoryForm: Form = {
         {
           name: 'storeNo',
           type: 'text',
-          placeholder: 'Store No.',
+          placeholder: 'inventory.insertWeapon.form.storeNo',
           defaultValue: '',
           size: 3,
           validations: [{ type: 'required', value: true }],
@@ -118,7 +118,7 @@ const inventoryForm: Form = {
         {
           name: 'shelfNo',
           type: 'text',
-          placeholder: 'Shelf No.',
+          placeholder: 'inventory.insertWeapon.form.shelfNo',
           defaultValue: '',
           size: 3,
           validations: [{ type: 'required', value: true }],
@@ -129,17 +129,17 @@ const inventoryForm: Form = {
 };
 
 const distributeForm: Form = {
-  title: 'Distribute Weapon',
+  title: 'distributeWeapon.distributeWeapon',
   elements: [],
 };
 
 const inventoryItemForm: Form = {
-  title: 'Inventory Item',
+  title: 'inventory.insertWeapon.form.weaponItems',
   elements: [
     {
       name: 'type',
       type: 'select',
-      placeholder: 'Weapon Type',
+      placeholder: 'inventory.insertWeapon.form.weaponType',
       defaultValue: '',
       size: 2,
       options: [
@@ -152,42 +152,42 @@ const inventoryItemForm: Form = {
     {
       name: 'itemDescription',
       type: 'text',
-      placeholder: 'Weapon Item Description',
+      placeholder: 'inventory.insertWeapon.form.weaponItemDescription',
       defaultValue: '',
       size: 8,
     },
     {
       name: 'model',
       type: 'text',
-      placeholder: 'Weapon Model',
+      placeholder: 'inventory.insertWeapon.form.weaponModel',
       defaultValue: '',
       size: 2,
     },
     {
       name: 'serialNo',
       type: 'text',
-      placeholder: 'Weapon Serial No.',
+      placeholder: 'inventory.insertWeapon.form.weaponSerialNo',
       defaultValue: '',
       size: 2,
     },
     {
       name: 'quantity',
       type: 'number',
-      placeholder: 'Weapon Quantity',
+      placeholder: 'inventory.insertWeapon.form.weaponQuantity',
       defaultValue: '',
       size: 2,
     },
     {
       name: 'unitPrice',
       type: 'number',
-      placeholder: 'Weapon Unit Price',
+      placeholder: 'inventory.insertWeapon.form.weaponUnitPrice',
       defaultValue: '',
       size: 2,
     },
     {
       name: 'totalPrice',
       type: 'text',
-      placeholder: 'Weapon Total Price',
+      placeholder: 'inventory.insertWeapon.form.weaponTotalPrice',
       defaultValue: '',
       computeValueFrom: {
         elements: ['quantity', 'unitPrice'],
@@ -205,7 +205,7 @@ const inventoryItemForm: Form = {
     {
       name: 'storeNo',
       type: 'text',
-      placeholder: 'Store No.',
+      placeholder: 'inventory.insertWeapon.form.storeNo',
       defaultValue: '',
       size: 2,
       validations: [{ type: 'required', value: true }],
@@ -213,7 +213,7 @@ const inventoryItemForm: Form = {
     {
       name: 'shelfNo',
       type: 'text',
-      placeholder: 'Shelf No.',
+      placeholder: 'inventory.insertWeapon.form.shelfNo',
       defaultValue: '',
       size: 2,
       validations: [{ type: 'required', value: true }],

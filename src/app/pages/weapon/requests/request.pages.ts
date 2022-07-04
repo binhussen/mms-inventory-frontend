@@ -3,11 +3,11 @@ const requestPages = {
   title: 'Requests',
   tabs: [
     {
-      title: 'Request For Weapon',
+      title: 'requestForWeapon.tabs.requestForWeapon',
       route: 'request-for-weapon',
     },
     {
-      title: 'Request For Return Weapon',
+      title: 'requestForWeapon.tabs.requestForReturnWeapon',
       route: 'request-for-return-weapon',
     },
   ],

@@ -5,13 +5,13 @@ import { environment } from 'src/environments/environment';
 const baseApiUrl = environment.baseApiUrl;
 const dataSourceUrl = `${baseApiUrl}storeheaders`;
 const actions: Array<Action> = [
-  { name: 'Expand', type: 'expand', path: 'storeheaders' },
-  { name: 'Edit', type: 'edit' },
+  { name: 'createNew.expand', type: 'expand', path: 'storeheaders' },
+  { name: 'createNew.edit', type: 'edit' },
 ];
 
 const inventoryTableState: TableState = {
   id: 'Inventory table',
-  title: 'List Of Records In Inventory',
+  title: 'inventory.listOfRecordsInInventory',
   pageNumber: 0,
   pageSize: 5,
   totalItems: 0,
@@ -40,7 +40,7 @@ const inventoryTableState: TableState = {
 
 const inventoryItemsTableState: TableState = {
   id: 'Weapon Items table',
-  title: 'List of weapons in a record',
+  title: 'inventory.listofweaponsinarecord',
   pageNumber: 0,
   pageSize: 5,
   totalItems: 0,

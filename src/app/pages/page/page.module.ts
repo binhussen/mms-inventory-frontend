@@ -8,16 +8,18 @@ import { RouterModule } from '@angular/router';
 import { MatTabsModule } from '@angular/material/tabs';
 import { HttpClientModule } from '@angular/common/http';
 import { MatMenuModule } from '@angular/material/menu';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [PageComponent, PageDetailComponent, TabbedPageComponent],
   imports: [
-    CommonModule,
+  CommonModule,
     RouterModule,
     MatTabsModule,
     MatMenuModule,
     MmsCommonModule,
     HttpClientModule,
+    TranslateModule
   ],
   exports: [PageComponent, PageDetailComponent, TabbedPageComponent],
 })

@@ -22,7 +22,7 @@ interface FormProps {
 })
 export class FormDialogComponent implements OnInit {
   form!: Form;
-  actionTitle = 'save';
+  actionTitle = 'createNew.create';
   dataSourceUrl!: string;
   actionType!: ActionType;
   loading$ = this.store$.select((state) => state.form.status === 'PENDING');

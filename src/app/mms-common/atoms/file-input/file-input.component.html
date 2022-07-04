@@ -12,17 +12,16 @@
         (change)="handleFileInputChange(f_input.files)"
       />
       <mat-icon [color]="'primary'" class="upload-icon">cloud_upload</mat-icon>
-      <h4>Drag & Drop your files here</h4>
-      <h4>OR</h4>
+      <h4>{{'fileUpload.dragDropyourfileshere' | translate}}</h4>
+      <h4>{{'fileUpload.or' | translate}}</h4>
       <button class="mat-elevation-z4"  mat-raised-button color="primary">
-        Browse Files
-      </button>
+        {{'fileUpload.browseFiles' | translate}}      </button>
     </div>
   </mat-grid-tile>
 
   <mat-grid-tile [colspan]="2" [rowspan]="1">
     <mat-grid-tile-header>
-      Uploaded Files
+      {{'fileUpload.uploadedFiles' | translate}}
       <mat-divider></mat-divider>
     </mat-grid-tile-header>
     <mat-list>

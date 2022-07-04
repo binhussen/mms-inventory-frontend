@@ -6,13 +6,13 @@ const baseApiUrl = environment.baseApiUrl;
 const dataSourceUrl = `${baseApiUrl}users`;
 const actions: Array<Action> = [
   //{ name: 'Expand', type: 'expand', path: 'users' },
-  { name: 'Edit', type: 'edit' },
-  { name: 'Delete', type: 'delete'},
+  { name: 'createNew.edit', type: 'edit' },
+  { name: 'createNew.delete', type: 'delete'},
 ];
 
 const userTableState: TableState = {
   id: 'user table',
-  title: 'List of system user',
+  title: 'createAccount.listofsystemuser',
   pageNumber: 0,
   pageSize: 5,
   totalItems: 0,

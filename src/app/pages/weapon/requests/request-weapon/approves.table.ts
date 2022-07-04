@@ -6,14 +6,14 @@ const baseApiUrl = environment.baseApiUrl;
 const dataSourceUrl = `${baseApiUrl}approves`;
 const actions: Array<Action> = [
   {
-    name: 'Distribute',type: 'distribute',
+    name: 'createNew.distribute',type: 'distribute',
     // form: requestWeaponForm.requestApprovalForm,
     // submittedUrl: `${baseApiUrl}requestapprove/[id]`,
   }
 ];
 const approvedTable: TableState = {
   id: 'approved requests table',
-  title: 'List of Approved for Distribution',
+  title: 'requestForWeapon.listofApprovedforDistribution',
   pageNumber: 0,
   pageSize: 5,
   totalItems: 0,

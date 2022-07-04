@@ -1,11 +1,11 @@
 import { Form } from 'src/app/mms-common/models/form';
 const notifyItemForm: Form = {
-  title: 'Notify Item',
+  title: 'notifyWeapon.form.notifyItems',
   elements: [
     {
       name: 'type',
       type: 'select',
-      placeholder: 'Weapon Type',
+      placeholder: 'notifyItem.form.weaponType',
       defaultValue: '',
       size: 4,
       options: [
@@ -18,7 +18,7 @@ const notifyItemForm: Form = {
     {
       name: 'name',
       type: 'text',
-      placeholder: 'Weapon Name',
+      placeholder: 'notifyItem.form.weaponName',
       defaultValue: '',
       size: 4,
       validations: [{ type: 'required', value: true }],
@@ -26,20 +26,21 @@ const notifyItemForm: Form = {
     {
       name: 'quantity',
       type: 'number',
-      placeholder: 'Quantity',
+      placeholder: 'notifyItem.form.quantity',
       defaultValue: '',
       size: 4,
       validations: [{ type: 'required', value: true }],
     },
   ],
 };
+
 const notifyForm: Form = {
-  title: 'Notify Weapon',
+  title: 'notifyWeapon.form.notifyItems',
   elements: [
     {
       name: 'itemDescription',
       type: 'text',
-      placeholder: 'Weapon Description',
+      placeholder: 'notifyWeapon.form.weaponDescription',
       defaultValue: '',
       size: 12,
       validations: [{ type: 'required', value: true }],
@@ -47,19 +48,19 @@ const notifyForm: Form = {
     {
       name: 'attachments',
       type: 'file',
-      placeholder: 'Attachments',
+      placeholder: 'notifyWeapon.form.attachments',
       defaultValue: '',
     },
     {
       name: 'notifyItems',
       type: 'formArray',
-      placeholder: 'Notify Items',
+      placeholder: 'notifyWeapon.form.notifyItems',
       defaultValue: '',
       formArrayItems: [
         {
           name: 'type',
           type: 'select',
-          placeholder: 'Weapon Type',
+          placeholder: 'notifyItem.form.weaponType',
           defaultValue: '',
           size: 4,
           options: [
@@ -72,7 +73,7 @@ const notifyForm: Form = {
         {
           name: 'name',
           type: 'text',
-          placeholder: 'Weapon Name',
+          placeholder: 'notifyItem.form.weaponName',
           defaultValue: '',
           size: 4,
           validations: [{ type: 'required', value: true }],
@@ -80,7 +81,7 @@ const notifyForm: Form = {
         {
           name: 'quantity',
           type: 'number',
-          placeholder: 'Quantity',
+          placeholder: 'notifyItem.form.quantity',
           defaultValue: '',
           size: 4,
           validations: [{ type: 'required', value: true }],

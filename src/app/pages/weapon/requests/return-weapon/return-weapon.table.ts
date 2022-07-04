@@ -4,13 +4,13 @@ import { TableState } from 'src/app/store/models/table.state';
 const baseApiUrl = 'http://localhost:3000';
 const dataSourceUrl = `${baseApiUrl}/returnWeapons`;
 const actions: Array<Action> = [
-  { name: 'Expand', type: 'expand', path: 'request-for-return-weapon' },
-  { name: 'Edit', type: 'edit' },
+  { name: 'createNew.expand', type: 'expand', path: 'request-for-return-weapon' },
+  { name: 'createNew.edit', type: 'edit' },
 ];
 
 const requestForReturningWeaponTable: TableState = {
   id: 'request table',
-  title: 'List of weapons that have been requested to be returned',
+  title: 'requestForWeapon.listofweaponsthathavebeenrequestedtobereturned',
   pageNumber: 0,
   pageSize: 5,
   totalItems: 0,

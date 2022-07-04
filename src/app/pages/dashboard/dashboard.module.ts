@@ -9,11 +9,12 @@ import {MatButtonModule} from "@angular/material/button";
 import {RouterModule} from "@angular/router";
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [DashboardComponent],
   imports: [
-    CommonModule,
+  CommonModule,
     MatGridListModule,
     MatCardModule,
     MatIconModule,
@@ -21,6 +22,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatButtonModule,
     NgxChartsModule,
     FlexLayoutModule,
+    TranslateModule,
     RouterModule.forChild([
       {path: '', component: DashboardComponent}
     ])

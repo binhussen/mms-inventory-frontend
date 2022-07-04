@@ -7,7 +7,7 @@ const dataSourceUrl = `${baseApiUrl}items`;
 
 const viewWeaponTable: TableState = {
   id: 'View Weapon table',
-  title: 'Inventory List',
+  title: 'inventory.inventoryList',
   pageNumber: 0,
   pageSize: 5,
   totalItems: 0,

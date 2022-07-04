@@ -6,7 +6,7 @@ const loginForm: Form = {
     {
       name: 'username',
       type: 'text',
-      placeholder: 'Username',
+      placeholder: 'login.form.username',
       defaultValue: '',
       validations: [
         {type: 'required', value: true}
@@ -15,7 +15,7 @@ const loginForm: Form = {
     {
       name: 'password',
       type: 'password',
-      placeholder: 'Password',
+      placeholder: 'login.form.password',
       defaultValue: '',
       validations: [
         {type: 'required', value: true}
