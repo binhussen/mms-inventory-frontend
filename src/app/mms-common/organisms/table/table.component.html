@@ -1,18 +1,18 @@
 <div class="headerdata">
   <div class="forprint" id="logo">
-    <img class="reportheaderimage" src="/assets/img/report-header.jpg" alt="Ethiopian Federal Police"/>
+    <img class="image" src="/assets/img/report-header.jpg" alt="Ethiopian Federal Police"/>
   </div>
-</div>
+  </div>
   <ng-container *ngIf="(tableState$ | async) as tableState"> 
     <mat-toolbar class="mat-elevation-z1 table-header">
       <div class="table-header-title" id="tableTitle">
-          <h1>{{tableState?.title}}</h1>
+          <h1>{{tableState?.title! | translate}}</h1>
       </div>
       <div class="table-header-actions">
         <!-- ///////////////////////// -->
         <button mat-button color="primary" (click)="generateReport()">
           <mat-icon>print</mat-icon>
-          Report
+          {{'formAction.report' | translate}}
         </button>
         <!-- ////////////////////////// -->
           <button mat-icon-button>
@@ -27,7 +27,7 @@
   
           <button mat-button color="primary" (click)="command({type: 'create', name: 'Create New'}, undefined)">
             <mat-icon>add</mat-icon>
-            Create New
+            {{'formAction.createNew' | translate}}
           </button>
       </div>
   </mat-toolbar>
@@ -43,7 +43,7 @@
       <ng-container *ngFor="let column of columns;" [cdkColumnDef]="column.columnDef">
         <mat-header-cell *cdkHeaderCellDef>{{ column.header }}</mat-header-cell>
         <mat-cell *cdkCellDef="let row; let i = index">
-          <span class="mobile-label">{{ column.header }}:</span>
+          <span class="mobile-label">{{ column.header  | translate}}:</span>
           <ng-container *ngIf="row && column.cell(row)">
             <a href={{column.cell(row)}} *ngIf="column.columnDef ==='attachments'">
               <!-- {{ column.cell(row)}} -->
@@ -52,7 +52,7 @@
             <span *ngIf="column.columnDef !='attachments'">{{ column.columnDef === 'date' ? (column.cell(row) | date) :  column.cell(row)}}</span>
           </ng-container>
     
-          <ng-container *ngIf="!column.cell(row) && column.columnDef == 'No'">
+          <ng-container *ngIf="!column.cell(row) && column.columnDef == 'formAction.no'">
             {{(i + 1)}}
           </ng-container>
           <div class="hidedata">
@@ -62,7 +62,7 @@
             </button>
             <mat-menu #menu="matMenu" xPosition="before">
               <ng-container *ngFor="let action of tableState?.actions">
-                <button mat-menu-item (click)="command(action, row)">{{action.name}}</button>
+                <button mat-menu-item (click)="command(action, row)">{{action.name | translate}}</button>
               </ng-container>
             </mat-menu>
           </ng-container>
@@ -92,7 +92,7 @@
       <mat-card-content>
         <div class="no-record-found">
           <img src="assets/img/no-record.svg" alt="No Record Found">
-          <h1>No Record Found!</h1>
+          <h1>{{'formAction.noRecordFound' | translate}}</h1>
         </div>
       </mat-card-content>
     </mat-card>

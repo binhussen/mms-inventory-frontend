@@ -4,7 +4,7 @@ import { environment } from 'src/environments/environment';
 
 const baseApiUrl = environment.baseApiUrl;
 const dataSourceUrl = `${baseApiUrl}notifyheaders`;
-const actions: Array<Action> = [{ name: 'Edit', type: 'edit' }];
+const actions: Array<Action> = [{ name: 'createNew.edit', type: 'edit' }];
 
 const notifyItemsTableState: TableState = {
   id: 'notify items table',

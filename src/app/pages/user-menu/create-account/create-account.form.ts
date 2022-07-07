@@ -1,11 +1,11 @@
 import { Form } from 'src/app/mms-common/models/form';
 const userForm: Form = {
-  title: 'Create user Account',
+  title: 'createAccount.form.createuserAccount',
   elements: [
     {
       name: 'firstName',
       type: 'text',
-      placeholder: 'first name',
+      placeholder: 'createAccount.form.firstName',
       defaultValue: '',
       size: 5,
       validations: [{ type: 'required', value: true }],
@@ -13,7 +13,7 @@ const userForm: Form = {
     {
         name: 'lastName',
         type: 'text',
-        placeholder: 'last name',
+        placeholder: 'createAccount.form.lastName',
         defaultValue: '',
         size: 5,
         validations: [{ type: 'required', value: true }],
@@ -21,7 +21,7 @@ const userForm: Form = {
       {
         name: 'userName',
         type: 'text',
-        placeholder: 'user name',
+        placeholder: 'createAccount.form.userName',
         defaultValue: '',
         size: 5,
         validations: [{ type: 'required', value: true }],
@@ -29,7 +29,7 @@ const userForm: Form = {
     {
         name: 'password',
         type: 'text',
-        placeholder: 'password',
+        placeholder: 'createAccount.form.password',
         defaultValue: '',
         size: 5,
         validations: [{ type: 'required', value: true }],
@@ -37,7 +37,7 @@ const userForm: Form = {
       {
         name: 'picture',
         type: 'file',
-        placeholder: 'Profile Picture',
+        placeholder: 'createAccount.form.profilePicture',
         defaultValue: '',
       },
   ],

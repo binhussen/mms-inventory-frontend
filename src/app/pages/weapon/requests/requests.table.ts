@@ -5,13 +5,13 @@ import { environment } from 'src/environments/environment';
 const baseApiUrl = environment.baseApiUrl;
 const dataSourceUrl = `${baseApiUrl}requests`;
 const actions: Array<Action> = [
-  { name: 'Expand', type: 'expand', path: 'requests' },
-  { name: 'Edit', type: 'edit' },
+  { name: 'createNew.expand', type: 'expand', path: 'requests' },
+  { name: 'createNew.edit', type: 'edit' },
 ];
 
 const requestForWeaponTable: TableState = {
   id: 'request table',
-  title: 'List of weapons that have been requested',
+  title: 'requestForWeapon.listofweaponsthathavebeenrequested',
   pageNumber: 0,
   pageSize: 5,
   totalItems: 0,

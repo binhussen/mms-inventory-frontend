@@ -1,7 +1,7 @@
 import { Form } from 'src/app/mms-common/models/form';
 
 const distributeForm: Form = {
-  title: 'Distribute Form',
+  title: 'requestForWeapon.ditribute.distributeForm',
   elements: [{
           name: 'fpId',
           type: 'select',

@@ -6,22 +6,22 @@ import requestWeaponForm from './request-weapon.form';
 const baseApiUrl = environment.baseApiUrl;
 const dataSourceUrl = `${baseApiUrl}requestheaders`;
 const actions: Array<Action> = [
-  { name: 'Expand', type: 'expand', path: 'request-for-weapon' },
-  { name: 'Edit', type: 'edit' },
+  { name: 'createNew.expand', type: 'expand', path: 'request-for-weapon' },
+  { name: 'createNew.edit', type: 'edit' },
   {
-    name: 'Approve',type: 'approve',
+    name: 'createNew.approve',type: 'approve',
     form: requestWeaponForm.requestApprovalForm,
     submittedUrl: `${baseApiUrl}requestapprove/[id]`,
   },
   {
-    name: 'Distribute',type: 'distribute',
+    name: 'createNew.distribute',type: 'distribute',
     // path:'approves'
   }
 ];
 
 const requestForWeaponTable: TableState = {
   id: 'request table',
-  title: 'List of weapons that have been requested',
+  title: 'requestForWeapon.listofweaponsthathavebeenrequested',
   pageNumber: 0,
   pageSize: 5,
   totalItems: 0,
@@ -50,7 +50,7 @@ const requestForWeaponTable: TableState = {
 
 const requestItemsForWeaponTable: TableState = {
   id: 'request items table',
-  title: 'List of weapons items that are in the request',
+  title: 'requestForWeapon.listofweaponsthathavebeenrequested',
   pageNumber: 0,
   pageSize: 5,
   totalItems: 0,

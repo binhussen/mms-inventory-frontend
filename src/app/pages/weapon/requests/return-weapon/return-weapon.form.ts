@@ -1,7 +1,7 @@
 import { Form } from 'src/app/mms-common/models/form';
 
 const requestForReturningWeaponForm: Form = {
-  title: 'Request For Returning Weapon',
+  title: 'requestForReturningWeapon.form.requestForReturningWeapon',
   elements: [
     {
       name: 'returnWeaponsItems',

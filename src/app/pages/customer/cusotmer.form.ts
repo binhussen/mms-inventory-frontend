@@ -1,11 +1,11 @@
 import { Form } from 'src/app/mms-common/models/form';
 const customerForm: Form = {
-  title: 'Register Warranty',
+  title: 'customer.form.registerWarranty',
   elements: [
     {
       name: 'name',
       type: 'text',
-      placeholder: 'name',
+      placeholder: 'customer.form.name',
       defaultValue: '',
       size: 3,
       validations: [{ type: 'required', value: true }],
@@ -13,7 +13,7 @@ const customerForm: Form = {
     {
       name: 'region',
       type: 'text',
-      placeholder: 'Region',
+      placeholder: 'customer.form.region',
       defaultValue: '',
       size: 3,
       validations: [{ type: 'required', value: true }],
@@ -21,7 +21,7 @@ const customerForm: Form = {
     {
       name: 'subCity',
       type: 'text',
-      placeholder: 'Sub City',
+      placeholder: 'customer.form.subCity',
       defaultValue: '',
       size: 3,
       validations: [{ type: 'required', value: true }],
@@ -29,7 +29,7 @@ const customerForm: Form = {
   {
       name: 'woreda',
       type: 'text',
-      placeholder: 'Woreda',
+      placeholder: 'customer.form.woreda',
       defaultValue: '',
       size: 3,
       validations: [{ type: 'required', value: true }],
@@ -37,7 +37,7 @@ const customerForm: Form = {
     {
       name: 'sex',
       type: 'select',
-      placeholder: 'sex',
+      placeholder: 'customer.form.sex',
       defaultValue: '',
       size: 3,
       options: [
@@ -49,7 +49,7 @@ const customerForm: Form = {
     {
       name: 'phoneNumber',
       type: 'text',
-      placeholder: 'Phone Number',
+      placeholder: 'customer.form.phoneNumber',
       defaultValue: '',
       size: 3,
       validations: [{ type: 'required', value: true }],
@@ -57,7 +57,7 @@ const customerForm: Form = {
     {
       name: 'birthPlace',
       type: 'text',
-      placeholder: 'Birth Place',
+      placeholder: 'customer.form.birthPlace',
       defaultValue: '',
       size: 3,
       validations: [{ type: 'required', value: true }],
@@ -65,7 +65,7 @@ const customerForm: Form = {
     {
       name: 'birthDate',
       type: 'date',
-      placeholder: 'Birth Date',
+      placeholder: 'customer.form.birthDate',
       defaultValue: '',
       size: 3,
       validations: [{ type: 'required', value: true }],
@@ -73,7 +73,7 @@ const customerForm: Form = {
   {
       name: 'occupation',
       type: 'text',
-      placeholder: 'Occupation',
+      placeholder: 'customer.form.occupation',
       defaultValue: '',
       size: 3,
       validations: [{ type: 'required', value: true }],
@@ -81,7 +81,7 @@ const customerForm: Form = {
     {
       name: 'homeNumber',
       type: 'text',
-      placeholder: 'Home Number',
+      placeholder: 'customer.form.homeNumber',
       defaultValue: '',
       size: 3,
       validations: [{ type: 'required', value: true }],
@@ -89,7 +89,7 @@ const customerForm: Form = {
 {
   name: 'timeLimit',
   type: 'date',
-  placeholder: 'Time Limit',
+  placeholder: 'customer.form.timeLimit',
   defaultValue: '',
   size: 3,
   validations: [{ type: 'required', value: true }],
@@ -97,13 +97,13 @@ const customerForm: Form = {
     {
       name: 'customerWarranties',
       type: 'formArray',
-      placeholder: 'Warrainter Information',
+      placeholder: 'customer.customerWarranties.warrantierInformation',
       defaultValue: '',
       formArrayItems: [
     {
       name: 'warantiyname',
       type: 'text',
-      placeholder: 'Warrantier Name',
+      placeholder: 'customer.customerWarranties.warrantierName',
       defaultValue: '',
       size: 3,
       validations: [{ type: 'required', value: true }],
@@ -111,7 +111,7 @@ const customerForm: Form = {
     {
       name: 'warantiyAddress',
       type: 'text',
-      placeholder: 'Warrantier Address',
+      placeholder: 'customer.customerWarranties.warrantierAddress',
       defaultValue: '',
       size: 3,
       validations: [{ type: 'required', value: true }],
@@ -119,7 +119,7 @@ const customerForm: Form = {
     {
       name: 'warantiyRegion',
       type: 'text',
-      placeholder: 'Warrantier Region',
+      placeholder: 'customer.customerWarranties.warrantierRegion',
       defaultValue: '',
       size: 2,
       validations: [{ type: 'required', value: true }],
@@ -127,7 +127,7 @@ const customerForm: Form = {
   {
       name: 'warantiySubCity',
       type: 'text',
-      placeholder: 'Warrantier Sub City',
+      placeholder: 'customer.customerWarranties.warrantierSubCity',
       defaultValue: '',
       size: 2,
       validations: [{ type: 'required', value: true }],
@@ -135,7 +135,7 @@ const customerForm: Form = {
     {
       name: 'warantiyWoreda',
       type: 'text',
-      placeholder: 'Warrantier Woreda',
+      placeholder: 'customer.customerWarranties.warrantierWoreda',
       defaultValue: '',
       size: 2,
       validations: [{ type: 'required', value: true }],
@@ -147,12 +147,12 @@ const customerForm: Form = {
 };
 
 const warrantyForm: Form = {
-  title: 'Register Warranty',
+  title: 'customer.customerWarranties.warrantierInformation',
   elements: [
   {
     name: 'warantiyname',
     type: 'text',
-    placeholder: 'Warrantier Name',
+    placeholder: 'customer.customerWarranties.warrantierName',
     defaultValue: '',
     size: 2,
     validations: [{ type: 'required', value: true }],
@@ -160,7 +160,7 @@ const warrantyForm: Form = {
   {
     name: 'warantiyAddress',
     type: 'text',
-    placeholder: 'Warrantier Address',
+    placeholder: 'customer.customerWarranties.warrantierAddress',
     defaultValue: '',
     size: 2,
     validations: [{ type: 'required', value: true }],
@@ -168,7 +168,7 @@ const warrantyForm: Form = {
   {
     name: 'warantiyRegion',
     type: 'text',
-    placeholder: 'Warrantier Region',
+    placeholder: 'customer.customerWarranties.warrantierRegion',
     defaultValue: '',
     size: 2,
     validations: [{ type: 'required', value: true }],
@@ -176,7 +176,7 @@ const warrantyForm: Form = {
 {
     name: 'warantiySubCity',
     type: 'text',
-    placeholder: 'Warrantier Sub City',
+    placeholder: 'customer.customerWarranties.warrantierSubCity',
     defaultValue: '',
     size: 2,
     validations: [{ type: 'required', value: true }],
@@ -184,7 +184,7 @@ const warrantyForm: Form = {
   {
     name: 'warantiyWoreda',
     type: 'text',
-    placeholder: 'Warrantier Woreda',
+    placeholder: 'customer.customerWarranties.warrantierWoreda',
     defaultValue: '',
     size: 2,
     validations: [{ type: 'required', value: true }],

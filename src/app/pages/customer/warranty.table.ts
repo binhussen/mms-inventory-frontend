@@ -4,7 +4,7 @@ import { environment } from 'src/environments/environment';
 
 const baseApiUrl = environment.baseApiUrl;
 const dataSourceUrl = `${baseApiUrl}customers`;
-const actions: Array<Action> = [{ name: 'Edit', type: 'edit' }];
+const actions: Array<Action> = [{ name: 'createNew.edit', type: 'edit' }];
 
 const warrantyTableState: TableState = {
   id: 'warranty table',

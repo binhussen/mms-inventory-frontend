@@ -5,13 +5,13 @@ import { environment } from 'src/environments/environment';
 const baseApiUrl = environment.baseApiUrl;
 const dataSourceUrl = `${baseApiUrl}notifyheaders`;
 const actions: Array<Action> = [
-  { name: 'Expand', type: 'expand', path: 'notifyheaders' },
-  { name: 'Edit', type: 'edit' },
+  { name: 'createNew.expand', type: 'expand', path: 'notifyheaders' },
+  { name: 'createNew.edit', type: 'edit' },
 ];
 
 const notifyTableState: TableState = {
   id: 'notify table',
-  title: 'List of weapons that have been notified',
+  title: 'notifyItem.listofweaponsthathavebeennotified',
   pageNumber: 0,
   pageSize: 5,
   totalItems: 0,

@@ -1,7 +1,7 @@
 import { Form, FormElement } from 'src/app/mms-common/models/form';
 
 const requestForWeaponForm: Form = {
-  title: 'Request For Weapon',
+  title: 'requestForWeapon.form.requestForWeapon',
   elements: [
   //   {
   //   name: 'requestStatus',
@@ -12,7 +12,7 @@ const requestForWeaponForm: Form = {
   {
     name: 'description',
     type: 'text',
-    placeholder: 'Request Description',
+    placeholder: 'requestForWeapon.form.description',
     defaultValue: '',
     size: 12,
     validations: [{ type: 'required', value: true }],
@@ -20,19 +20,19 @@ const requestForWeaponForm: Form = {
   {
     name: 'attachments',
     type: 'file',
-    placeholder: 'Request Attachments',
+    placeholder: 'requestForWeapon.form.attachments',
     defaultValue: '',
   },
     {
       name: 'requestItems',
       type: 'formArray',
-      placeholder: 'Request Items',
+      placeholder: 'requestForWeapon.requestItemForWeapon.form.requestItems',
       defaultValue: '',
       formArrayItems: [
         {
           name: 'type',
           type: 'select',
-          placeholder: 'Weapon Type',
+          placeholder: 'requestForWeapon.form.type',
           defaultValue: '',
           size: 3,
           options: [
@@ -45,7 +45,7 @@ const requestForWeaponForm: Form = {
         {
           name: 'name',
           type: 'text',
-          placeholder: 'Weapon Name',
+          placeholder: 'requestForWeapon.form.name',
           defaultValue: '',
           size: 3,
           validations: [{ type: 'required', value: true }],
@@ -53,7 +53,7 @@ const requestForWeaponForm: Form = {
         {
           name: 'model',
           type: 'text',
-          placeholder: 'Weapon Model',
+          placeholder: 'requestForWeapon.form.model',
           defaultValue: '',
           size: 3,
           validations: [{ type: 'required', value: true }],
@@ -61,7 +61,7 @@ const requestForWeaponForm: Form = {
         {
           name: 'requestedQuantity',
           type: 'number',
-          placeholder: 'Quantity',
+          placeholder: 'requestForWeapon.form.quantity',
           defaultValue: '',
           size: 3,
           validations: [{ type: 'required', value: true }],
@@ -72,7 +72,7 @@ const requestForWeaponForm: Form = {
 };
 
 const requestItemForWeaponForm: Form = {
-  title: 'Request Item For Weapon',
+  title: 'requestForWeapon.requestItemForWeapon.form.requestItems',
   elements:
     (
       requestForWeaponForm.elements.find(
@@ -113,13 +113,13 @@ requestApprovalElements.push({
   defaultValue: '',
 });
 const requestApprovalForm:Form = {
-  title: 'Request Approval Form',
+  title: 'requestForWeapon.requestApprovalForm',
   // elements: requestApprovalElements,
   elements: [
     {
       name: 'status',
       type: 'select',
-      placeholder: 'Status',
+      placeholder: 'requestForWeapon.form.status',
       defaultValue: 'Pending',
       size: 6,
       options: [
@@ -132,7 +132,7 @@ const requestApprovalForm:Form = {
     {
       name: 'approvedQuantity',
       type: 'number',
-      placeholder: 'Approved Quantity',
+      placeholder: 'requestForWeapon.form.approvedQuantity',
       defaultValue: 0,
       size: 6,
       validations: [{ type: 'required', value: true }],
@@ -140,7 +140,7 @@ const requestApprovalForm:Form = {
     {
       name: 'attachments',
       type: 'file',
-      placeholder: 'Request Attachments',
+      placeholder: 'requestForWeapon.form.attachments',
       defaultValue: '',
     },
   ],

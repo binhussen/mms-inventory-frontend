@@ -16,202 +16,215 @@
             "text2": "በሰብዓዊነት ማገልገል"
         }
     },
-
     "userMenu": {
         "profile": "መገለጫ",
         "setting": "ቅንብር",
         "help": "እርዳታ",
         "logout": "ዉጣ"
-      },
-  
-      "formAction": {
-          "createNew": "አዲስ ፍጠር",
-          "noRecordFound": "ምንም መዝገብ አልተገኘም!",
-          "no": "ተ.ቁ"
-        },
-
+    },
+    "formAction": {
+        "createNew": "አዲስ ፍጠር",
+        "noRecordFound": "ምንም መዝገብ አልተገኘም!",
+        "no": "ተ.ቁ",
+        "report": "ሪፖርት"
+    },
     "menus": {
         "dashboard": "ዳሽ ቦርድ",
         "weapon": "የጦር መሳሪያ",
         "notifyWeapon": "የጦር መሳሪያ ማሰወቅ",
         "inventory": "የጦር መሳሪያ መከማቻ",
         "request": "የጦር መሳሪያ መጠየቅ",
-        "reportDamages":"የሚወገዱ ጦር መሳሪያዎች",
-        "userManagement":"የተጠቃሚ አስተዳደር",
-        "customer":"ከተቆሙ የሚታጠቁ ደንበኞች"
-
+        "reportDamages": "የሚወገዱ ጦር መሳሪያዎች",
+        "userManagement": "የተጠቃሚ አስተዳደር",
+        "customer": "ከተቆሙ የሚታጠቁ ደንበኞች"
     },
-    
-        "createNew":{
-            "expand": "ተጨማሪ /ዝርዝር",
-            "edit":"ማሻሻል",
-            "create": "ጨምር",
-            "update": "በሌላ ለመተካት",
-            "cancel": "ውጣ"           
-        },
-
-    
-
+    "createNew": {
+        "expand": "ተጨማሪ /ዝርዝር",
+        "edit": "አሻሽል",
+        "create": "መዝግብ",
+        "update": "ቀይር",
+        "cancel": "አቋርጥ",
+        "add": "ጨምር",
+        "delete": "ሰርዝ",
+        "approve": "ማጽደቅ",
+        "warranties": "ተያዠ",
+        "distribute":"ማሰራጨት"
+    },
+    "fileUpload": {
+        "dragDropyourfileshere": "ፋይሎችህን ጎትት እና እዚህ ጣል",
+        "or": "ወይስ",
+        "browseFiles": "ፋይሎችን ከ ዲስክ ፋሊጎ ያስሱ",
+        "uploadedFiles": "የተጫና ፋይል",
+        "ethiopianFederalPoliceCommission": "የኢትዮጵያ ፌደራል ፖሊስ"
+    },
     "notifyItem": {
-    "listofweaponsthathavebeennotified": "ገቢ እንዲደረጉ የታዘዙ የጦር መሳሪያዎች ዝርዝር",        
+        "listofweaponsthathavebeennotified": "ገቢ እንዲደረጉ የታዘዙ የጦር መሳሪያዎች ዝርዝር",
         "form": {
             "weaponType": "የጦር መሳሪያው አይነት",
-            "options":{
-                "Weapon": "የጦር መሣሪያ",
-                "Bullet" :"ጥይት",
-                "Other":"ሌላ"
-            },
             "weaponName": "የጦር መሳሪያ ስም",
-            "quantity" :"ብዛት"
+            "quantity": "ብዛት"
         }
     },
     "notifyWeapon": {
         "form": {
-        "notifyItems": "አዲስ የሚገቡ እቃዎች ዝርዝር",
-        "weaponType": "የጦር መሳሪያው አይነት",
-        "options":{
-            "Weapon": "የጦር መሣሪያ",
-            "Bullet" :"ጥይት",
-            "Other":"ሌላ"
-        },
-        "weaponName": "የጦር መሳሪያ ስም",
-        "quantity": "ብዛት",        
-        "weaponDescription":"መግለጫ",
-        "attachments": "አባሪ ዶኩሜንት"
-        }
-    },
-
-    
-    "requestForWeapon": {  
-        "listofweaponsthathavebeenrequested": "የተጥየቁ እቃዎች/መሳሪያዎች ዝርዝር",
-        "listofweaponsthathavebeenrequestedtobereturned": "ሊመለሱ የተጥየቁ እቃዎች ዝርዝር",
-        "tabs":{
-            "requestForWeapon": "የጦር መሳሪያ መጠየቅ", 
-            "requestForReturnWeapon": "የጦር መሳሪያን ለመመለስ መጠየቅ"          
-        },       
-        "form": {
-            "requestItems": "የተጠየቁ አይነት",
-            "type": "የእቃው አይነት",
-                "options":{
-                    "Weapon": "የጦር መሣሪያ",
-                    "Bullet" :"ጥይት",
-                    "Other":"ሌላ"
-                },
-                "name": "የእቃው ስም",
-                "quantity" :"ብዛት",
-            "requestStatus": "መጠይቁ ያለበት ሁኔታ",
-            "description": "መግለጫ",
-            "attachments": "አባሪ ዶኩሜንት"
-        },
-
-    "requestItemForWeapon": {
-        "form": {
-            "type": "የእቃው አይነት",
-            "options":{
-                "Weapon": "የጦር መሣሪያ",
-                "Bullet" :"ጥይት",
-                "Other":"ሌላ"
-            },
-            "name": "የእቃው ስም",
-            "quantity" :"ብዛት"
-       }
-    },   
-    
-    "requestForReturningWeapon": {
-        "form":{
-           "returnItems" : "የሚመለሱ እቃዎች ዝርዝር",
-           "type": "የእቃው አይነት",
-                "options":{
-                    "Weapon": "የጦር መሣሪያ",
-                    "Bullet" :"ጥይት",
-                    "Other":"ሌላ"
-                },
-            "name": "የእቃው ስም",
-            "Quantity" :"ብዛት",
-            "returnStatus": "የተመላሽ እቃው ሁኔታ",
-            "description": "መግለጫ",
-            "attachments": "አባሪ ዶኩሜንት"
-        }
-    },    
-        "requestApprovalForm": "የማጽደቅ መጠየቅያ ቅጽ",
-        "insertWeaponstostore": "የጦር መሳሪያዎች ወደ መከማቻ አስገባ",
-        "requestForWeapons": "የጦር መሳሪያ ጠይቅ",        
-        "viewApprovedRequest": "የተጸደቁ ጥያቄ ይመልከቱ"
-},  
-
-        "Inventory": { 
-            "listOfRecordsInInventory": "ማጠራቀሚያው ላይ ያሉ እቃዎች ዝርዝር",
-            "tabs":{
-                "insertWeaopn": "የጦር መሳሪያ አስገባ", 
-                "viewWeapon": "ያሉ መሳሪያዎችን እይ",
-                "distributeWeapon": "የጦር መሳሪያ አሰራጭ" 
-            }, 
-            
-            "insertWeaopn":{
-            "form": {
-                "itemNoInExpenditureRegister": "ዋገዉ በገንዘብ ወጪ መዝገብ የሳረንበት ተራ ቁጥር",
-                "noOfEntryInTheRegisterOfIncomingGoods": "በእቃ ገቢ መዝገብ የገባበት ንምራ ",
-                 "donor": "የአስረካቢው ስም",
-                 "weaponItems": "የመሳሪያ አይነቶች",
-                 "weaponItemDescription": "መግለጫ",
-                 "weaponModel": "ሞዴል",
-                 "weaponSerialNo": "ሴሪ",
-                 "weaponQuantity": "ብዛት",
-                 "weaponUnitPrice": "የአንዱ ዋጋ",
-                 "weaponTotalPrice": "የዋጋ ድምር",
-                 "storeNo": "እቃዉ የሚቀመጥበት መጋዛን ቁጥር",
-                 "shelfNo": "የመደርደሪያዉ ቁጥር"
-            }  
-        }      
-        },
-       
-        "distributeWeapon": {
-            "form": {
-                "weaponItems": "የመሳሪያ አይነቶች",
-                "weaponItemDescription": "መግለጫ",
-                 "weaponModel": "ሞዴል",
-                 "weaponSerialNo": "ሴሪ",
-                 "weaponQuantity": "ብዛት",
-                 "weaponUnitPrice": "የአንዱ ዋጋ",
-                 "weaponTotalPrice": "የዋጋ ድምር",
-                 "storeNo": "እቃዉ የሚቀመጥበት መጋዛን ቁጥር",
-                 "shelfNo": "የመደርደሪያዉ ቁጥር" 
-            }           
-        },       
-
-    "dashboard": {
-      "dashboard": "ዳሽ ቦርድ"
-    },
-
-    "damagesItem": {  
-        "listofdamagedweapons": "የተወገዱ እቃዎች ዝርዝር",     
-        "form": {
+            "notifyItems": "አዲስ የሚገቡ እቃዎች ዝርዝር",
             "weaponType": "የጦር መሳሪያው አይነት",
-            "options":{
-                "Weapon": "የጦር መሣሪያ",
-                "Bullet" :"ጥይት",
-                "Other":"ሌላ"
-            },
-            "weaponName": "የጦር መሳሪያ ስም",
-            "quantity" :"ብዛት"
-        },
-    
-        "damagesWeapon": {
-            "form": {
-            "damagesItems": "የሚወገዱ እቃዎች ዝርዝር",
-            "weaponType": "የጦር መሳሪያው አይነት",
-            "options":{
-                "Weapon": "የጦር መሣሪያ",
-                "Bullet" :"ጥይት",
-                "Other":"ሌላ"
-            },
             "weaponName": "የጦር መሳሪያ ስም",
             "quantity": "ብዛት",
-            "reason": "እቃው የሚወገድበት ምክንያት",
-            "weaponDescription":"መግለጫ",
-            "attachments": "አባሪ ዶኩሜንት"
+            "weaponDescription": "መግለጫ",
+            "attachments": "አባሪ ዶኩሜንት",
+            "type": "የእቃው አይነት",
+            "name": "የእቃው ስም"
+        }
+    },
+    "requestForWeapon": {
+        "listofweaponsthathavebeenrequested": "የተጥየቁ እቃዎች/መሳሪያዎች ዝርዝር",
+        "listofweaponsthathavebeenrequestedtobereturned": "ሊመለሱ የተጥየቁ እቃዎች ዝርዝር",
+        "listofApprovedforDistribution":"ለስርጭት የተፈቀደላቸው የጦ መሰሪያ ዝርዝር",
+        "tabs": {
+            "requestForWeapon": "የጦር መሳሪያ መጠየቅ",
+            "requestForReturnWeapon": "የጦር መሳሪያን ለመመለስ መጠየቅ"
+        },
+        "form": {
+            "requestForWeapon": "የጦር መሳሪያ መጠየቅያ ቅጽ",
+            "type": "የእቃው አይነት",
+            "requestStatus": "መጠይቁ ያለበት ሁኔታ",
+            "description": "መግለጫ",
+            "attachments": "አባሪ ዶኩሜንት",
+            "name": "የእቃው ስም",
+            "model": "ሞዴል",
+            "quantity": "ብዛት",
+            "status":"የጥያቄው ሁኔታ",
+            "approvedQuantity":"የተጽደቀዉ ቢዛት"
+        },
+        "requestItemForWeapon": {
+            "form": {
+                "requestItems": "የተጠየቁ አይነት",
+                "type": "የእቃው አይነት",
+                "name": "የእቃው ስም",
+                "model": "ሞዴል",
+                "quantity": "ብዛት"
+            }
+        },
+        "requestForReturningWeapon": {
+            "form": {
+                "requestForReturningWeapon":"የጦር መሰሪያ ለመመለስ መጠየቅያ ቅጽ",
+                "returnItems": "የሚመለሱ እቃዎች አይነት",
+                "type": "የእቃው አይነት",
+                "name": "የእቃው ስም",
+                "quantity": "ብዛት",
+                "returnStatus": "የተመላሽ እቃው ሁኔታ",
+                "description": "መግለጫ",
+                "attachments": "አባሪ ዶኩሜንት"
+            }
+        },
+        "requestApprovalForm": "ለማጽደቅ መጠየቅያ ቅጽ",
+        "insertWeaponstostore": "የጦር መሳሪያዎች ወደ መከማቻ አስገባ",
+        "requestForWeapons": "የጦር መሳሪያ ጠይቅ",
+        "viewApprovedRequest": "የተጸደቁ ጥያቄ ይመልከቱ",
+        "ditribute": {
+            "distributeForm":"የጦር መሰሪያ ማሰራጫ ቅጽ"
+            }
+    },
+    "inventory": {
+        "listOfRecordsInInventory": "ማጠራቀሚያው ላይ ያሉ እቃዎች ዝርዝር",
+        "listofweaponsinarecord": "በመጠረቀሚያ ውስጢ ያሉ የጦር መሳሪያ ዝርዝር",
+        "inventoryList": "መገዝን ውስጥ የሉ የጦር መሰሪያ ዝርዝር",
+        "tabs": {
+            "insertWeapon": "የጦር መሳሪያ አስገባ",
+            "viewWeapon": "ያሉ መሳሪያዎችን እይ",
+            "distributeWeapon": "የጦር መሳሪያ አሰራጭ"
+        },
+        "insertWeapon": {
+            "form": {
+                "inventory": "የጦር መሳሪያ መከማቻ ቅጽ/ሞዴል 19",
+                "itemNoInExpenditureRegister": "ዋገዉ በገንዘብ ወጪ መዝገብ የሳረንበት ተራ ቁጥር",
+                "noOfEntryInTheRegisterOfIncomingGoods": "በእቃ ገቢ መዝገብ የገባበት ንምራ ",
+                "donor": "የአስረካቢው ስም",
+                "weaponItems": "የመሳሪያ አይነቶች",
+                "weaponType": "የጦር መሳሪያው አይነት",
+                "weaponItemDescription": "መግለጫ",
+                "weaponModel": "ሞዴል",
+                "weaponSerialNo": "ሴሪ",
+                "weaponQuantity": "ብዛት",
+                "weaponUnitPrice": "የአንዱ ዋጋ",
+                "weaponTotalPrice": "የዋጋ ድምር",
+                "storeNo": "እቃዉ የሚቀመጥበት መጋዛን ቁጥር",
+                "shelfNo": "የመደርደሪያዉ ቁጥር"
             }
         }
+    },
+    "distributeWeapon": {
+        "distributeWeapon": "የጦር መሳሪያ መከፋፈያ ቅጽ/ ሞዴል 22",
+        "form": {
+            "weaponItems": "የመሳሪያ አይነቶች",
+            "weaponItemDescription": "መግለጫ",
+            "weaponModel": "ሞዴል",
+            "weaponSerialNo": "ሴሪ",
+            "weaponQuantity": "ብዛት",
+            "weaponUnitPrice": "የአንዱ ዋጋ",
+            "weaponTotalPrice": "የዋጋ ድምር",
+            "storeNo": "እቃዉ የሚቀመጥበት መጋዛን ቁጥር",
+            "shelfNo": "የመደርደሪያዉ ቁጥር"
+        }
+    },
+    "dashboard": {
+        "dashboard": "ዳሽ ቦርድ",
+        "Board": "ሰሌዳ"
+    },
+    "damagesItem": {
+        "listofdamagedweapons": "የተወገዱ እቃዎች ዝርዝር",
+        "form": {
+            "weaponType": "የጦር መሳሪያው አይነት",
+            "weaponName": "የጦር መሳሪያ ስም",
+            "quantity": "ብዛት"
+        },
+        "damagesWeapon": {
+            "form": {
+                "damagesItems": "የሚወገዱ እቃዎች ዝርዝር",
+                "weaponType": "የጦር መሳሪያው አይነት",
+                "weaponName": "የጦር መሳሪያ ስም",
+                "quantity": "ብዛት",
+                "reason": "እቃው የሚወገድበት ምክንያት",
+                "weaponDescription": "መግለጫ",
+                "attachments": "አባሪ ዶኩሜንት"
+            }
+        }
+    },
+    "customer": {
+        "listofOrganizationscustomer": "ከተቋሙ የሚታጠቁ ደንበኞች ዝርዝር",
+        "form": {
+            "registerWarranty": "የደንበኞች መመዝገቢያ ቅጽ",
+            "name": "ስም",
+            "region": "ክልል",
+            "subCity": "ክፍለ ከተማ",
+            "woreda": "ወረዳ",
+            "sex": "ጾታ",
+            "phoneNumber": "ስልክ ቁጥር",
+            "birthPlace": "የትውልድ ቦታ",
+            "birthDate": "የትውልድ ቀን",
+            "occupation": "ስራ",
+            "homeNumber": "የቤት ቁጥር",
+            "timeLimit": "የጊዜ ገደብ"
+        },
+        "customerWarranties": {
+            "warrantierInformation": "የተያዥ መረጃ",
+            "warrantierName": "የተያዥ ስም",
+            "warrantierAddress": "የተያዥ አዲራሻ",
+            "warrantierRegion": "የተያዥ ክልል",
+            "warrantierSubCity": "የተያዥ ክፍለ ከተማ",
+            "warrantierWoreda": "የተያዥ ወረዳ"
+        }
+    },
+    "createAccount": {
+        "listofsystemuser": "የሲስተሙ ተጠቃሚዎች ዝርዝር",
+        "form": {
+            "createuserAccount": "የሲስተሙ ተጠቃሚ አከውንት መፍጠሪያ ቅጽ",
+            "firstName": "የመጀመራ ስም",
+            "lastName": "የአባት ስም",
+            "userName": "የተጠቃሚው ስም",
+            "password": "የይላፍ ቃል",
+            "profilePicture": "የተጠቃሚ መግለጫ ፎቶ"
+        }
     }
- }
- 
+}

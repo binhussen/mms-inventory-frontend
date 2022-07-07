@@ -2,9 +2,9 @@ const inventoryPageTabs = {
   type: 'tabbed page',
   title: 'Inventory',
   tabs: [
-    { title: 'Insert Weapon', route: 'insert-weapon' },
-    { title: 'View Weapon', route: 'view-weapon-inventory' },
-    { title: 'Distribute Weapon', route: 'distribute-weapon' },
+    { title: 'inventory.tabs.insertWeapon' , route: 'insert-weapon' },
+    { title: 'inventory.tabs.viewWeapon', route: 'view-weapon-inventory' },
+    { title: 'inventory.tabs.distributeWeapon', route: 'distribute-weapon' },
   ],
 };
 
