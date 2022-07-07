@@ -78,8 +78,8 @@
         }
     },
     "requestForWeapon": {
-        "listofweaponsthathavebeenrequested": "የተጥየቁ እቃዎች/መሳሪያዎች ዝርዝር",
-        "listofweaponsthathavebeenrequestedtobereturned": "ሊመለሱ የተጥየቁ እቃዎች ዝርዝር",
+        "listofweaponsthathavebeenrequested": "የተጠየቁ መሳሪያዎች ዝርዝር",
+        "listofweaponsthathavebeenrequestedtobereturned": "ሊመለሱ የተጠየቁ እቃዎች ዝርዝር",
         "listofApprovedforDistribution":"ለስርጭት የተፈቀደላቸው የጦ መሰሪያ ዝርዝር",
         "tabs": {
             "requestForWeapon": "የጦር መሳሪያ መጠየቅ",

@@ -1,8 +1,9 @@
 import { Action } from 'src/app/mms-common/organisms/table/table.component';
 import { TableState } from 'src/app/store/models/table.state';
+import { environment } from 'src/environments/environment';
 
-const baseApiUrl = 'http://localhost:3000';
-const dataSourceUrl = `${baseApiUrl}/returnWeapons`;
+const baseApiUrl = environment.baseApiUrl;
+const dataSourceUrl = `${baseApiUrl}returnheaders`;
 const actions: Array<Action> = [
   { name: 'createNew.expand', type: 'expand', path: 'request-for-return-weapon' },
   { name: 'createNew.edit', type: 'edit' },
