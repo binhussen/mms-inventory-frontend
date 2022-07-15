@@ -52,7 +52,7 @@
             <span *ngIf="column.columnDef !='attachments'">{{ column.columnDef === 'date' ? (column.cell(row) | date) :  column.cell(row)}}</span>
           </ng-container>
     
-          <ng-container *ngIf="!column.cell(row) && column.columnDef == 'formAction.no'">
+          <ng-container *ngIf="!column.cell(row) && column.columnDef == 'No'">
             {{(i + 1)}}
           </ng-container>
           <div class="hidedata">
