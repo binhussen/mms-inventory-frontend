@@ -1,0 +1,63 @@
+<mat-stepper linear>
+  <mat-step label="Firearm Receiver Registration" [editable]="false">
+    <ng-template matStepLabel style="margin-bottom: 24px">{{
+      "userRegistrationForm.title"
+    }}</ng-template>
+
+    <mat-dialog-content>
+      <br />
+      <app-form #userRegistration (onFormSubmit)="onSubmit($event)"></app-form>
+    </mat-dialog-content>
+
+    <mat-dialog-actions class="actions">
+      <button
+        mat-button
+        (click)="userRegistration.submit()"
+        [disabled]="userRegistration.mmsForm.invalid"
+      >
+        Next
+      </button>
+      <button
+        mat-button
+        color="warn"
+        type="button"
+        mat-dialog-close
+        tabindex="1"
+      >
+        Cancel
+      </button>
+    </mat-dialog-actions>
+  </mat-step>
+  <mat-step label="Distribute Form" [editable]="false">
+    <ng-template matStepLabel style="margin-bottom: 24px">{{
+      "distributeForm.title"
+    }}</ng-template>
+
+    <mat-dialog-content>
+      <br />
+      <app-form
+        #distributeFormRegistration
+        (onFormSubmit)="onSubmit($event)"
+      ></app-form>
+    </mat-dialog-content>
+
+    <mat-dialog-actions class="actions">
+      <button
+        mat-button
+        [disabled]="distributeFormRegistration.mmsForm.invalid"
+        (click)="distributeFormRegistration.submit()"
+      >
+        Finish
+      </button>
+      <button
+        mat-button
+        color="warn"
+        type="button"
+        mat-dialog-close
+        tabindex="1"
+      >
+        Cancel
+      </button>
+    </mat-dialog-actions>
+  </mat-step>
+</mat-stepper>
