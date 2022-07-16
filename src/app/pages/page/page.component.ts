@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { of, Subscription } from 'rxjs';
 import { distinctUntilChanged, map, mergeMap, tap } from 'rxjs/operators';
+import { TableService } from 'src/app/mms-common/organisms/table/table.service';
 import tableActions from 'src/app/store/actions/table.actions';
 import { AppState } from 'src/app/store/models/app.state';
 
@@ -19,7 +20,8 @@ export class PageComponent implements OnInit, OnDestroy {
     public activatedRoute: ActivatedRoute,
     private store$: Store<AppState>,
     private titleService: Title,
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private tableService: TableService
   ) {}
 
   ngOnInit(): void {
@@ -29,9 +31,28 @@ export class PageComponent implements OnInit, OnDestroy {
         mergeMap((data) => {
           console.log(data);
 
-          this.activatedRoute.snapshot.params.id?
-          data.table.links.getPath = `${data.table.links.getPath}/${this.activatedRoute.snapshot.params.id}`:data.table.links.getPath;
-          
+          this.tableService
+            .fetchData(0, 5, 'http://localhost:5000/api/hrs')
+            .pipe(
+              map((response) => {
+                data.form.elements.map((val: any) => {
+                  if (val.name == 'hrId') {
+                    response.data.map((opt) => {
+                      val.options = [
+                        ...val.options,
+                        { value: opt.id, label: opt.fpId },
+                      ];
+                    });
+                  }
+                });
+              })
+            )
+            .subscribe();
+
+          this.activatedRoute.snapshot.params.id
+            ? (data.table.links.getPath = `${data.table.links.getPath}/${this.activatedRoute.snapshot.params.id}`)
+            : data.table.links.getPath;
+
           this.titleService.setTitle(data.title ?? 'MMS - MMS');
           this.store$.dispatch(
             tableActions.setTableState({ value: data.table })
