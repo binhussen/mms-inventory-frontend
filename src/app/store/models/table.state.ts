@@ -25,5 +25,5 @@ export interface TableState {
   childOf?: {
     [key: string]: number;
   };
-  path?:string;
+  path?: string;
 }

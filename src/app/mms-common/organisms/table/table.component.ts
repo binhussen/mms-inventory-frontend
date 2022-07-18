@@ -156,8 +156,7 @@ export class TableComponent implements OnInit, AfterViewInit {
           'Save',
           action.form ?? this.form,
           action.submittedUrl ?? '',
-          action.type,
-          row.id
+          action.type
         );
         break;
       case 'reject':
