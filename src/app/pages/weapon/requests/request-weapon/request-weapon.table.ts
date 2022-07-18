@@ -9,14 +9,16 @@ const actions: Array<Action> = [
   { name: 'createNew.expand', type: 'expand', path: 'request-for-weapon' },
   { name: 'createNew.edit', type: 'edit' },
   {
-    name: 'createNew.approve',type: 'approve',
+    name: 'createNew.approve',
+    type: 'approve',
     form: requestWeaponForm.requestApprovalForm,
     submittedUrl: `${baseApiUrl}requestapprove/[id]`,
   },
   {
-    name: 'createNew.distribute',type: 'distribute',
+    name: 'createNew.distribute',
+    type: 'distribute',
     // path:'approves'
-  }
+  },
 ];
 
 const requestForWeaponTable: TableState = {
@@ -33,19 +35,7 @@ const requestForWeaponTable: TableState = {
     updatePath: `${dataSourceUrl}/[id]`,
     deletePath: `${dataSourceUrl}/[id]`,
   },
-  actions:actions.slice(0, 2),
-  // relations: [
-  //   {
-  //     type: 'requestWeaponItems',
-  //     links: {
-  //       getPath: `${baseApiUrl}/requestWeaponItems?requestWeaponsId=[id]`,
-  //       createPath: `${baseApiUrl}/requestWeaponItems`,
-  //       updatePath: `${baseApiUrl}/requestWeaponItems/[id]`,
-  //       deletePath: `${baseApiUrl}/requestWeaponItems/[id]`,
-  //     },
-  //     relationType: 'many',
-  //   },
-  // ],
+  actions: actions.slice(0, 2),
 };
 
 const requestItemsForWeaponTable: TableState = {
@@ -62,8 +52,8 @@ const requestItemsForWeaponTable: TableState = {
     updatePath: `${dataSourceUrl}/[id]`,
     deletePath: `${dataSourceUrl}/[id]`,
   },
-  actions : actions.slice(1),
-  path:"items",
+  actions: actions.slice(1),
+  path: 'items',
   relations: [],
   childOf: {
     requestWeaponsId: 0,

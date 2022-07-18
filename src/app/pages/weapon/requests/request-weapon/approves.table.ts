@@ -4,13 +4,6 @@ import { environment } from 'src/environments/environment';
 
 const baseApiUrl = environment.baseApiUrl;
 const dataSourceUrl = `${baseApiUrl}approves`;
-const actions: Array<Action> = [
-  {
-    name: 'createNew.distribute',type: 'distribute',
-    // form: requestWeaponForm.requestApprovalForm,
-    // submittedUrl: `${baseApiUrl}requestapprove/[id]`,
-  }
-];
 const approvedTable: TableState = {
   id: 'approved requests table',
   title: 'requestForWeapon.listofApprovedforDistribution',
@@ -25,7 +18,6 @@ const approvedTable: TableState = {
     updatePath: `${dataSourceUrl}/[id]`,
     deletePath: `${dataSourceUrl}/[id]`,
   },
-  actions
 };
 
-export default  approvedTable;
+export default approvedTable;

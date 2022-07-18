@@ -105,7 +105,6 @@ export class TableComponent implements OnInit, AfterViewInit {
   }
   command(action: Action, row: any, link?: string) {
     switch (action.type) {
-      
       case 'create':
         this.openDialog(
           'createNew.create',
@@ -152,48 +151,46 @@ export class TableComponent implements OnInit, AfterViewInit {
       //     });
       //   break;
       case 'approve':
-          // approve
-          this.openDialog(
-            'Save',
-            action.form??this.form,
-            action.submittedUrl ?? '',
-            action.type,
-            row.id
-          );
-          break;
-        case 'reject':
-          // reject
-          const f = {
-            value: {
-              id: row.id,
-              submittedToUrl: action.path,
-              action: action.type,
-            },
-          };
-          this.store$.dispatch(formActions.setRejectingForm(f));
-          break;
-        case 'distribute':
-          this.router.navigate([`${this.router.url}/approves/${row['id']}`]);
+        // approve
+        this.openDialog(
+          'Save',
+          action.form ?? this.form,
+          action.submittedUrl ?? '',
+          action.type
+        );
+        break;
+      case 'reject':
+        // reject
+        const f = {
+          value: {
+            id: row.id,
+            submittedToUrl: action.path,
+            action: action.type,
+          },
+        };
+        this.store$.dispatch(formActions.setRejectingForm(f));
+        break;
+      case 'distribute':
+        this.router.navigate([`${this.router.url}/approves/${row['id']}`]);
         break;
       default:
         console.log('unknown action');
     }
   }
   //////////////////
-generateReport(){
-  let reportLogo = document.getElementById('logo')!.innerHTML;
-  let reportTitle = document.getElementById('tableTitle')!.innerHTML;
-  let reportedTable = document.getElementById('tableid')!.innerHTML;
-  let originalContents = document.body.innerHTML;
-  if(reportLogo!=null && reportedTable!=null && reportTitle!=null){
-    let contents =reportLogo +reportTitle + reportedTable;
-  document.body.innerHTML= contents;
-
+  generateReport() {
+    let reportLogo = document.getElementById('logo')!.innerHTML;
+    let reportTitle = document.getElementById('tableTitle')!.innerHTML;
+    let reportedTable = document.getElementById('tableId')!.innerHTML;
+    let originalContents = document.body.innerHTML;
+    if (reportLogo != null && reportedTable != null && reportTitle != null) {
+      let contents = reportLogo + reportTitle + reportedTable;
+      document.body.innerHTML = contents;
+    }
+    window.print();
+    document.body.innerHTML = originalContents;
   }
-  window.print();
-  document.body.innerHTML = originalContents;
-}
-////////////////////////////////
+  ////////////////////////////////
 
   initTable(state$: Observable<TableState>, currentSize?: number) {
     return this.store$.select(tableSelectors.getTableState).pipe(

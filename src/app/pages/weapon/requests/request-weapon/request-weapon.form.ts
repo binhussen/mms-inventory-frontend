@@ -3,26 +3,35 @@ import { Form, FormElement } from 'src/app/mms-common/models/form';
 const requestForWeaponForm: Form = {
   title: 'requestForWeapon.form.requestForWeapon',
   elements: [
-  //   {
-  //   name: 'requestStatus',
-  //   type: 'hidden',
-  //   placeholder: 'Request Status',
-  //   defaultValue: 'PENDING',
-  // },
-  {
-    name: 'description',
-    type: 'text',
-    placeholder: 'requestForWeapon.form.description',
-    defaultValue: '',
-    size: 12,
-    validations: [{ type: 'required', value: true }],
-  },
-  {
-    name: 'attachments',
-    type: 'file',
-    placeholder: 'requestForWeapon.form.attachments',
-    defaultValue: '',
-  },
+    //   {
+    //   name: 'requestStatus',
+    //   type: 'hidden',
+    //   placeholder: 'Request Status',
+    //   defaultValue: 'PENDING',
+    // },
+    {
+      name: 'description',
+      type: 'text',
+      placeholder: 'requestForWeapon.form.description',
+      defaultValue: '',
+      size: 6,
+      validations: [{ type: 'required', value: true }],
+    },
+    {
+      name: 'hrId',
+      type: 'select',
+      placeholder: 'who is armed',
+      defaultValue: 'Please Select Employee',
+      size: 6,
+      options: [],
+      validations: [{ type: 'required', value: true }],
+    },
+    {
+      name: 'attachments',
+      type: 'file',
+      placeholder: 'requestForWeapon.form.attachments',
+      defaultValue: '',
+    },
     {
       name: 'requestItems',
       type: 'formArray',
@@ -112,7 +121,7 @@ requestApprovalElements.push({
   placeholder: 'Request Weapons Id',
   defaultValue: '',
 });
-const requestApprovalForm:Form = {
+const requestApprovalForm: Form = {
   title: 'requestForWeapon.requestApprovalForm',
   // elements: requestApprovalElements,
   elements: [
