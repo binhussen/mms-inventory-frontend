@@ -10,10 +10,7 @@
       </div>
       <div class="table-header-actions">
         <!-- ///////////////////////// -->
-        <button mat-button color="primary" (click)="generateReport()">
-          <mat-icon>print</mat-icon>
-          {{'formAction.report' | translate}}
-        </button>
+<input type="text" [(ngModel)]="searchKey" autocomplete="off" placeholder="search">
         <!-- ////////////////////////// -->
           <button mat-icon-button>
               <mat-icon>refresh</mat-icon>
@@ -52,7 +49,7 @@
             <span *ngIf="column.columnDef !='attachments'">{{ column.columnDef === 'date' ? (column.cell(row) | date) :  column.cell(row)}}</span>
           </ng-container>
     
-          <ng-container *ngIf="!column.cell(row) && column.columnDef == 'formAction.no'">
+          <ng-container *ngIf="!column.cell(row) && column.columnDef == 'No'">
             {{(i + 1)}}
           </ng-container>
           <div class="hidedata">
@@ -81,7 +78,10 @@
     </div>
   </ng-container>
   
-  
+  <button class="print" mat-button color="primary" (click)="generateReport()">
+    <mat-icon>print</mat-icon>
+    {{'formAction.report' | translate}}
+  </button>
   
   </ng-container>
   

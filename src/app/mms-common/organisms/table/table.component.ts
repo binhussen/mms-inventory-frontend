@@ -4,7 +4,11 @@ import {
   Component,
   Input,
   OnInit,
+  Output,
   ViewChild,
+  EventEmitter,
+  OnChanges,
+  SimpleChanges
 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { FormDialogComponent } from '../form-dialog/form-dialog.component';
@@ -56,6 +60,7 @@ export class TableComponent implements OnInit, AfterViewInit {
   routeForDetailPage!: string;
 
   loading = false;
+  searchKey !: string;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @Input() form!: Form;
@@ -66,7 +71,6 @@ export class TableComponent implements OnInit, AfterViewInit {
 
   tableState$!: Observable<TableState>;
   links!: any;
-
   constructor(
     public dialog: MatDialog,
     private router: Router,
@@ -74,12 +78,22 @@ export class TableComponent implements OnInit, AfterViewInit {
     public tableService: TableService,
     private changeDetectorRefs: ChangeDetectorRef,
     private httpClient: HttpClient
-  ) {}
+  ) { }
 
   async ngOnInit() {
     this.tableState$ = this.store$.select(tableSelectors.getTableState);
     await this.initTable(this.tableState$).toPromise();
+    console.log(this.searchKey)
   }
+
+  //search functionality
+  search(searchKey:string) {
+    console.log(searchKey)
+    this.dataSource.filter=this.searchKey.trim().toLocaleLowerCase();
+          }
+  // @Output()
+  // searchValue:EventEmitter<string>=new EventEmitter();
+
   openDialog(
     actionTitle: string,
     form: Form,
@@ -105,7 +119,7 @@ export class TableComponent implements OnInit, AfterViewInit {
   }
   command(action: Action, row: any, link?: string) {
     switch (action.type) {
-      
+
       case 'create':
         this.openDialog(
           'createNew.create',
@@ -152,48 +166,48 @@ export class TableComponent implements OnInit, AfterViewInit {
       //     });
       //   break;
       case 'approve':
-          // approve
-          this.openDialog(
-            'Save',
-            action.form??this.form,
-            action.submittedUrl ?? '',
-            action.type,
-            row.id
-          );
-          break;
-        case 'reject':
-          // reject
-          const f = {
-            value: {
-              id: row.id,
-              submittedToUrl: action.path,
-              action: action.type,
-            },
-          };
-          this.store$.dispatch(formActions.setRejectingForm(f));
-          break;
-        case 'distribute':
-          this.router.navigate([`${this.router.url}/approves/${row['id']}`]);
+        // approve
+        this.openDialog(
+          'Save',
+          action.form ?? this.form,
+          action.submittedUrl ?? '',
+          action.type,
+          row.id
+        );
+        break;
+      case 'reject':
+        // reject
+        const f = {
+          value: {
+            id: row.id,
+            submittedToUrl: action.path,
+            action: action.type,
+          },
+        };
+        this.store$.dispatch(formActions.setRejectingForm(f));
+        break;
+      case 'distribute':
+        this.router.navigate([`${this.router.url}/approves/${row['id']}`]);
         break;
       default:
         console.log('unknown action');
     }
   }
   //////////////////
-generateReport(){
-  let reportLogo = document.getElementById('logo')!.innerHTML;
-  let reportTitle = document.getElementById('tableTitle')!.innerHTML;
-  let reportedTable = document.getElementById('tableid')!.innerHTML;
-  let originalContents = document.body.innerHTML;
-  if(reportLogo!=null && reportedTable!=null && reportTitle!=null){
-    let contents =reportLogo +reportTitle + reportedTable;
-  document.body.innerHTML= contents;
+  generateReport() {
+    let reportLogo = document.getElementById('logo')!.innerHTML;
+    let reportTitle = document.getElementById('tableTitle')!.innerHTML;
+    let reportedTable = document.getElementById('tableid')!.innerHTML;
+    let originalContents = document.body.innerHTML;
+    if (reportLogo != null && reportedTable != null && reportTitle != null) {
+      let contents = reportLogo + reportTitle + reportedTable;
+      document.body.innerHTML = contents;
 
+    }
+    window.print();
+    document.body.innerHTML = originalContents;
   }
-  window.print();
-  document.body.innerHTML = originalContents;
-}
-////////////////////////////////
+  ////////////////////////////////
 
   initTable(state$: Observable<TableState>, currentSize?: number) {
     return this.store$.select(tableSelectors.getTableState).pipe(

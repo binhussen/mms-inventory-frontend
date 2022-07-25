@@ -36,7 +36,8 @@
         "request": "Request Weapon",
         "reportDamages": "report Damages",
         "userManagement": "User Managment",
-        "customer": "customers"
+        "customer": "customers",
+        "hrm": "hrm"
     },
     "createNew": {
         "expand": "Expand",
@@ -48,7 +49,7 @@
         "delete": "Delete",
         "approve": "Approve",
         "warranties": "Warranties",
-        "distribute":"Distribute"
+        "distribute": "Distribute"
     },
     "fileUpload": {
         "dragDropyourfileshere": "Drag & Drop your files here",
@@ -80,7 +81,7 @@
     "requestForWeapon": {
         "listofweaponsthathavebeenrequested": "List of weapons that have been requested",
         "listofweaponsthathavebeenrequestedtobereturned": "list of weapons that have been requested to be returned",
-        "listofApprovedforDistribution":"List of Approved for Distribution",
+        "listofApprovedforDistribution": "List of Approved for Distribution",
         "tabs": {
             "requestForWeapon": "Request For Weapon",
             "requestForReturnWeapon": "Request For Return Weapon"
@@ -94,8 +95,8 @@
             "attachments": "Attachments",
             "model": "Model",
             "quantity": "Quantity",
-            "status":"Status",
-            "approvedQuantity":"Approved Quantity"
+            "status": "Status",
+            "approvedQuantity": "Approved Quantity"
         },
         "requestItemForWeapon": {
             "form": {
@@ -108,7 +109,7 @@
         },
         "requestForReturningWeapon": {
             "form": {
-                "requestForReturningWeapon":"Request For Returning Weapon",
+                "requestForReturningWeapon": "Request For Returning Weapon",
                 "returnItems": "Return Items",
                 "type": "Type",
                 "name": "Name",
@@ -122,13 +123,13 @@
         "insertWeaponstostore": "Insert Weapons to store",
         "requestForWeapons": "Request For Weapons",
         "viewApprovedRequest": "View Approved Request",
-       "ditribute": {
-        "distributeForm":"Distribute Form"
+        "ditribute": {
+            "distributeForm": "Distribute Form"
         }
     },
     "inventory": {
         "listOfRecordsInInventory": "List Of Records In Inventory",
-        "listofweaponsinarecord":"List of weapons in a record",
+        "listofweaponsinarecord": "List of weapons in a record",
         "inventoryList": "Inventory List",
         "tabs": {
             "insertWeapon": "Insert Weaopn",
@@ -137,7 +138,7 @@
         },
         "insertWeapon": {
             "form": {
-                "inventory":"Inventory",
+                "inventory": "Inventory",
                 "itemNoInExpenditureRegister": "Item No In Expenditure Register",
                 "noOfEntryInTheRegisterOfIncomingGoods": "No Of Entry In The Register Of Incoming Goods ",
                 "donor": "Donor",
@@ -155,7 +156,7 @@
         }
     },
     "distributeWeapon": {
-        "distributeWeapon":"Distribute Weapon",
+        "distributeWeapon": "Distribute Weapon",
         "form": {
             "weaponItems": "Weapon Items",
             "weaponItemDescription": "Weapon Item Description",
@@ -181,6 +182,7 @@
         },
         "damagesWeapon": {
             "form": {
+                "damagesWeapon": "Damages Weapon",
                 "damagesItems": "Damages Items",
                 "weaponType": "Weapon Type",
                 "weaponName": "Weapon Name",
@@ -192,7 +194,7 @@
         }
     },
     "customer": {
-        "listofOrganizationscustomer":"List of Organizations Customer",
+        "listofOrganizationscustomer": "List of Organizations Customer",
         "form": {
             "registerWarranty": "Register Customer",
             "name": "Name",
@@ -215,16 +217,16 @@
             "warrantierSubCity": "Warrantier Sub City",
             "warrantierWoreda": "Warrantier Woreda"
         }
-        },
-        "createAccount":{
-           "listofsystemuser": "List of System User",
-           "form":{
-            "createuserAccount" :"Create User Account",
-            "firstName":"First Name",
-            "lastName":"Last Name",
-            "userName":"UserName",
+    },
+    "createAccount": {
+        "listofsystemuser": "List of System User",
+        "form": {
+            "createuserAccount": "Create User Account",
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "userName": "UserName",
             "password": "Password",
-            "profilePicture":"profile Picture"
-           }
+            "profilePicture": "profile Picture"
         }
+    }
 }

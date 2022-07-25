@@ -17,6 +17,14 @@ const routes: Routes = [
         //canActivate:[AuthGuard]
       },
       {
+        path: 'hrms',
+        loadChildren: () =>
+          import('../hrm/hrm.module').then(
+            (m) => m.HrmModule
+          ),
+         // canActivate: [AuthGuard]
+      },
+      {
         path: 'customers',
         loadChildren: () =>
           import('../customer/customer.module').then(

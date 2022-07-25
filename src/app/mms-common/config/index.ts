@@ -45,6 +45,13 @@ export const menus: Array<Menu> = [
     ],
   },
   {
+    name: 'Hrm',
+    icon: 'wc',
+    link: 'hrms',
+    open: false,
+    trans: 'menus.hrm',
+  },
+  {
     name: 'customers',
     icon: 'people',
     link: 'customers',

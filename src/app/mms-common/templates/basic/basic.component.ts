@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Action } from '../../organisms/table/table.component';
 import { Form } from '../../models/form';
 
@@ -10,6 +10,7 @@ import { Form } from '../../models/form';
 export class BasicComponent implements OnInit {
   @Input()
   form!: Form;
+  searchValue:any
   constructor() {}
 
   ngOnInit(): void {
