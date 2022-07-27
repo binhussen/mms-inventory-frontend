@@ -106,7 +106,8 @@ const matSnackbarDefaultConfig: MatSnackBarConfig = {
     MatTabsModule,
     RouterModule,
     TranslateModule,
-
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [
     {

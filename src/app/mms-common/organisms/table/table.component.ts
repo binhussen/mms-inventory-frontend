@@ -58,11 +58,7 @@ export class TableComponent implements OnInit, AfterViewInit {
   filters = []; // TODO
   isColumnClickable: boolean = true;
   routeForDetailPage!: string;
-
-  loading = false;
-  searchKey !: string;
-
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  loading = false; @ViewChild(MatPaginator) paginator!: MatPaginator;
   @Input() form!: Form;
   pageSize = 5;
   dataSource = new MatTableDataSource<any>(this.data);
@@ -83,17 +79,12 @@ export class TableComponent implements OnInit, AfterViewInit {
   async ngOnInit() {
     this.tableState$ = this.store$.select(tableSelectors.getTableState);
     await this.initTable(this.tableState$).toPromise();
-    console.log(this.searchKey)
   }
 
-  //search functionality
-  search(searchKey:string) {
-    console.log(searchKey)
-    this.dataSource.filter=this.searchKey.trim().toLocaleLowerCase();
-          }
-  // @Output()
-  // searchValue:EventEmitter<string>=new EventEmitter();
-
+  searchData(event: Event) {
+    const searchValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = searchValue.trim().toLowerCase();
+  }
   openDialog(
     actionTitle: string,
     form: Form,
@@ -263,5 +254,6 @@ export class TableComponent implements OnInit, AfterViewInit {
   }
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
+
   }
 }
