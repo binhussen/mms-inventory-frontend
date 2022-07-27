@@ -36,7 +36,10 @@
         <mat-cell *cdkCellDef="let row; let i = index">
           <span class="mobile-label">{{ column.header | translate}}:</span>
           <ng-container *ngIf="row && column.cell(row)">
-            <a href={{column.cell(row)}} *ngIf="column.columnDef ==='attachments'">
+            <a
+              href="{{ column.cell(row) }}"
+              *ngIf="column.columnDef === 'attachments'"
+            >
               <!-- {{ column.cell(row)}} -->
               <mat-icon>file_download</mat-icon>
             </a>

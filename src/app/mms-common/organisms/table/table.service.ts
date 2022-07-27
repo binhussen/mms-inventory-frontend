@@ -58,7 +58,7 @@ export class TableService {
     let params = new HttpParams();
     params = params.set('PageNumber', pageNumber.toString());
     params = params.set('PageSize', limit.toString());
-    console.log(dataSourceUrl)
+    console.log(dataSourceUrl);
     const httpResponse = this.httpClient.get(dataSourceUrl, {
       observe: 'response',
       params,

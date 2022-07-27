@@ -110,7 +110,6 @@ export class TableComponent implements OnInit, AfterViewInit {
   }
   command(action: Action, row: any, link?: string) {
     switch (action.type) {
-
       case 'create':
         this.openDialog(
           'createNew.create',
@@ -162,8 +161,7 @@ export class TableComponent implements OnInit, AfterViewInit {
           'Save',
           action.form ?? this.form,
           action.submittedUrl ?? '',
-          action.type,
-          row.id
+          action.type
         );
         break;
       case 'reject':
@@ -193,7 +191,6 @@ export class TableComponent implements OnInit, AfterViewInit {
     if (reportLogo != null && reportedTable != null && reportTitle != null) {
       let contents = reportLogo + reportTitle + reportedTable;
       document.body.innerHTML = contents;
-
     }
     window.print();
     document.body.innerHTML = originalContents;

@@ -149,22 +149,33 @@ export class CrudHttpService extends BaseService<any> {
         observer.next(null);
       });
     }
-    console.log(this.getUrl(url, data.id))
+    console.log(this.getUrl(url, data.id));
     return this.httpClient.put(`${this.getUrl(url, data.id)}`, data, {
       headers: this.headers,
     });
   }
 
-  rejectResource(value:any): Observable<any> {
-    return this.httpClient.post(`${this.getUrl(value.submittedToUrl,value.data.id)}?status=Reject&status=Approve&attachments=${value.data.attachments}`, {
-      headers: this.headers,
-    });
+  rejectResource(value: any): Observable<any> {
+    return this.httpClient.post(
+      `${this.getUrl(
+        value.submittedToUrl,
+        value.data.id
+      )}?status=Reject&status=Approve&attachments=${value.data.attachments}`,
+      {
+        headers: this.headers,
+      }
+    );
   }
 
-  approveResource(value:any): Observable<any> {
-    return this.httpClient.post(`${this.getUrl(value.submittedToUrl,value.data.id)}?qty=${value.data.approvedQuantity}&status=Approve&attachments=${value.data.attachments}`, {
-      headers: this.headers,
-    });
+  approveResource(value: any): Observable<any> {
+    return this.httpClient.post(
+      `${this.getUrl(value.submittedToUrl, value.data.id)}?qty=${
+        value.data.approvedQuantity
+      }&status=Approve&attachments=${value.data.attachments}`,
+      {
+        headers: this.headers,
+      }
+    );
   }
 
   getSingleAndBulk(
