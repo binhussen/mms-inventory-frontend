@@ -9,15 +9,22 @@ const inventoryForm: Form = {
       placeholder: 'inventory.insertWeapon.form.itemNoInExpenditureRegister',
       defaultValue: '',
       size: 4,
-      validations: [{ type: 'required', value: true }],
+      validations: [
+        { type: 'required', value: true },
+        { type: 'minLength', value: 3 },
+      ],
     },
     {
       name: 'noOfEntryInTheRegisterOfIncomingGoods',
       type: 'text',
-      placeholder: 'inventory.insertWeapon.form.noOfEntryInTheRegisterOfIncomingGoods',
+      placeholder:
+        'inventory.insertWeapon.form.noOfEntryInTheRegisterOfIncomingGoods',
       defaultValue: '',
       size: 4,
-      validations: [{ type: 'required', value: true }],
+      validations: [
+        { type: 'required', value: true },
+        { type: 'minLength', value: 3 },
+      ],
     },
 
     // {
@@ -34,7 +41,10 @@ const inventoryForm: Form = {
       placeholder: 'inventory.insertWeapon.form.donor',
       defaultValue: '',
       size: 4,
-      validations: [{ type: 'required', value: true }],
+      validations: [
+        { type: 'required', value: true },
+        { type: 'minLength', value: 3 },
+      ],
     },
     {
       name: 'storeItems',
@@ -54,7 +64,8 @@ const inventoryForm: Form = {
             { value: 'Other', label: 'Other' },
           ],
           validations: [{ type: 'required', value: true }],
-        },{
+        },
+        {
           name: 'itemDescription',
           type: 'text',
           placeholder: 'inventory.insertWeapon.form.weaponItemDescription',
@@ -67,6 +78,10 @@ const inventoryForm: Form = {
           placeholder: 'inventory.insertWeapon.form.weaponModel',
           defaultValue: '',
           size: 3,
+          validations: [
+            { type: 'required', value: true },
+            { type: 'minLength', value: 3 },
+          ],
         },
         {
           name: 'serialNo',
@@ -74,6 +89,10 @@ const inventoryForm: Form = {
           placeholder: 'inventory.insertWeapon.form.weaponSerialNo',
           defaultValue: '',
           size: 3,
+          validations: [
+            { type: 'required', value: true },
+            { type: 'minLength', value: 3 },
+          ],
         },
         {
           name: 'quantity',
@@ -81,6 +100,10 @@ const inventoryForm: Form = {
           placeholder: 'inventory.insertWeapon.form.weaponQuantity',
           defaultValue: '',
           size: 3,
+          validations: [
+            { type: 'required', value: true },
+            { type: 'min', value: 1 },
+          ],
         },
         {
           name: 'unitPrice',
@@ -88,6 +111,10 @@ const inventoryForm: Form = {
           placeholder: 'inventory.insertWeapon.form.weaponUnitPrice',
           defaultValue: '',
           size: 3,
+          validations: [
+            { type: 'required', value: true },
+            { type: 'min', value: 1 },
+          ],
         },
         {
           name: 'totalPrice',
@@ -99,6 +126,10 @@ const inventoryForm: Form = {
             operator: '*',
           },
           size: 3,
+          validations: [
+            { type: 'required', value: true },
+            { type: 'min', value: 1 },
+          ],
         },
         // {
         //   name: 'availability',
@@ -155,6 +186,10 @@ const inventoryItemForm: Form = {
       placeholder: 'inventory.insertWeapon.form.weaponItemDescription',
       defaultValue: '',
       size: 8,
+      validations: [
+        { type: 'required', value: true },
+        { type: 'maxLength', value: 50 },
+      ],
     },
     {
       name: 'model',
@@ -162,6 +197,10 @@ const inventoryItemForm: Form = {
       placeholder: 'inventory.insertWeapon.form.weaponModel',
       defaultValue: '',
       size: 2,
+      validations: [
+        { type: 'required', value: true },
+        { type: 'minLength', value: 3 },
+      ],
     },
     {
       name: 'serialNo',
@@ -169,6 +208,10 @@ const inventoryItemForm: Form = {
       placeholder: 'inventory.insertWeapon.form.weaponSerialNo',
       defaultValue: '',
       size: 2,
+      validations: [
+        { type: 'required', value: true },
+        { type: 'minLength', value: 3 },
+      ],
     },
     {
       name: 'quantity',
@@ -176,6 +219,10 @@ const inventoryItemForm: Form = {
       placeholder: 'inventory.insertWeapon.form.weaponQuantity',
       defaultValue: '',
       size: 2,
+      validations: [
+        { type: 'required', value: true },
+        { type: 'min', value: 1 },
+      ],
     },
     {
       name: 'unitPrice',
@@ -183,6 +230,10 @@ const inventoryItemForm: Form = {
       placeholder: 'inventory.insertWeapon.form.weaponUnitPrice',
       defaultValue: '',
       size: 2,
+      validations: [
+        { type: 'required', value: true },
+        { type: 'min', value: 1 },
+      ],
     },
     {
       name: 'totalPrice',
@@ -194,6 +245,10 @@ const inventoryItemForm: Form = {
         operator: '*',
       },
       size: 2,
+      validations: [
+        { type: 'required', value: true },
+        { type: 'min', value: 1 },
+      ],
     },
     // {
     //   name: 'availability',
