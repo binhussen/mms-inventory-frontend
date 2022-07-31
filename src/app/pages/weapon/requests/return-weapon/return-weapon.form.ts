@@ -1,12 +1,14 @@
 import { Form } from 'src/app/mms-common/models/form';
 
 const requestForReturningWeaponForm: Form = {
-  title: 'requestForWeapon.requestForReturningWeapon.form.requestForReturningWeapon',
+  title:
+    'requestForWeapon.requestForReturningWeapon.form.requestForReturningWeapon',
   elements: [
     {
       name: 'returnWeaponsItems',
       type: 'formArray',
-      placeholder: 'requestForWeapon.requestForReturningWeapon.form.returnItems',
+      placeholder:
+        'requestForWeapon.requestForReturningWeapon.form.returnItems',
       defaultValue: '',
       formArrayItems: [
         {
@@ -28,15 +30,22 @@ const requestForReturningWeaponForm: Form = {
           placeholder: 'requestForWeapon.requestForReturningWeapon.form.name',
           defaultValue: '',
           size: 4,
-          validations: [{ type: 'required', value: true }],
+          validations: [
+            { type: 'required', value: true },
+            { type: 'minLength', value: 3 },
+          ],
         },
         {
           name: 'quantity',
           type: 'number',
-          placeholder: 'requestForWeapon.requestForReturningWeapon.form.quantity',
+          placeholder:
+            'requestForWeapon.requestForReturningWeapon.form.quantity',
           defaultValue: '',
           size: 4,
-          validations: [{ type: 'required', value: true }],
+          validations: [
+            { type: 'required', value: true },
+            { type: 'min', value: 1 },
+          ],
         },
       ],
     },
@@ -49,15 +58,20 @@ const requestForReturningWeaponForm: Form = {
     {
       name: 'description',
       type: 'text',
-      placeholder: 'requestForWeapon.requestForReturningWeapon.form.description',
+      placeholder:
+        'requestForWeapon.requestForReturningWeapon.form.description',
       defaultValue: '',
       size: 12,
-      validations: [{ type: 'required', value: true }],
+      validations: [
+        { type: 'required', value: true },
+        { type: 'maxLength', value: 50 },
+      ],
     },
     {
       name: 'attachments',
       type: 'file',
-      placeholder: 'requestForWeapon.requestForReturningWeapon.form.attachments',
+      placeholder:
+        'requestForWeapon.requestForReturningWeapon.form.attachments',
       defaultValue: '',
     },
   ],
@@ -85,7 +99,10 @@ const requestForReturningWeaponItemsForm: Form = {
       placeholder: 'requestForWeapon.requestForReturningWeapon.form.name',
       defaultValue: '',
       size: 4,
-      validations: [{ type: 'required', value: true }],
+      validations: [
+        { type: 'required', value: true },
+        { type: 'minLength', value: 3 },
+      ],
     },
     {
       name: 'quantity',
@@ -93,7 +110,10 @@ const requestForReturningWeaponItemsForm: Form = {
       placeholder: 'requestForWeapon.requestForReturningWeapon.form.quantity',
       defaultValue: '',
       size: 4,
-      validations: [{ type: 'required', value: true }],
+      validations: [
+        { type: 'required', value: true },
+        { type: 'min', value: 1 },
+      ],
     },
   ],
 };

@@ -28,7 +28,10 @@ const requestForWeaponForm: Form = {
           placeholder: 'Name',
           defaultValue: '',
           size: 4,
-          validations: [{ type: 'required', value: true }],
+          validations: [
+            { type: 'required', value: true },
+            { type: 'minLength', value: 3 },
+          ],
         },
         {
           name: 'model',
@@ -36,7 +39,10 @@ const requestForWeaponForm: Form = {
           placeholder: 'Model',
           defaultValue: '',
           size: 4,
-          validations: [{ type: 'required', value: true }],
+          validations: [
+            { type: 'required', value: true },
+            { type: 'minLength', value: 3 },
+          ],
         },
         {
           name: 'quantity',
@@ -44,7 +50,10 @@ const requestForWeaponForm: Form = {
           placeholder: 'Quantity',
           defaultValue: '',
           size: 4,
-          validations: [{ type: 'required', value: true }],
+          validations: [
+            { type: 'required', value: true },
+            { type: 'min', value: 1 },
+          ],
         },
       ],
     },
@@ -60,7 +69,10 @@ const requestForWeaponForm: Form = {
       placeholder: 'Request Description',
       defaultValue: '',
       size: 12,
-      validations: [{ type: 'required', value: true }],
+      validations: [
+        { type: 'required', value: true },
+        { type: 'maxLength', value: 50 },
+      ],
     },
     {
       name: 'attachments',
@@ -93,7 +105,10 @@ const requestItemForWeaponForm: Form = {
       placeholder: 'Name',
       defaultValue: '',
       size: 4,
-      validations: [{ type: 'required', value: true }],
+      validations: [
+        { type: 'required', value: true },
+        { type: 'minLength', value: 3 },
+      ],
     },
     {
       name: 'quantity',
@@ -101,7 +116,10 @@ const requestItemForWeaponForm: Form = {
       placeholder: 'Quantity',
       defaultValue: '',
       size: 4,
-      validations: [{ type: 'required', value: true }],
+      validations: [
+        { type: 'required', value: true },
+        { type: 'min', value: 1 },
+      ],
     },
   ],
 };
@@ -134,7 +152,10 @@ const requestForReturningWeaponForm: Form = {
           placeholder: 'Name',
           defaultValue: '',
           size: 4,
-          validations: [{ type: 'required', value: true }],
+          validations: [
+            { type: 'required', value: true },
+            { type: 'minLength', value: 3 },
+          ],
         },
         {
           name: 'quantity',
@@ -142,7 +163,10 @@ const requestForReturningWeaponForm: Form = {
           placeholder: 'Quantity',
           defaultValue: '',
           size: 4,
-          validations: [{ type: 'required', value: true }],
+          validations: [
+            { type: 'required', value: true },
+            { type: 'min', value: 1 },
+          ],
         },
       ],
     },
@@ -158,7 +182,10 @@ const requestForReturningWeaponForm: Form = {
       placeholder: 'Return Description',
       defaultValue: '',
       size: 12,
-      validations: [{ type: 'required', value: true }],
+      validations: [
+        { type: 'required', value: true },
+        { type: 'maxLength', value: 50 },
+      ],
     },
     {
       name: 'attachments',

@@ -10,6 +10,7 @@ const distributeForm: Form = {
       defaultValue: '',
       size: 6,
       options: [],
+      validations: [{ type: 'required', value: true }],
     },
     {
       name: 'fpId',
