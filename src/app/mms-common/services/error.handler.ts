@@ -1,15 +1,19 @@
-import {AbstractControl, FormArray, FormControl, FormGroup, ValidationErrors} from '@angular/forms';
-import {Injectable} from '@angular/core';
-import {debounceTime, distinctUntilChanged} from 'rxjs/operators';
-
+import {
+  AbstractControl,
+  FormArray,
+  FormControl,
+  FormGroup,
+  ValidationErrors,
+} from '@angular/forms';
+import { Injectable } from '@angular/core';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 export declare interface ServerError {
   [key: string]: [];
 }
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ErrorHandler {
   private form!: FormGroup;
@@ -17,11 +21,9 @@ export class ErrorHandler {
   private errorObject!: ServerError;
   private message!: string;
 
-
   private static hasError(control: AbstractControl): boolean {
     return control.invalid && (control.dirty || control.touched);
   }
-
 
   /**
    * Takes server error obj and set errors to appropriate fields at form given.
@@ -47,14 +49,13 @@ export class ErrorHandler {
   public handleErrors(form: FormGroup, errorObject: any) {
     this.form = form;
     this.errorObject = errorObject;
-    form.valueChanges.pipe(
-      debounceTime(500),
-      distinctUntilChanged(),
-    ).subscribe(() => {
-      if (form.invalid) {
-        this.findErrors(form.controls);
-      }
-    });
+    form.valueChanges
+      .pipe(debounceTime(500), distinctUntilChanged())
+      .subscribe(() => {
+        if (form.invalid) {
+          this.findErrors(form.controls);
+        }
+      });
   }
 
   /** Used to call when an invalid form has been submit
@@ -69,12 +70,14 @@ export class ErrorHandler {
 
   /** Finds appropriate fields on form and set's the server error. */
   private setErrorToFormFields() {
-    Object.keys(this.serverError).forEach(field => {
+    Object.keys(this.serverError).forEach((field) => {
       if (!Array.isArray(this.serverError[field])) {
         this.setErrorsToNestedFields(field);
       } else {
         const errorMessages: any[] = this.serverError[field];
-        this.form.get(field)?.setErrors({serverError: errorMessages[0].message});
+        this.form
+          .get(field)
+          ?.setErrors({ serverError: errorMessages[0].message });
       }
     });
   }
@@ -85,15 +88,15 @@ export class ErrorHandler {
    */
   private setErrorsToNestedFields(nestedFieldName: string) {
     const nestedFormErrors = this.serverError[nestedFieldName];
-    Object.keys(nestedFormErrors).forEach(field => {
+    Object.keys(nestedFormErrors).forEach((field) => {
       const formControl = this.form.get(field);
       if (formControl) {
-        formControl.setErrors({serverError: nestedFormErrors[field]});
+        formControl.setErrors({ serverError: nestedFormErrors[field] });
       } else {
         const nestedForm = this.form.get(nestedFieldName);
         const nestedField = nestedForm?.get(field);
         if (nestedField) {
-          nestedField.setErrors({serverError: nestedFormErrors[field]});
+          nestedField.setErrors({ serverError: nestedFormErrors[field] });
         }
       }
     });
@@ -108,9 +111,11 @@ export class ErrorHandler {
   private findErrors(controls: { [key: string]: AbstractControl }) {
     Object.keys(controls).forEach((control: string) => {
       if (controls[control] instanceof FormArray) {
-        Object.defineProperty(this.errorObject, control, {value: [], writable: true});
+        Object.defineProperty(this.errorObject, control, {
+          value: [],
+          writable: true,
+        });
         this.findErrorsOnFormArrays(controls[control] as FormArray, control);
-
       } else if (controls[control] instanceof FormControl) {
         this.findErrorsOnFormControls(controls, control);
       }
@@ -126,14 +131,20 @@ export class ErrorHandler {
       Object.keys(controls).forEach((control: string) => {
         if (ErrorHandler.hasError(controls[control])) {
           this.setErrorMessage(controls[control].errors);
-          Object.defineProperty(formArrayErrors[i], control, {value: this.message, writable: true});
+          Object.defineProperty(formArrayErrors[i], control, {
+            value: this.message,
+            writable: true,
+          });
         }
       });
       i++;
     }
   }
 
-  private findErrorsOnFormControls(controls: { [key: string]: AbstractControl }, control: string) {
+  private findErrorsOnFormControls(
+    controls: { [key: string]: AbstractControl },
+    control: string
+  ) {
     if (ErrorHandler.hasError(controls[control])) {
       this.setErrorMessage(controls[control].errors);
       this.setErrorToErrorObject(control);
@@ -151,15 +162,17 @@ export class ErrorHandler {
     } else if (errors?.required) {
       this.message = 'Required field';
     } else if (errors?.minlength) {
-      this.message = `Max length is ${errors.minlength.actualLength}/${errors.minlength.requiredLength}`;
+      this.message = `Min length is ${errors.minlength.actualLength}/${errors.minlength.requiredLength}`;
     } else if (errors?.maxlength) {
-      this.message = `Min length is ${errors.maxlength.actualLength}/${errors.maxlength.requiredLength}`;
+      this.message = `Max length is ${errors.maxlength.actualLength}/${errors.maxlength.requiredLength}`;
     } else if (errors?.email) {
       this.message = 'Email is not valid';
     } else if (errors?.min) {
       this.message = `Min value is ${errors.min.min}, actual value is ${errors.min.actual}`;
     } else if (errors?.max) {
       this.message = `Max value is ${errors.max.max}, actual value is ${errors.max.actual}`;
+    } else if (errors?.phone) {
+      this.message = 'Phone is not valid';
     } else if (errors?.pattern) {
       this.message = 'Invalid value';
     } else if (errors?.passwordMismatch) {
@@ -168,6 +181,7 @@ export class ErrorHandler {
       this.message = 'There is an account with that email';
     } else {
       this.message = '';
+      console.log(errors);
     }
   }
 
@@ -176,6 +190,9 @@ export class ErrorHandler {
    * @param field         Field which contains error.
    */
   private setErrorToErrorObject(field: string) {
-    Object.defineProperty(this.errorObject, field, {value: this.message, writable: true});
+    Object.defineProperty(this.errorObject, field, {
+      value: this.message,
+      writable: true,
+    });
   }
 }

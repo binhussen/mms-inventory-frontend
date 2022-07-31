@@ -151,6 +151,7 @@ const requestApprovalForm: Form = {
       type: 'file',
       placeholder: 'requestForWeapon.form.attachments',
       defaultValue: '',
+      validations: [{ type: 'required', value: true }],
     },
   ],
 };
