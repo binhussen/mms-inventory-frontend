@@ -3,6 +3,15 @@ const customerForm: Form = {
   title: 'customer.form.registerWarranty',
   elements: [
     {
+      name: 'hrId',
+      type: 'select',
+      placeholder: 'FP iD',
+      defaultValue: '',
+      size: 3,
+      options: [],
+      validations: [{ type: 'required', value: true }],
+    },
+    {
       name: 'name',
       type: 'text',
       placeholder: 'customer.form.name',
