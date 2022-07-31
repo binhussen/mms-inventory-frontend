@@ -7,7 +7,8 @@ export interface Validation {
     | 'min'
     | 'email'
     | 'phone'
-    | 'file';
+    | 'file'
+    | 'fp';
   value: any;
 }
 export interface FormElement {

@@ -231,6 +231,18 @@ export class FormComponent implements OnInit, OnDestroy {
           case 'email':
             temp = [...temp, Validators.email];
             break;
+          case 'min':
+            temp = [...temp, Validators.min(validation.value)];
+            break;
+          case 'max':
+            temp = [...temp, Validators.max(validation.value)];
+            break;
+          case 'phone':
+            temp = [...temp, Validators.pattern('[0][9][0-9]{8}')];
+            break;
+          case 'fp':
+            temp = [...temp, Validators.pattern('')];
+            break;
         }
       }
     }
