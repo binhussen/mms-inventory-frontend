@@ -1,12 +1,12 @@
 import { Form } from "src/app/mms-common/models/form";
 
 const damagesItemForm: Form = {
-    title: 'damages Item',
-    elements: [
+  title: 'damagesItem.damagesWeapon.form.damagesItems',
+  elements: [
       {
         name: 'weaponType',
         type: 'select',
-        placeholder: 'Weapon Type',
+        placeholder: 'damagesItem.damagesWeapon.form.weaponType',
         defaultValue: '',
         size: 4,
         options: [
@@ -19,7 +19,7 @@ const damagesItemForm: Form = {
       {
         name: 'weaponName',
         type: 'text',
-        placeholder: 'Weapon Name',
+        placeholder: 'damagesItem.damagesWeapon.form.weaponName',
         defaultValue: '',
         size: 4,
         validations: [{ type: 'required', value: true }],
@@ -27,7 +27,7 @@ const damagesItemForm: Form = {
       {
         name: 'quantity',
         type: 'number',
-        placeholder: 'Quantity',
+        placeholder: 'damagesItem.damagesWeapon.form.quantity',
         defaultValue: '',
         size: 4,
         validations: [{ type: 'required', value: true }],
@@ -36,18 +36,18 @@ const damagesItemForm: Form = {
   };
   
   const damagesForm: Form = {
-    title: 'Damages Weapon',
+    title: 'damagesItem.damagesWeapon.form.damagesWeapon',
     elements: [
       {
         name: 'damagesItems',
         type: 'formArray',
-        placeholder: 'damages Items',
+        placeholder: 'damagesItem.damagesWeapon.form.damagesItems',
         defaultValue: '',
         formArrayItems: [
           {
             name: 'weaponType',
             type: 'select',
-            placeholder: 'Weapon Type',
+            placeholder: 'damagesItem.damagesWeapon.form.weaponType',
             defaultValue: '',
             size: 4,
             options: [
@@ -60,7 +60,7 @@ const damagesItemForm: Form = {
           {
             name: 'weaponName',
             type: 'text',
-            placeholder: 'Weapon Name',
+            placeholder: 'damagesItem.damagesWeapon.form.weaponName',
             defaultValue: '',
             size: 4,
             validations: [{ type: 'required', value: true }],
@@ -68,7 +68,7 @@ const damagesItemForm: Form = {
           {
             name: 'quantity',
             type: 'number',
-            placeholder: 'Quantity',
+            placeholder: 'damagesItem.damagesWeapon.form.quantity',
             defaultValue: '',
             size: 4,
             validations: [{ type: 'required', value: true }],
@@ -78,7 +78,7 @@ const damagesItemForm: Form = {
       {
         name: 'reason',
         type: 'text',
-        placeholder: ' Reason for damages',
+        placeholder: 'damagesItem.damagesWeapon.form.reason',
         defaultValue: '',
         size: 12,
         validations: [{ type: 'required', value: true }],
@@ -86,7 +86,7 @@ const damagesItemForm: Form = {
       {
         name: 'weaponDescription',
         type: 'text',
-        placeholder: 'Weapon Description',
+        placeholder: 'damagesItem.damagesWeapon.form.weaponDescription',
         defaultValue: '',
         size: 12,
         validations: [{ type: 'required', value: true }],
@@ -94,7 +94,7 @@ const damagesItemForm: Form = {
       {
         name: 'attachments',
         type: 'file',
-        placeholder: 'Attachments',
+        placeholder: 'damagesItem.damagesWeapon.form.attachments',
         defaultValue: '',
       },
     ],

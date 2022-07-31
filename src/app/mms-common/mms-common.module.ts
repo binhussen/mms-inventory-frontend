@@ -23,7 +23,7 @@ import { LoadingButtonComponent } from './atoms/loading-button/loading-button.co
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
@@ -92,6 +92,7 @@ const matSnackbarDefaultConfig: MatSnackBarConfig = {
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
+    FormsModule,
     MatDatepickerModule,
     MatRadioModule,
     MatSelectModule,
@@ -105,7 +106,8 @@ const matSnackbarDefaultConfig: MatSnackBarConfig = {
     MatTabsModule,
     RouterModule,
     TranslateModule,
-
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [
     {

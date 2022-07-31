@@ -1,72 +1,40 @@
 <div class="headerdata">
   <div class="forprint" id="logo">
-    <img
-      class="image"
-      src="/assets/img/report-header.jpg"
-      alt="Ethiopian Federal Police"
-    />
+    <img class="image" src="/assets/img/report-header.jpg" alt="Ethiopian Federal Police" />
   </div>
 </div>
-<ng-container *ngIf="tableState$ | async as tableState">
+<ng-container *ngIf="(tableState$ | async) as tableState">
   <mat-toolbar class="mat-elevation-z1 table-header">
     <div class="table-header-title" id="tableTitle">
-      <h1>{{ tableState?.title! | translate }}</h1>
+      <h1>{{tableState?.title! | translate}}</h1>
     </div>
     <div class="table-header-actions">
       <!-- ///////////////////////// -->
-      <button mat-button color="primary" (click)="generateReport()">
-        <mat-icon>print</mat-icon>
-        {{ "formAction.report" | translate }}
-      </button>
+      <input type="text" (keyup)="searchData($event)" placeholder="search data">
       <!-- ////////////////////////// -->
       <button mat-icon-button>
         <mat-icon>refresh</mat-icon>
       </button>
-      <button
-        mat-icon-button
-        matTooltip="Filter"
-        aria-label="Filter the table"
-        color="primary"
-      >
+      <button mat-icon-button matTooltip="Filter" aria-label="Filter the table" color="primary">
         <mat-icon>filter_list</mat-icon>
       </button>
 
-      <button
-        mat-button
-        color="primary"
-        (click)="command({ type: 'create', name: 'Create New' }, undefined)"
-      >
+      <button mat-button color="primary" (click)="command({type: 'create', name: 'Create New'}, undefined)">
         <mat-icon>add</mat-icon>
-        {{ "formAction.createNew" | translate }}
+        {{'formAction.createNew' | translate}}
       </button>
     </div>
   </mat-toolbar>
-  <div
-    *ngIf="loading"
-    style="display: flex; justify-content: center; padding: 24px"
-  >
-    <mat-progress-spinner
-      strokeWidth="3"
-      diameter="50"
-      mode="indeterminate"
-    ></mat-progress-spinner>
+  <div *ngIf="loading" style="display: flex; justify-content: center; padding: 24px">
+    <mat-progress-spinner strokeWidth="3" diameter="50" mode="indeterminate"></mat-progress-spinner>
   </div>
 
-  <ng-container *ngIf="tableState.data?.length; else noRecordTemplate">
-    <mat-table
-      *ngIf="!loading"
-      #table
-      [dataSource]="dataSource"
-      class="mat-elevation-z1"
-      id="tableid"
-    >
-      <ng-container
-        *ngFor="let column of columns"
-        [cdkColumnDef]="column.columnDef"
-      >
+  <ng-container *ngIf="tableState.data?.length; else noRecordTemplate;">
+    <mat-table *ngIf="!loading" #table [dataSource]="dataSource" class="mat-elevation-z1" id="tableid">
+      <ng-container *ngFor="let column of columns;" [cdkColumnDef]="column.columnDef">
         <mat-header-cell *cdkHeaderCellDef>{{ column.header }}</mat-header-cell>
         <mat-cell *cdkCellDef="let row; let i = index">
-          <span class="mobile-label">{{ column.header | translate }}:</span>
+          <span class="mobile-label">{{ column.header | translate}}:</span>
           <ng-container *ngIf="row && column.cell(row)">
             <a
               href="{{ column.cell(row) }}"
@@ -75,36 +43,21 @@
               <!-- {{ column.cell(row)}} -->
               <mat-icon>file_download</mat-icon>
             </a>
-            <span *ngIf="column.columnDef != 'attachments'">{{
-              column.columnDef === "date"
-                ? (column.cell(row) | date)
-                : column.cell(row)
-            }}</span>
+            <span *ngIf="column.columnDef !='attachments'">{{ column.columnDef === 'date' ? (column.cell(row) | date) :
+              column.cell(row)}}</span>
           </ng-container>
 
           <ng-container *ngIf="!column.cell(row) && column.columnDef == 'No'">
-            {{ i + 1 }}
+            {{(i + 1)}}
           </ng-container>
           <div class="hidedata">
-            <ng-container
-              *ngIf="
-                !column.cell(row) &&
-                column.columnDef == ' ' &&
-                tableState?.actions
-              "
-            >
-              <button
-                mat-icon-button
-                color="primary"
-                [matMenuTriggerFor]="menu"
-              >
+            <ng-container *ngIf="!column.cell(row) && column.columnDef == ' ' && tableState?.actions">
+              <button mat-icon-button color="primary" [matMenuTriggerFor]="menu">
                 <mat-icon>more_horiz</mat-icon>
               </button>
               <mat-menu #menu="matMenu" xPosition="before">
                 <ng-container *ngFor="let action of tableState?.actions">
-                  <button mat-menu-item (click)="command(action, row)">
-                    {{ action.name | translate }}
-                  </button>
+                  <button mat-menu-item (click)="command(action, row)">{{action.name | translate}}</button>
                 </ng-container>
               </mat-menu>
             </ng-container>
@@ -112,30 +65,31 @@
         </mat-cell>
       </ng-container>
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row
-        [ngClass.gt-sm]="{ 'clickable-mat-row': isColumnClickable }"
-        *matRowDef="let row; columns: displayedColumns"
-      ></mat-row>
+      <mat-row [ngClass.gt-sm]="{'clickable-mat-row': isColumnClickable}"
+        *matRowDef="let row; columns: displayedColumns;"></mat-row>
     </mat-table>
     <div class="hidedata">
-      <mat-paginator
-        [pageSizeOptions]="[5, 10, 20]"
-        (page)="pageChange($event)"
-        showFirstLastButtons
-        aria-label="Select page"
-      >
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" (page)="pageChange($event)" showFirstLastButtons
+        aria-label="Select page">
       </mat-paginator>
     </div>
   </ng-container>
+
+  <button class="print" mat-button color="primary" (click)="generateReport()">
+    <mat-icon>print</mat-icon>
+    {{'formAction.report' | translate}}
+  </button>
+
 </ng-container>
+
 
 <ng-template #noRecordTemplate>
   <!--no record found -->
   <mat-card>
     <mat-card-content>
       <div class="no-record-found">
-        <img src="assets/img/no-record.svg" alt="No Record Found" />
-        <h1>{{ "formAction.noRecordFound" | translate }}</h1>
+        <img src="assets/img/no-record.svg" alt="No Record Found">
+        <h1>{{'formAction.noRecordFound' | translate}}</h1>
       </div>
     </mat-card-content>
   </mat-card>

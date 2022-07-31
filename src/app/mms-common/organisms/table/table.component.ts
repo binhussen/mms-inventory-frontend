@@ -4,7 +4,11 @@ import {
   Component,
   Input,
   OnInit,
+  Output,
   ViewChild,
+  EventEmitter,
+  OnChanges,
+  SimpleChanges
 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { FormDialogComponent } from '../form-dialog/form-dialog.component';
@@ -54,10 +58,7 @@ export class TableComponent implements OnInit, AfterViewInit {
   filters = []; // TODO
   isColumnClickable: boolean = true;
   routeForDetailPage!: string;
-
-  loading = false;
-
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  loading = false; @ViewChild(MatPaginator) paginator!: MatPaginator;
   @Input() form!: Form;
   pageSize = 5;
   dataSource = new MatTableDataSource<any>(this.data);
@@ -66,7 +67,6 @@ export class TableComponent implements OnInit, AfterViewInit {
 
   tableState$!: Observable<TableState>;
   links!: any;
-
   constructor(
     public dialog: MatDialog,
     private router: Router,
@@ -74,11 +74,16 @@ export class TableComponent implements OnInit, AfterViewInit {
     public tableService: TableService,
     private changeDetectorRefs: ChangeDetectorRef,
     private httpClient: HttpClient
-  ) {}
+  ) { }
 
   async ngOnInit() {
     this.tableState$ = this.store$.select(tableSelectors.getTableState);
     await this.initTable(this.tableState$).toPromise();
+  }
+
+  searchData(event: Event) {
+    const searchValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = searchValue.trim().toLowerCase();
   }
   openDialog(
     actionTitle: string,
@@ -181,7 +186,7 @@ export class TableComponent implements OnInit, AfterViewInit {
   generateReport() {
     let reportLogo = document.getElementById('logo')!.innerHTML;
     let reportTitle = document.getElementById('tableTitle')!.innerHTML;
-    let reportedTable = document.getElementById('tableId')!.innerHTML;
+    let reportedTable = document.getElementById('tableid')!.innerHTML;
     let originalContents = document.body.innerHTML;
     if (reportLogo != null && reportedTable != null && reportTitle != null) {
       let contents = reportLogo + reportTitle + reportedTable;
@@ -246,5 +251,6 @@ export class TableComponent implements OnInit, AfterViewInit {
   }
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
+
   }
 }

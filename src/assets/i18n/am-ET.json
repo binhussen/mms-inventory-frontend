@@ -36,7 +36,8 @@
         "request": "የጦር መሳሪያ መጠየቅ",
         "reportDamages": "የሚወገዱ ጦር መሳሪያዎች",
         "userManagement": "የተጠቃሚ አስተዳደር",
-        "customer": "ከተቆሙ የሚታጠቁ ደንበኞች"
+        "customer": "ከተቆሙ የሚታጠቁ ደንበኞች",
+        "hrm": "የሰው ሀይል"
     },
     "createNew": {
         "expand": "ተጨማሪ /ዝርዝር",
@@ -48,7 +49,7 @@
         "delete": "ሰርዝ",
         "approve": "ማጽደቅ",
         "warranties": "ተያዠ",
-        "distribute":"ማሰራጨት"
+        "distribute": "ማሰራጨት"
     },
     "fileUpload": {
         "dragDropyourfileshere": "ፋይሎችህን ጎትት እና እዚህ ጣል",
@@ -80,7 +81,7 @@
     "requestForWeapon": {
         "listofweaponsthathavebeenrequested": "የተጠየቁ መሳሪያዎች ዝርዝር",
         "listofweaponsthathavebeenrequestedtobereturned": "ሊመለሱ የተጠየቁ እቃዎች ዝርዝር",
-        "listofApprovedforDistribution":"ለስርጭት የተፈቀደላቸው የጦ መሰሪያ ዝርዝር",
+        "listofApprovedforDistribution": "ለስርጭት የተፈቀደላቸው የጦ መሰሪያ ዝርዝር",
         "tabs": {
             "requestForWeapon": "የጦር መሳሪያ መጠየቅ",
             "requestForReturnWeapon": "የጦር መሳሪያን ለመመለስ መጠየቅ"
@@ -94,8 +95,8 @@
             "name": "የእቃው ስም",
             "model": "ሞዴል",
             "quantity": "ብዛት",
-            "status":"የጥያቄው ሁኔታ",
-            "approvedQuantity":"የተጽደቀዉ ቢዛት"
+            "status": "የጥያቄው ሁኔታ",
+            "approvedQuantity": "የተጽደቀዉ ቢዛት"
         },
         "requestItemForWeapon": {
             "form": {
@@ -108,7 +109,7 @@
         },
         "requestForReturningWeapon": {
             "form": {
-                "requestForReturningWeapon":"የጦር መሰሪያ ለመመለስ መጠየቅያ ቅጽ",
+                "requestForReturningWeapon": "የጦር መሰሪያ ለመመለስ መጠየቅያ ቅጽ",
                 "returnItems": "የሚመለሱ እቃዎች አይነት",
                 "type": "የእቃው አይነት",
                 "name": "የእቃው ስም",
@@ -123,8 +124,8 @@
         "requestForWeapons": "የጦር መሳሪያ ጠይቅ",
         "viewApprovedRequest": "የተጸደቁ ጥያቄ ይመልከቱ",
         "ditribute": {
-            "distributeForm":"የጦር መሰሪያ ማሰራጫ ቅጽ"
-            }
+            "distributeForm": "የጦር መሰሪያ ማሰራጫ ቅጽ"
+        }
     },
     "inventory": {
         "listOfRecordsInInventory": "ማጠራቀሚያው ላይ ያሉ እቃዎች ዝርዝር",
@@ -173,7 +174,7 @@
         "Board": "ሰሌዳ"
     },
     "damagesItem": {
-        "listofdamagedweapons": "የተወገዱ እቃዎች ዝርዝር",
+        "listofdamagedweapons": "የሚወገዱ እቃዎች ዝርዝር",
         "form": {
             "weaponType": "የጦር መሳሪያው አይነት",
             "weaponName": "የጦር መሳሪያ ስም",
@@ -181,7 +182,8 @@
         },
         "damagesWeapon": {
             "form": {
-                "damagesItems": "የሚወገዱ እቃዎች ዝርዝር",
+                "damagesWeapon": "የሚወገዱ የጦር መሳሪያ ሪፖርት መድረጊያ ቅጽ",
+                "damagesItems": "የሚወገዱ እቃዎች አይነት",
                 "weaponType": "የጦር መሳሪያው አይነት",
                 "weaponName": "የጦር መሳሪያ ስም",
                 "quantity": "ብዛት",
