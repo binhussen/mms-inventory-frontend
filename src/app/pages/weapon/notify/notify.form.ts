@@ -21,7 +21,10 @@ const notifyItemForm: Form = {
       placeholder: 'notifyItem.form.weaponName',
       defaultValue: '',
       size: 4,
-      validations: [{ type: 'required', value: true }],
+      validations: [
+        { type: 'required', value: true },
+        { type: 'minLength', value: 3 },
+      ],
     },
     {
       name: 'quantity',
@@ -29,7 +32,10 @@ const notifyItemForm: Form = {
       placeholder: 'notifyItem.form.quantity',
       defaultValue: '',
       size: 4,
-      validations: [{ type: 'required', value: true }],
+      validations: [
+        { type: 'required', value: true },
+        { type: 'min', value: 1 },
+      ],
     },
   ],
 };
@@ -76,7 +82,10 @@ const notifyForm: Form = {
           placeholder: 'notifyItem.form.weaponName',
           defaultValue: '',
           size: 4,
-          validations: [{ type: 'required', value: true }],
+          validations: [
+            { type: 'required', value: true },
+            { type: 'minLength', value: 3 },
+          ],
         },
         {
           name: 'quantity',
@@ -84,10 +93,13 @@ const notifyForm: Form = {
           placeholder: 'notifyItem.form.quantity',
           defaultValue: '',
           size: 4,
-          validations: [{ type: 'required', value: true }],
+          validations: [
+            { type: 'required', value: true },
+            { type: 'min', value: 1 },
+          ],
         },
       ],
-    }
+    },
   ],
 };
 
