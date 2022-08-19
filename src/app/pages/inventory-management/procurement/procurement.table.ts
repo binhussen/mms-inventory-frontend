@@ -3,15 +3,15 @@ import { TableState } from 'src/app/store/models/table.state';
 import { environment } from 'src/environments/environment';
 
 const baseApiUrl = environment.baseApiUrl;
-const dataSourceUrl = `${baseApiUrl}customers`;
+const dataSourceUrl = `${baseApiUrl}procurements`;
 const actions: Array<Action> = [
-  { name: 'createNew.warranties', type: 'expand', path: 'users' },
+  { name: 'createNew.expand', type: 'expand', path: 'procurements' },
   { name: 'createNew.edit', type: 'edit' },
 ];
 
-const customerTableState: TableState = {
-  id: 'customer table',
-  title: 'customer.listofOrganizationscustomer',
+const procurementTableState: TableState = {
+  id: 'procurement request table',
+  title: 'list of requested item for procurement',
   pageNumber: 0,
   pageSize: 5,
   totalItems: 0,
@@ -25,4 +25,8 @@ const customerTableState: TableState = {
   },
   actions,
 };
-export default customerTableState;
+export default procurementTableState;
+
+
+
+

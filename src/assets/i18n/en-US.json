@@ -26,7 +26,8 @@
         "createNew": "Create New",
         "noRecordFound": "No Record Found",
         "no": "NO",
-        "report": "Report"
+        "report": "Report",
+        "searchData":"search data"
     },
     "menus": {
         "dashboard": "Dashboard",
@@ -37,7 +38,11 @@
         "reportDamages": "report Damages",
         "userManagement": "User Managment",
         "customer": "customers",
-        "hrm": "hrm"
+        "hrm": "hrm",
+        
+        "inventoryManagement":"Inventory Management",
+        "procurement":"Request for procurement",
+        "notifyInventory":"Notify Inventory"
     },
     "createNew": {
         "expand": "Expand",

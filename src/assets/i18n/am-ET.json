@@ -24,9 +24,10 @@
     },
     "formAction": {
         "createNew": "አዲስ ፍጠር",
-        "noRecordFound": "ምንም መዝገብ አልተገኘም!",
+        "noRecordFound": "ምንም ዳታ አልተገኘም!",
         "no": "ተ.ቁ",
-        "report": "ሪፖርት"
+        "report": "ሪፖርት",
+        "searchData":"ፈልግ"
     },
     "menus": {
         "dashboard": "ዳሽ ቦርድ",
@@ -37,24 +38,28 @@
         "reportDamages": "የሚወገዱ ጦር መሳሪያዎች",
         "userManagement": "የተጠቃሚ አስተዳደር",
         "customer": "ከተቆሙ የሚታጠቁ ደንበኞች",
-        "hrm": "የሰው ሀይል"
+        "hrm": "የሰው ሀይል",
+        
+        "inventoryManagement":"ንብራት አስተዳደር",
+        "procurement":"የግዥ ፍላጎት",
+        "notifyInventory":"አዲስ ንብረት መሳወቅ"
     },
     "createNew": {
         "expand": "ተጨማሪ /ዝርዝር",
-        "edit": "አሻሽል",
-        "create": "መዝግብ",
-        "update": "ቀይር",
-        "cancel": "አቋርጥ",
-        "add": "ጨምር",
-        "delete": "ሰርዝ",
-        "approve": "ማጽደቅ",
+        "edit": "ያሻሽሉ",
+        "create": "አዲስ ይፍጠሩ",
+        "update": "ይቀይሩ",
+        "cancel": "ያቋርጡ",
+        "add": "ይጨምሩ",
+        "delete": "ይሰርዙ",
+        "approve": "ያጽደቁ",
         "warranties": "ተያዠ",
         "distribute": "ማሰራጨት"
     },
     "fileUpload": {
-        "dragDropyourfileshere": "ፋይሎችህን ጎትት እና እዚህ ጣል",
+        "dragDropyourfileshere": "ፋይሎችን ጎትተው እዚህ ይጣሉ",
         "or": "ወይስ",
-        "browseFiles": "ፋይሎችን ከ ዲስክ ፋሊጎ ያስሱ",
+        "browseFiles": "ፋይሎችን ካለበት ፈልገዉ ያስገቡ",
         "uploadedFiles": "የተጫና ፋይል",
         "ethiopianFederalPoliceCommission": "የኢትዮጵያ ፌደራል ፖሊስ"
     },
