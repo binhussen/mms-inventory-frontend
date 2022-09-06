@@ -3,15 +3,15 @@ import { TableState } from 'src/app/store/models/table.state';
 import { environment } from 'src/environments/environment';
 
 const baseApiUrl = environment.baseApiUrl;
-const dataSourceUrl = `${baseApiUrl}customers`;
+const dataSourceUrl = `${baseApiUrl}notifyheaders`;
 const actions: Array<Action> = [
-  { name: 'createNew.warranties', type: 'expand', path: 'users' },
+  { name: 'createNew.expand', type: 'expand', path: 'notifyheaders' },
   { name: 'createNew.edit', type: 'edit' },
 ];
 
-const customerTableState: TableState = {
-  id: 'customer table',
-  title: 'customer.listofOrganizationscustomer',
+const notifyInventoryTableState: TableState = {
+  id: 'notify inventory table',
+  title: 'List of new inventory that have been notified',
   pageNumber: 0,
   pageSize: 5,
   totalItems: 0,
@@ -24,5 +24,6 @@ const customerTableState: TableState = {
     deletePath: `${dataSourceUrl}/[id]`,
   },
   actions,
-};
-export default customerTableState;
+}
+
+export default notifyInventoryTableState;

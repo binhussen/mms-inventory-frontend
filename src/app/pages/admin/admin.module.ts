@@ -40,6 +40,12 @@ const routes: Routes = [
         
       },
       {
+        path: 'inventory',
+        loadChildren: () =>
+          import('../inventory-management/inventory-management.module').then((m) => m.InventoryManagementModule),
+          //canActivate: [AuthGuard]
+      },
+      {
         path: 'weapon',
         loadChildren: () =>
           import('../weapon/weapon.module').then((m) => m.WeaponModule),
