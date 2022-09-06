@@ -16,7 +16,7 @@ const notifyInventoryForm: Form = {
           defaultValue: '',
           size: 4,
           options: [
-            { value: 'electronic', label: 'Electronic Item' },
+            { value: 'electronic', label: 'Electronic Material' },
             { value: 'accessory ', label: 'Accessory Materials' },
             { value: 'furniture ', label: 'Furniture Materials' },
             { value: 'detergent ', label: 'Detergents' },
@@ -46,6 +46,18 @@ const notifyInventoryForm: Form = {
             { type: 'min', value: 1 },
           ],
         },
+        {
+          name: 'model',
+          type: 'text',
+          placeholder: 'Model',
+          defaultValue: '',
+          size: 4,
+          validations: [
+            { type: 'required', value: true },
+            { type: 'min', value: 1 },
+          ],
+        }
+        
       ],
     },
     {
@@ -106,20 +118,16 @@ const notifyInventoryItemForm: Form = {
       ],
     },
     {
-      name: 'unitMeasure',
-      type: 'select',
-      placeholder: 'Unit Of Measurement',
+      name: 'model',
+      type: 'text',
+      placeholder: 'Model',
       defaultValue: '',
       size: 4,
-      options: [
-        { value: 'inNumber', label: 'Number' },
-        { value: 'pcs ', label: 'Packet' },
-        { value: 'kilo ', label: 'Kilogram' },
-        { value: 'meter ', label: 'Meter' },
-        { value: 'box', label: 'Box' },
+      validations: [
+        { type: 'required', value: true },
+        { type: 'min', value: 1 },
       ],
-      validations: [{ type: 'required', value: true }],
-    },
+    }
   ],
 };
 export default { notifyInventoryForm, notifyInventoryItemForm };

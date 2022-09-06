@@ -6,6 +6,7 @@ import { PageComponent } from '../../page/page.component';
 import inventoryNotifyPage from './notifyinventory.page';
 import { PageDetailComponent } from '../../page/page-detail/page-detail.component';
 import notifyDetailPage from '../../weapon/notify/notify-detail.page';
+import notifyInventoryDetailPage from './notifyinventory-detail.page';
 
 
 
@@ -16,7 +17,7 @@ import notifyDetailPage from '../../weapon/notify/notify-detail.page';
     MmsCommonModule,
     RouterModule.forChild([
       { path: '', component: PageComponent, data: inventoryNotifyPage }, // page
-      { path: ':id', component: PageDetailComponent, data: notifyDetailPage }, // page detail
+      { path: ':id', component: PageDetailComponent, data: notifyInventoryDetailPage }, // page detail
     ])
   ]
 })

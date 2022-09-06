@@ -12,7 +12,7 @@ const notifyInventoryItemsTableState: TableState = {
   pageSize: 5,
   totalItems: 0,
   data: [],
-  excludedColumns: ['id', 'notifiesId'],
+  excludedColumns: ['id'],
   links: {
     getPath: dataSourceUrl,
     createPath: `${dataSourceUrl}`,
