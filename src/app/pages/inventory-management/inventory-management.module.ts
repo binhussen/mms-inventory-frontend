@@ -18,6 +18,11 @@ import { RouterModule } from '@angular/router';
         path: 'notify-inventory',
         loadChildren: () =>
           import('./notify/notify.module').then((m) => m.NotifyModule),
+      },
+      {
+        path: 'inventory-store',
+        loadChildren: () =>
+          import('./store/store.module').then((m) => m.StoreModule),
       }
     ]),
   ],

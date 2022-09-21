@@ -42,7 +42,8 @@
         
         "inventoryManagement":"Inventory Management",
         "procurement":"Request for procurement",
-        "notifyInventory":"Notify Inventory"
+        "notifyInventory":"Notify Inventory",
+        "inventoryStore":"Inventory Store"
     },
     "createNew": {
         "expand": "Expand",
@@ -64,23 +65,38 @@
         "ethiopianFederalPoliceCommission": "Ethiopian Federal Police"
     },
     "notifyItem": {
-        "listofweaponsthathavebeennotified": "List of weapons that have been notified",
+        "listofweaponsthathavebeennotified": "List of Inventory that have been notified",
         "form": {
-            "weaponType": "Weapon Type",
-            "weaponName": "Weapon Name",
+            "weaponType": "Inventory Type",
+            "weaponName": "Inventory Name",
             "quantity": "Quantity"
         }
     },
     "notifyWeapon": {
         "form": {
             "notifyItems": "Notify Items",
-            "weaponType": "Weapon Type",
-            "weaponName": "Weapon Name",
+            "weaponType": "Inventory Type",
+            "weaponName": "Inventory Name",
             "quantity": "Quantity",
-            "weaponDescription": "Weapon Description",
+            "weaponDescription": "Description",
             "attachments": "Attachments",
             "type": "Type",
             "name": "Name"
+        }
+    },
+    "procurement": {
+        "listofrequesteditemforprocurement": "List of Inventory Requestd for Procurement",
+        "requestforprocurement":"Request for Procurement",
+        "form": {
+            "procurementitem": "List of procurement item",
+            "description": "Description",
+            "attachments": "Attachments",
+
+            "type": "Inventory Type",
+            "name": "Inventory Name",
+            "quantity": "Quantity",
+            "unitMeasure": "Unit Measurement",
+            "category": "Inventory Category"
         }
     },
     "requestForWeapon": {
@@ -134,12 +150,15 @@
     },
     "inventory": {
         "listOfRecordsInInventory": "List Of Records In Inventory",
-        "listofweaponsinarecord": "List of weapons in a record",
+        "listofweaponsinarecord": "List of Inventory in a record",
         "inventoryList": "Inventory List",
         "tabs": {
-            "insertWeapon": "Insert Weaopn",
-            "viewWeapon": "View Weapon",
-            "distributeWeapon": "Distribute Weapon"
+            "insertInventory": "Insert Inventory",
+            "setAllocation": "View Weapon",
+            "distributeInventory": "Distribute Inventory",
+
+            "annualBudgetProcurement": "Annual Budget Procurement ",
+            "requestForPurchase": "Request For Purchase"
         },
         "insertWeapon": {
             "form": {
@@ -147,14 +166,14 @@
                 "itemNoInExpenditureRegister": "Item No In Expenditure Register",
                 "noOfEntryInTheRegisterOfIncomingGoods": "No Of Entry In The Register Of Incoming Goods ",
                 "donor": "Donor",
-                "weaponItems": "Weapon Items",
-                "weaponType": "Weapon Type",
-                "weaponItemDescription": "Weapon Item Description",
+                "weaponItems": "Inventory Items",
+                "weaponType": "Inventory Type",
+                "weaponItemDescription": "Inventory Item Description",
                 "weaponModel": "Weapon Model",
-                "weaponSerialNo": "Weapon Serial No",
-                "weaponQuantity": "Weapon Quantity",
-                "weaponUnitPrice": "Weapon Unit Price",
-                "weaponTotalPrice": "Weapon Total Price",
+                "weaponSerialNo": "Serial No",
+                "weaponQuantity": "Quantity",
+                "weaponUnitPrice": "Unit Price",
+                "weaponTotalPrice": "Total Price",
                 "storeNo": "Store No",
                 "shelfNo": "Shelf No"
             }

@@ -1,18 +1,18 @@
 import { Form } from "src/app/mms-common/models/form";
 
-  const procurementForm: Form = {
-    title: 'procurement.requestforprocurement',
+  const purchaseRequestForm: Form = {
+    title: 'request for procurement',
     elements: [
       {
         name: 'procurmentItems',
         type: 'formArray',
-        placeholder: 'procurement.form.procurementitem',
+        placeholder: 'Requested Procurement Item',
         defaultValue: '',
         formArrayItems: [
           {
             name: 'type',
             type: 'select',
-            placeholder: 'procurement.form.type',
+            placeholder: 'Inventory Type',
             defaultValue: '',
             size: 4,
             options: [
@@ -27,7 +27,7 @@ import { Form } from "src/app/mms-common/models/form";
           {
             name: 'category',
             type: 'select',
-            placeholder: 'procurement.form.category',
+            placeholder: 'Category',
             defaultValue: '',
             size: 4,
             options: [
@@ -39,7 +39,7 @@ import { Form } from "src/app/mms-common/models/form";
           {
             name: 'name',
             type: 'text',
-            placeholder: 'procurement.form.name',
+            placeholder: 'Inventory Name',
             defaultValue: '',
             size: 4,
             validations: [{ type: 'required', value: true }],
@@ -47,7 +47,7 @@ import { Form } from "src/app/mms-common/models/form";
           {
             name: 'quantity',
             type: 'number',
-            placeholder: 'procurement.form.quantity',
+            placeholder: 'Quantity',
             defaultValue: '',
             size: 4,
             validations: [{ type: 'required', value: true }],
@@ -55,7 +55,7 @@ import { Form } from "src/app/mms-common/models/form";
           {
             name: 'unitMeasure',
             type: 'select',
-            placeholder: 'procurement.form.unitMeasure',
+            placeholder: 'Unit Of Measurement',
             defaultValue: '',
             size: 4,
             options: [
@@ -72,7 +72,7 @@ import { Form } from "src/app/mms-common/models/form";
       {
         name: 'description',
         type: 'text',
-        placeholder: 'procurement.form.description',
+        placeholder: 'Description',
         defaultValue: '',
         size: 12,
         validations: [{ type: 'required', value: true }],
@@ -80,20 +80,20 @@ import { Form } from "src/app/mms-common/models/form";
       {
         name: 'attachments',
         type: 'file',
-        placeholder: 'procurement.form.attachments',
+        placeholder: 'Attachements',
         defaultValue: '',
       },
     ],
   };
 
 
-  const procurementItemForm: Form = {
-    title: 'procurement.form.procurementitem',
+  const purchaseRequestItemForm: Form = {
+    title: 'Requested Procurement Item',
     elements: [
         {
           name: 'type',
           type: 'select',
-          placeholder: 'procurement.form.type',
+          placeholder: 'Inventory Type',
           defaultValue: '',
           size: 4,
           options: [
@@ -108,7 +108,7 @@ import { Form } from "src/app/mms-common/models/form";
         {
           name: 'category',
           type: 'select',
-          placeholder: 'procurement.form.category',
+          placeholder: 'Category',
           defaultValue: '',
           size: 4,
           options: [
@@ -120,7 +120,7 @@ import { Form } from "src/app/mms-common/models/form";
         {
           name: 'name',
           type: 'text',
-          placeholder: 'procurement.form.name',
+          placeholder: 'Inventory Name',
           defaultValue: '',
           size: 4,
           validations: [{ type: 'required', value: true }],
@@ -128,7 +128,7 @@ import { Form } from "src/app/mms-common/models/form";
         {
           name: 'quantity',
           type: 'number',
-          placeholder: 'procurement.form.quantity',
+          placeholder: 'Quantity',
           defaultValue: '',
           size: 4,
           validations: [{ type: 'required', value: true }],
@@ -136,7 +136,7 @@ import { Form } from "src/app/mms-common/models/form";
         {
           name: 'unitMeasure',
           type: 'select',
-          placeholder: 'procurement.form.unitMeasure',
+          placeholder: 'Unit Of Measurement',
           defaultValue: '',
           size: 4,
           options: [
@@ -150,4 +150,4 @@ import { Form } from "src/app/mms-common/models/form";
         },
       ],
     };
-  export default {procurementForm, procurementItemForm}
+  export default {purchaseRequestForm, purchaseRequestItemForm}

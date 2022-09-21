@@ -1,18 +1,18 @@
 import { Form } from 'src/app/mms-common/models/form';
 
 const notifyInventoryForm: Form = {
-  title: 'Notify new Inventory',
+  title: 'notifyWeapon.form.notifyItems',
   elements: [
     {
       name: 'notifyItems',
       type: 'formArray',
-      placeholder: 'Notify new Inventory Items',
+      placeholder: 'notifyWeapon.form.notifyItems',
       defaultValue: '',
       formArrayItems: [
         {
           name: 'type',
           type: 'select',
-          placeholder: 'Inventory Type',
+          placeholder: 'notifyItem.form.weaponType',
           defaultValue: '',
           size: 4,
           options: [
@@ -27,7 +27,7 @@ const notifyInventoryForm: Form = {
         {
           name: 'name',
           type: 'text',
-          placeholder: 'Inventory Name',
+          placeholder: 'notifyItem.form.weaponName',
           defaultValue: '',
           size: 4,
           validations: [
@@ -38,18 +38,7 @@ const notifyInventoryForm: Form = {
         {
           name: 'quantity',
           type: 'number',
-          placeholder: 'Quantity',
-          defaultValue: '',
-          size: 4,
-          validations: [
-            { type: 'required', value: true },
-            { type: 'min', value: 1 },
-          ],
-        },
-        {
-          name: 'model',
-          type: 'text',
-          placeholder: 'Model',
+          placeholder: 'notifyItem.form.quantity',
           defaultValue: '',
           size: 4,
           validations: [
@@ -57,13 +46,12 @@ const notifyInventoryForm: Form = {
             { type: 'min', value: 1 },
           ],
         }
-        
       ],
     },
     {
       name: 'itemDescription',
       type: 'text',
-      placeholder: 'Description',
+      placeholder: 'notifyWeapon.form.weaponDescription',
       defaultValue: '',
       size: 12,
       validations: [{ type: 'required', value: true }],
@@ -71,19 +59,19 @@ const notifyInventoryForm: Form = {
     {
       name: 'attachments',
       type: 'file',
-      placeholder: 'Attachements',
+      placeholder: 'notifyWeapon.form.attachments',
       defaultValue: '',
     }
   ],
 };
 
 const notifyInventoryItemForm: Form = {
-  title: 'Notify new Inventory Items',
+  title: 'notifyWeapon.form.notifyItems',
   elements: [
     {
       name: 'type',
       type: 'select',
-      placeholder: 'Inventory Type',
+      placeholder: 'notifyItem.form.weaponType',
       defaultValue: '',
       size: 4,
       options: [
@@ -98,7 +86,7 @@ const notifyInventoryItemForm: Form = {
     {
       name: 'name',
       type: 'text',
-      placeholder: 'Inventory Name',
+      placeholder: 'notifyItem.form.weaponName',
       defaultValue: '',
       size: 4,
       validations: [
@@ -109,7 +97,7 @@ const notifyInventoryItemForm: Form = {
     {
       name: 'quantity',
       type: 'number',
-      placeholder: 'Quantity',
+      placeholder: 'notifyItem.form.quantity',
       defaultValue: '',
       size: 4,
       validations: [
@@ -117,17 +105,6 @@ const notifyInventoryItemForm: Form = {
         { type: 'min', value: 1 },
       ],
     },
-    {
-      name: 'model',
-      type: 'text',
-      placeholder: 'Model',
-      defaultValue: '',
-      size: 4,
-      validations: [
-        { type: 'required', value: true },
-        { type: 'min', value: 1 },
-      ],
-    }
   ],
 };
 export default { notifyInventoryForm, notifyInventoryItemForm };

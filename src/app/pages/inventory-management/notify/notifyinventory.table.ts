@@ -11,7 +11,7 @@ const actions: Array<Action> = [
 
 const notifyInventoryTableState: TableState = {
   id: 'notify inventory table',
-  title: 'List of new inventory that have been notified',
+  title: 'notifyItem.listofweaponsthathavebeennotified',
   pageNumber: 0,
   pageSize: 5,
   totalItems: 0,

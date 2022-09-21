@@ -28,6 +28,13 @@ export const menus: Array<Menu> = [
         open: false,
         trans: 'menus.notifyInventory',
       },
+      {
+        name: 'Store Inventory',
+        icon: '',
+        link: 'inventory/inventory-store',
+        open: false,
+        trans: 'menus.inventoryStore',
+      },
     ],
   },
   // {

@@ -27,7 +27,7 @@
         "noRecordFound": "ምንም ዳታ አልተገኘም!",
         "no": "ተ.ቁ",
         "report": "ሪፖርት",
-        "searchData":"ፈልግ"
+        "searchData": "ፈልግ"
     },
     "menus": {
         "dashboard": "ዳሽ ቦርድ",
@@ -39,10 +39,10 @@
         "userManagement": "የተጠቃሚ አስተዳደር",
         "customer": "ከተቆሙ የሚታጠቁ ደንበኞች",
         "hrm": "የሰው ሀይል",
-        
-        "inventoryManagement":"ንብራት አስተዳደር",
-        "procurement":"የግዥ ፍላጎት",
-        "notifyInventory":"አዲስ ንብረት መሳወቅ"
+        "inventoryManagement": "ንብራት አስተዳደር",
+        "procurement": "ግዥ ጥያቄ",
+        "notifyInventory": "አዲስ ንብረት መሳወቅ",
+        "inventoryStore": "አዲስ ንብረት አስገባ"
     },
     "createNew": {
         "expand": "ተጨማሪ /ዝርዝር",
@@ -64,23 +64,37 @@
         "ethiopianFederalPoliceCommission": "የኢትዮጵያ ፌደራል ፖሊስ"
     },
     "notifyItem": {
-        "listofweaponsthathavebeennotified": "ገቢ እንዲደረጉ የታዘዙ የጦር መሳሪያዎች ዝርዝር",
+        "listofweaponsthathavebeennotified": "ገቢ እንዲደረጉ የታዘዙ ንብረቶች ዝርዝር",
         "form": {
-            "weaponType": "የጦር መሳሪያው አይነት",
-            "weaponName": "የጦር መሳሪያ ስም",
+            "weaponType": "የንብረት አይነት",
+            "weaponName": "የንብረት ስም",
             "quantity": "ብዛት"
         }
     },
     "notifyWeapon": {
         "form": {
             "notifyItems": "አዲስ የሚገቡ እቃዎች ዝርዝር",
-            "weaponType": "የጦር መሳሪያው አይነት",
-            "weaponName": "የጦር መሳሪያ ስም",
+            "weaponType": "የንብረት አይነት",
+            "weaponName": "የንብረት ስም",
             "quantity": "ብዛት",
             "weaponDescription": "መግለጫ",
             "attachments": "አባሪ ዶኩሜንት",
             "type": "የእቃው አይነት",
             "name": "የእቃው ስም"
+        }
+    },
+    "procurement": {
+        "listofrequesteditemforprocurement": "የአመታዊ በጀት ንብረት ግዥ ፍላጎት ዝርዝር",
+        "requestforprocurement": "መጠየቅያ ቅጽ",
+        "form": {
+            "procurementitem": "ግዥ ፍላጎት ዝርዝር",
+            "description": "መግለጫ",
+            "attachments": "አባሪ ዶኩሜንት",
+            "type": "የንብረት አይነት",
+            "name": "የንብረት ስም",
+            "quantity": "ብዛት",
+            "unitMeasure": "መለክያ",
+            "category": "የንብረት ምድብ"
         }
     },
     "requestForWeapon": {
@@ -137,18 +151,20 @@
         "listofweaponsinarecord": "በመጠረቀሚያ ውስጢ ያሉ የጦር መሳሪያ ዝርዝር",
         "inventoryList": "መገዝን ውስጥ የሉ የጦር መሰሪያ ዝርዝር",
         "tabs": {
-            "insertWeapon": "የጦር መሳሪያ አስገባ",
-            "viewWeapon": "ያሉ መሳሪያዎችን እይ",
-            "distributeWeapon": "የጦር መሳሪያ አሰራጭ"
+            "insertInventory": "ንብረት አስገባ",
+            "setAllocation": "ድልድል መዉጣት",
+            "distributeInventory": "ንብረት አስራጭ",
+            "annualBudgetProcurement": "አመተዊ የግዥ ፍላጎት አሳውቅ ",
+            "requestForPurchase": "ግዥ ጠይቅ"
         },
         "insertWeapon": {
             "form": {
-                "inventory": "የጦር መሳሪያ መከማቻ ቅጽ/ሞዴል 19",
+                "inventory": "የንብረት መከማቻ ቅጽ/ሞዴል 19",
                 "itemNoInExpenditureRegister": "ዋገዉ በገንዘብ ወጪ መዝገብ የሳረንበት ተራ ቁጥር",
                 "noOfEntryInTheRegisterOfIncomingGoods": "በእቃ ገቢ መዝገብ የገባበት ንምራ ",
                 "donor": "የአስረካቢው ስም",
-                "weaponItems": "የመሳሪያ አይነቶች",
-                "weaponType": "የጦር መሳሪያው አይነት",
+                "weaponItems": "ንብረት ዝርዝር መስገቢያ",
+                "weaponType": "የንብረት አይነት",
                 "weaponItemDescription": "መግለጫ",
                 "weaponModel": "ሞዴል",
                 "weaponSerialNo": "ሴሪ",
@@ -163,7 +179,7 @@
     "distributeWeapon": {
         "distributeWeapon": "የጦር መሳሪያ መከፋፈያ ቅጽ/ ሞዴል 22",
         "form": {
-            "weaponItems": "የመሳሪያ አይነቶች",
+            "weaponItems": "ንብረት ዝርዝር መስገቢያ",
             "weaponItemDescription": "መግለጫ",
             "weaponModel": "ሞዴል",
             "weaponSerialNo": "ሴሪ",
