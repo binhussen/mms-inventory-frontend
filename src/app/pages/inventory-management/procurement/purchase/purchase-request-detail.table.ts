@@ -11,7 +11,7 @@ const actions: Array<Action> = [
 
 const purchaseRequestDetailTableState: TableState = {
   id: 'purchase request table',
-  title: 'list of requested item for purchase',
+  title: 'requestForWeapon.listofweaponsthathavebeenrequested',
   pageNumber: 0,
   pageSize: 5,
   totalItems: 0,

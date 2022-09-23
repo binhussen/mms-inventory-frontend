@@ -98,15 +98,15 @@
         }
     },
     "requestForWeapon": {
-        "listofweaponsthathavebeenrequested": "የተጠየቁ መሳሪያዎች ዝርዝር",
+        "listofweaponsthathavebeenrequested": "ለግዥ የተጠየቁ ንብረት ዝርዝር",
         "listofweaponsthathavebeenrequestedtobereturned": "ሊመለሱ የተጠየቁ እቃዎች ዝርዝር",
         "listofApprovedforDistribution": "ለስርጭት የተፈቀደላቸው የጦ መሰሪያ ዝርዝር",
         "tabs": {
-            "requestForWeapon": "የጦር መሳሪያ መጠየቅ",
+            "requestForWeapon": "የንብረት ግዥ መጠየቅ",
             "requestForReturnWeapon": "የጦር መሳሪያን ለመመለስ መጠየቅ"
         },
         "form": {
-            "requestForWeapon": "የጦር መሳሪያ መጠየቅያ ቅጽ",
+            "requestForWeapon": "የንብረት ግዥ መጠየቅያ ቅጽ",
             "type": "የእቃው አይነት",
             "requestStatus": "መጠይቁ ያለበት ሁኔታ",
             "description": "መግለጫ",

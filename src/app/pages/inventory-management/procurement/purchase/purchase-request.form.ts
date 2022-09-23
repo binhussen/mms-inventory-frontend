@@ -1,99 +1,17 @@
 import { Form } from "src/app/mms-common/models/form";
-
-  const purchaseRequestForm: Form = {
-    title: 'request for procurement',
-    elements: [
-      {
-        name: 'procurmentItems',
-        type: 'formArray',
-        placeholder: 'Requested Procurement Item',
-        defaultValue: '',
-        formArrayItems: [
-          {
-            name: 'type',
-            type: 'select',
-            placeholder: 'Inventory Type',
-            defaultValue: '',
-            size: 4,
-            options: [
-              { value: 'electronic', label: 'Electronic Item' },
-              { value: 'accessory ', label: 'Accessory Materials' },
-              { value: 'furniture ', label: 'Furniture Materials' },
-              { value: 'detergent ', label: 'Detergents' },
-              { value: 'Other', label: 'Other' },
-            ],
-            validations: [{ type: 'required', value: true }],
-          },
-          {
-            name: 'category',
-            type: 'select',
-            placeholder: 'Category',
-            defaultValue: '',
-            size: 4,
-            options: [
-              { value: 'fixed', label: 'Fixed Asset' },
-              { value: 'nonfixedFixed ', label: 'Fixed Non Fixed Asset' },
-            ],
-            validations: [{ type: 'required', value: true }],
-          },
-          {
-            name: 'name',
-            type: 'text',
-            placeholder: 'Inventory Name',
-            defaultValue: '',
-            size: 4,
-            validations: [{ type: 'required', value: true }],
-          },
-          {
-            name: 'quantity',
-            type: 'number',
-            placeholder: 'Quantity',
-            defaultValue: '',
-            size: 4,
-            validations: [{ type: 'required', value: true }],
-          },
-          {
-            name: 'unitMeasure',
-            type: 'select',
-            placeholder: 'Unit Of Measurement',
-            defaultValue: '',
-            size: 4,
-            options: [
-              { value: 'inNumber', label: 'Number' },
-              { value: 'pcs ', label: 'Packet' },
-              { value: 'kilo ', label: 'Kilogram' },
-              { value: 'meter ', label: 'Meter' },
-              { value: 'box', label: 'Box' },
-            ],
-            validations: [{ type: 'required', value: true }],
-          },
-        ],
-      },
-      {
-        name: 'description',
-        type: 'text',
-        placeholder: 'Description',
-        defaultValue: '',
-        size: 12,
-        validations: [{ type: 'required', value: true }],
-      },
-      {
-        name: 'attachments',
-        type: 'file',
-        placeholder: 'Attachements',
-        defaultValue: '',
-      },
-    ],
-  };
-
-
-  const purchaseRequestItemForm: Form = {
-    title: 'Requested Procurement Item',
-    elements: [
+const purchaseRequestForm: Form = {
+  title: 'requestForWeapon.form.requestForWeapon',
+  elements: [
+    {
+      name: 'requestItems',
+      type: 'formArray',
+      placeholder: 'requestForWeapon.requestItemForWeapon.form.requestItems',
+      defaultValue: '',
+      formArrayItems: [
         {
           name: 'type',
           type: 'select',
-          placeholder: 'Inventory Type',
+          placeholder: 'procurement.form.type',
           defaultValue: '',
           size: 4,
           options: [
@@ -106,48 +24,57 @@ import { Form } from "src/app/mms-common/models/form";
           validations: [{ type: 'required', value: true }],
         },
         {
-          name: 'category',
-          type: 'select',
-          placeholder: 'Category',
-          defaultValue: '',
-          size: 4,
-          options: [
-            { value: 'fixed', label: 'Fixed Asset' },
-            { value: 'nonfixedFixed ', label: 'Fixed Non Fixed Asset' },
-          ],
-          validations: [{ type: 'required', value: true }],
-        },
-        {
           name: 'name',
           type: 'text',
-          placeholder: 'Inventory Name',
+          placeholder: 'requestForWeapon.form.name',
           defaultValue: '',
-          size: 4,
+          size: 3,
           validations: [{ type: 'required', value: true }],
         },
         {
-          name: 'quantity',
+          name: 'model',
+          type: 'text',
+          placeholder: 'requestForWeapon.form.model',
+          defaultValue: '',
+          size: 3,
+          validations: [{ type: 'required', value: true }],
+        },
+        {
+          name: 'requestedQuantity',
           type: 'number',
-          placeholder: 'Quantity',
+          placeholder: 'requestForWeapon.form.quantity',
           defaultValue: '',
-          size: 4,
-          validations: [{ type: 'required', value: true }],
-        },
-        {
-          name: 'unitMeasure',
-          type: 'select',
-          placeholder: 'Unit Of Measurement',
-          defaultValue: '',
-          size: 4,
-          options: [
-            { value: 'inNumber', label: 'Number' },
-            { value: 'pcs ', label: 'Packet' },
-            { value: 'kilo ', label: 'Kilogram' },
-            { value: 'meter ', label: 'Meter' },
-            { value: 'box', label: 'Box' },
-          ],
+          size: 3,
           validations: [{ type: 'required', value: true }],
         },
       ],
-    };
+    },
+    {
+      name: 'description',
+      type: 'text',
+      placeholder: 'requestForWeapon.form.description',
+      defaultValue: '',
+      size: 6,
+      validations: [{ type: 'required', value: true }],
+    },
+
+    {
+      name: 'attachments',
+      type: 'file',
+      placeholder: 'requestForWeapon.form.attachments',
+      defaultValue: '',
+    },
+  ],
+};
+
+const purchaseRequestItemForm: Form = {
+  title: 'requestForWeapon.requestItemForWeapon.form.requestItems',
+  elements:
+    (
+      purchaseRequestForm.elements.find(
+        (element) => element.name === 'requestItems'
+      ) ?? { formArrayItems: [] }
+    ).formArrayItems ?? [],
+};
+  
   export default {purchaseRequestForm, purchaseRequestItemForm}

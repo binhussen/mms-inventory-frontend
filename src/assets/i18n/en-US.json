@@ -100,7 +100,7 @@
         }
     },
     "requestForWeapon": {
-        "listofweaponsthathavebeenrequested": "List of weapons that have been requested",
+        "listofweaponsthathavebeenrequested": "List of Inventory that have been requested",
         "listofweaponsthathavebeenrequestedtobereturned": "list of weapons that have been requested to be returned",
         "listofApprovedforDistribution": "List of Approved for Distribution",
         "tabs": {
@@ -108,7 +108,7 @@
             "requestForReturnWeapon": "Request For Return Weapon"
         },
         "form": {
-            "requestForWeapon": "Request For Weapon",
+            "requestForWeapon": "Request For Inventory Purchase",
             "type": "Type",
             "name": "Name",
             "requestStatus": "Request Status",

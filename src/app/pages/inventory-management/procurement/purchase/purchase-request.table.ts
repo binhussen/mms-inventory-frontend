@@ -3,7 +3,7 @@ import { TableState } from 'src/app/store/models/table.state';
 import { environment } from 'src/environments/environment';
 
 const baseApiUrl = environment.baseApiUrl;
-const dataSourceUrl = `${baseApiUrl}requests`;
+const dataSourceUrl = `${baseApiUrl}requestheaders`;
 const actions: Array<Action> = [
   { name: 'createNew.expand', type: 'expand', path: 'requests' },
   { name: 'createNew.edit', type: 'edit' },
@@ -11,7 +11,7 @@ const actions: Array<Action> = [
 
 const purchaseRequestTableState: TableState = {
   id: 'procurement request table',
-  title: 'list of requested item for purchase',
+  title: 'requestForWeapon.listofweaponsthathavebeenrequested',
   pageNumber: 0,
   pageSize: 5,
   totalItems: 0,
