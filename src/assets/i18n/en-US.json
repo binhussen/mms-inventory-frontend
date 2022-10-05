@@ -39,11 +39,12 @@
         "userManagement": "User Managment",
         "customer": "customers",
         "hrm": "hrm",
-        
         "inventoryManagement":"Inventory Management",
         "procurement":"Request for procurement",
         "notifyInventory":"Notify Inventory",
-        "inventoryStore":"Inventory Store"
+        "inventoryStore":"Inventory Store",
+        "inventoryRequest":"inventory"
+
     },
     "createNew": {
         "expand": "Expand",

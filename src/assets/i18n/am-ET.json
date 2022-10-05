@@ -42,7 +42,8 @@
         "inventoryManagement": "ንብራት አስተዳደር",
         "procurement": "ግዥ ጥያቄ",
         "notifyInventory": "አዲስ ንብረት መሳወቅ",
-        "inventoryStore": "አዲስ ንብረት አስገባ"
+        "inventoryStore": "አዲስ ንብረት አስገባ",
+        "inventoryRequest":"inventory"
     },
     "createNew": {
         "expand": "ተጨማሪ /ዝርዝር",

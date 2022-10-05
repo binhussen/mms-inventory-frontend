@@ -35,6 +35,13 @@ export const menus: Array<Menu> = [
         open: false,
         trans: 'menus.inventoryStore',
       },
+      {
+        name: 'Request Inventory',
+        icon: '',
+        link: 'inventory/inventory-request',
+        open: false,
+        trans: 'menus.inventoryRequest',
+      },
     ],
   },
   // {

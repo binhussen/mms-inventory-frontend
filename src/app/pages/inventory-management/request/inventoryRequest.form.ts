@@ -1,5 +1,5 @@
 import { Form } from "src/app/mms-common/models/form";
-const purchaseRequestForm: Form = {
+const inventoryRequestForm: Form = {
   title: 'requestForWeapon.form.requestForWeapon',
   elements: [
     {
@@ -67,14 +67,14 @@ const purchaseRequestForm: Form = {
   ],
 };
 
-const purchaseRequestItemForm: Form = {
+const inventoryRequestItemForm: Form = {
   title: 'requestForWeapon.requestItemForWeapon.form.requestItems',
   elements:
     (
-      purchaseRequestForm.elements.find(
+      inventoryRequestForm.elements.find(
         (element) => element.name === 'requestItems'
       ) ?? { formArrayItems: [] }
     ).formArrayItems ?? [],
 };
   
-  export default {purchaseRequestForm, purchaseRequestItemForm}
+  export default {inventoryRequestForm, inventoryRequestItemForm}

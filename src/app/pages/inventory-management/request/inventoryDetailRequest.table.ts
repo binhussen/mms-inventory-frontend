@@ -3,14 +3,14 @@ import { TableState } from 'src/app/store/models/table.state';
 import { environment } from 'src/environments/environment';
 
 const baseApiUrl = environment.baseApiUrl;
-const dataSourceUrl = `${baseApiUrl}requestheaders`;
+const dataSourceUrl = `${baseApiUrl}requests`;
 const actions: Array<Action> = [
   { name: 'createNew.expand', type: 'expand', path: 'requests' },
   { name: 'createNew.edit', type: 'edit' },
 ];
 
-const purchaseRequestTableState: TableState = {
-  id: 'procurement request table',
+const inventoryRequestDetailTableState: TableState = {
+  id: 'inventory request table',
   title: 'requestForWeapon.listofweaponsthathavebeenrequested',
   pageNumber: 0,
   pageSize: 5,
@@ -25,7 +25,7 @@ const purchaseRequestTableState: TableState = {
   },
   actions,
 };
-export default purchaseRequestTableState;
+export default inventoryRequestDetailTableState;
 
 
 

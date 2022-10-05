@@ -23,7 +23,12 @@ import { RouterModule } from '@angular/router';
         path: 'inventory-store',
         loadChildren: () =>
           import('./store/store.module').then((m) => m.StoreModule),
-      }
+      },
+      {
+        path: 'inventory-request',
+        loadChildren: () =>
+          import('./request/request.module').then((m) => m.RequestModule),
+      },
     ]),
   ],
 })
