@@ -3,9 +3,8 @@ import { TableState } from 'src/app/store/models/table.state';
 import { environment } from 'src/environments/environment';
 
 const baseApiUrl = environment.baseApiUrl;
-const dataSourceUrl = `${baseApiUrl}requests`;
+const dataSourceUrl = `${baseApiUrl}requestheaders`;
 const actions: Array<Action> = [
-  { name: 'createNew.expand', type: 'expand', path: 'requests' },
   { name: 'createNew.edit', type: 'edit' },
 ];
 

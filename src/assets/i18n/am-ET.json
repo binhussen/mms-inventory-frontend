@@ -43,7 +43,7 @@
         "procurement": "ግዥ ጥያቄ",
         "notifyInventory": "አዲስ ንብረት መሳወቅ",
         "inventoryStore": "አዲስ ንብረት አስገባ",
-        "inventoryRequest":"inventory"
+        "inventoryRequest":"ንብረት ጠይቅ"
     },
     "createNew": {
         "expand": "ተጨማሪ /ዝርዝር",
@@ -99,15 +99,15 @@
         }
     },
     "requestForWeapon": {
-        "listofweaponsthathavebeenrequested": "ለግዥ የተጠየቁ ንብረት ዝርዝር",
+        "listofweaponsthathavebeenrequested": "የተጠየቁ ንብረት ዝርዝር",
         "listofweaponsthathavebeenrequestedtobereturned": "ሊመለሱ የተጠየቁ እቃዎች ዝርዝር",
         "listofApprovedforDistribution": "ለስርጭት የተፈቀደላቸው የጦ መሰሪያ ዝርዝር",
         "tabs": {
-            "requestForWeapon": "የንብረት ግዥ መጠየቅ",
+            "requestForWeapon": "የንብረት መጠየቅ",
             "requestForReturnWeapon": "የጦር መሳሪያን ለመመለስ መጠየቅ"
         },
         "form": {
-            "requestForWeapon": "የንብረት ግዥ መጠየቅያ ቅጽ",
+            "requestForWeapon": "የንብረት መጠየቅያ ቅጽ",
             "type": "የእቃው አይነት",
             "requestStatus": "መጠይቁ ያለበት ሁኔታ",
             "description": "መግለጫ",
@@ -156,7 +156,7 @@
             "setAllocation": "ድልድል መዉጣት",
             "distributeInventory": "ንብረት አስራጭ",
             "annualBudgetProcurement": "አመተዊ የግዥ ፍላጎት አሳውቅ ",
-            "requestForPurchase": "ግዥ ጠይቅ"
+            "requestForinventory": "ንብረት ጠይቅ"
         },
         "insertWeapon": {
             "form": {

@@ -5,7 +5,7 @@ import { environment } from 'src/environments/environment';
 const baseApiUrl = environment.baseApiUrl;
 const dataSourceUrl = `${baseApiUrl}requestheaders`;
 const actions: Array<Action> = [
-  { name: 'createNew.expand', type: 'expand', path: 'requests' },
+  { name: 'createNew.expand', type: 'expand', path: 'requestheaders' },
   { name: 'createNew.edit', type: 'edit' },
 ];
 

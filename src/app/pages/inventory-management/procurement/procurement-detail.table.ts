@@ -4,7 +4,9 @@ import { environment } from 'src/environments/environment';
 
 const baseApiUrl = environment.baseApiUrl;
 const dataSourceUrl = `${baseApiUrl}procurements`;
-const actions: Array<Action> = [{ name: 'createNew.edit', type: 'edit' }];
+const actions: Array<Action> = [
+  { name: 'createNew.edit', type: 'edit' }
+];
 
 const procurementItemsTableState: TableState = {
   id: 'procurement items table',
@@ -20,7 +22,7 @@ const procurementItemsTableState: TableState = {
     deletePath: `${dataSourceUrl}/[id]`,
   },
   actions,
-  path:"items",
+  path: "items",
   relations: [],
   childOf: {
     notifiesId: 0,

@@ -43,7 +43,7 @@
         "procurement":"Request for procurement",
         "notifyInventory":"Notify Inventory",
         "inventoryStore":"Inventory Store",
-        "inventoryRequest":"inventory"
+        "inventoryRequest":"Inventory Request"
 
     },
     "createNew": {
@@ -157,9 +157,8 @@
             "insertInventory": "Insert Inventory",
             "setAllocation": "View Weapon",
             "distributeInventory": "Distribute Inventory",
-
             "annualBudgetProcurement": "Annual Budget Procurement ",
-            "requestForPurchase": "Request For Purchase"
+            "requestForinventory": "Request For Inventory"
         },
         "insertWeapon": {
             "form": {

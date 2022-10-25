@@ -5,7 +5,6 @@ import { MmsCommonModule } from 'src/app/mms-common/mms-common.module';
 import { PageDetailComponent } from '../../page/page-detail/page-detail.component';
 import { PageComponent } from '../../page/page.component';
 import { TabbedPageComponent } from '../../page/tabbed-page/tabbed-page.component';
-import inventoryPageTabs from '../../weapon/inventory/inventory.tabs';
 import inventoryRequestPage from './inventoryRequest.page';
 import inventoryRequestDetailPage from './inventoryDetailRequest.page';
 import inventoryRequestPageTabs from './inventoryRequest.tabs';
